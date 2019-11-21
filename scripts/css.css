@@ -1,0 +1,327 @@
+/* CSS Document */
+@font-face {
+        font-family: "Console";
+        src: url("fonts/CPmono.ttf") format("truetype");
+}
+/*@font-face {
+        font-family: "Con sole";
+        src: url("fonts/CPmono.eot") format("opentype");
+}*/
+
+body {
+	background-color: black;	
+}
+
+#video {
+	position: absolute;
+	height: 300px;
+	width: 800px; 
+	margin-left: 267px;
+	margin-top: -300;
+}
+
+.copyright {
+	color: #333333;
+	font-size: 13px;
+}
+
+#container {
+	color: white;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	margin-top: 0px;
+	margin-left: -400px;
+}
+
+#console {
+	background-color:black; 
+	height: 300px; 
+	width: 800px; 
+	margin: 0 auto;
+	overflow: auto;
+	color: white;
+}
+
+#console p {
+	color: white;
+	display: none;
+	font-size: 17px;
+	font-family: 'Times New Roman', Times, serif;
+}
+
+#wingame {
+	display: none;
+	height: 500px;
+	width: 1000px;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	margin-left: -500px;
+	margin-top: -250px;
+}
+
+#wingame p {
+	font-size: 30px;
+	padding-top: 175px;
+	color: white;
+}
+
+#wingame p.link {
+	font-size: 15px;
+	padding-top: 0px;
+}
+
+#wingame a {
+	color: white;
+}
+
+#wingame a:hover {
+	color: red;
+}
+
+#foodpoisoning {
+	display: none;
+	height: 500px;
+	width: 1000px;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	margin-left: -500px;
+	margin-top: -250px;
+}
+
+#foodpoisoning p {
+	font-size: 30px;
+	padding-top: 175px;
+	color: white;
+}
+
+#foodpoisoning p.link {
+	font-size: 15px;
+	padding-top: 0px;
+}
+
+#foodpoisoning a {
+	color: white;
+}
+
+#foodpoisoning a:hover {
+	color: red;
+}
+
+#health_die {
+	display: none;
+	height: 500px;
+	width: 1000px;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	margin-left: -500px;
+	margin-top: -250px;
+}
+
+#health_die p {
+	font-size: 30px;
+	padding-top: 175px;
+	color: white;
+}
+
+#health_die p.link {
+	font-size: 15px;
+	padding-top: 0px;
+}
+
+#health_die a {
+	color: white;
+}
+
+#health_die a:hover {
+	color: red;
+}
+
+#killself {
+	display: none;
+	height: 500px;
+	width: 1000px;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	margin-left: -500px;
+	margin-top: -250px;
+}
+
+#killself p {
+	font-size: 30px;
+	padding-top: 175px;
+	color: white;
+}
+
+#killself p.link {
+	font-size: 15px;
+	padding-top: 0px;
+}
+
+#killself a {
+	color: white;
+}
+
+#killself a:hover {
+	color: red;
+}
+
+#yes {
+	position: absolute;
+	margin-top: 350px;
+}
+
+#command_line {
+	display: none;
+}
+
+input {
+	background-color: black;
+	color: white;
+	border: 1px solid #333;
+	font-family: "Times New Roman", Times, serif;
+	font-size: 17px;
+}
+
+input:focus {
+	outline: none;
+}
+
+#map_box_test {
+	background-color: white;
+	border:2px solid rgb(172, 145, 73);
+	display: none;
+	position: absolute;
+	height: 20px;
+	width: 30px;
+	margin-top: 425px;
+	margin-left: 1190px;
+}
+
+#hallway {
+	background-color: gray;
+	display: none;
+	height: 8px;
+	width: 5px;
+	margin-top: 417px;
+	margin-left: 1205px;
+	position: absolute;
+}
+
+#hallway_WH1 {
+	background-color: gray;
+	display: none;
+	height: 8px;
+	width: 5px;
+	margin-top: 417px;
+	margin-left: 1167px;
+	position: absolute;
+}
+
+#hallway_WH2 {
+	background-color: gray;
+	display: none;
+	height: 8px;
+	width: 5px;
+	margin-top: 387px;
+	margin-left: 1167px;
+	position: absolute;
+}
+
+#hallway_TH1 {
+	background-color: gray;
+	display: none;
+	height: 5px;
+	width: 8px;
+	margin-top: 405px;
+	margin-left: 1182px;
+	position: absolute;
+}
+
+#hallway_TH2 {
+	background-color: gray;
+	display: none;
+	height: 5px;
+	width: 8px;
+	margin-top: 405px;
+	margin-left: 1222px;
+	position: absolute;
+}
+
+#map_box_TH {
+	background-color: white;
+	border:2px solid rgb(172, 145, 73);
+	display: none;
+	position: absolute;
+	height: 20px;
+	width: 30px;
+	margin-top: 395px;
+	margin-left: 1190px;
+}
+
+#map_box_WH {
+	background-color: white;
+	border:2px solid rgb(172, 145, 73);
+	display: none;
+	position: absolute;
+	height: 20px;
+	width: 30px;
+	margin-top: 395px;
+	margin-left: 1150px;
+}
+
+#location_JC {
+	background-color: blue;
+	display: none;
+	position: absolute;
+	height: 5px;
+	width: 5px;
+	margin-top: 435px;
+	margin-left: 1200px;
+	z-index: 1;
+}
+
+#location_TH {
+	background-color: blue;
+	display: none;
+	position: absolute;
+	height: 5px;
+	width: 5px;
+	margin-top: 405px;
+	margin-left: 1200px;
+	z-index: 1;
+}
+
+#location_WH {
+	background-color: blue;
+	display: none;
+	position: absolute;
+	height: 5px;
+	width: 5px;
+	margin-top: 405px;
+	margin-left: 1158px;
+	z-index: 1;
+}
+
+#map_back {
+	background-color: black;
+	z-index: -1;
+	display: none;
+	position: absolute;
+	height: 500px;
+	width: 250px;
+	margin-top: 30px;
+	margin-left: 1080px;
+}
+
+#health_display {
+	position: absolute;
+	margin-top: 540px;
+	margin-left: 1150px;
+	height: 100px;
+	width: 110px;
+}
