@@ -1,0 +1,165 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<script src="scripts/jquery.js" type="text/javascript"></script>
+<link rel=stylesheet href="scripts/css.css" type="text/css" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Mazmorra Maestros</title>
+
+</head>
+
+<body>
+
+<p style="text-align:center"><div id="wingame">
+<p>You made it! Congratulations!</p>
+<p class="link"><a href="index.html">Play again</a>
+</div></p>
+
+<p style="text-align:center"><div id="killself" style="display:none;">
+<p>You killed yourself...</p>
+<p class="link"><a href="index.html">Play again</a>
+</div></p>
+
+<p style="text-align:center"><div id="map_box_test" style="display:none;"></div>
+
+<p style="text-align:center"><div id="foodpoisoning" style="display:none;">
+<p>You ate some bad food and have died as a result.</p>
+<p class="link"><a href="index.html">Play again</a>
+</div></p>
+
+<p style="text-align:center"><div id="health_die" style="display:none;">
+    <p>You have died a pathetic death.</p>
+    <p class="link"><a href="index.html">Play again</a>
+</div></p>
+
+<!--maybe mini map-->
+<div id="map_box_test"></div>
+
+<div id="map_box_TH"></div>
+
+<div id="map_box_WH"></div>
+
+<div id="hallway_WH1"></div>
+
+<div id="hallway_WH2"></div>
+
+<div id="location_JC"></div>
+
+<div id="location_TH"></div>
+
+<div id="location_WH"></div>
+
+<div id="hallway"></div>
+
+<div id="hallway_TH1"></div>
+
+<div id="hallway_TH2"></div>
+
+
+<div id="map_back">
+        <img src="images/map background1.png" style="width:250px;height:500px" id="map_pic">
+</div>
+
+<!--graphics time-->
+<div id="video">
+    
+    <div id="zero"></div>
+</div>
+
+<!--health display-->
+<div id="health_display">
+    <div id="placeholder_dos"></div>
+</div>
+
+<!--Game Time-->
+<div id="container">
+
+
+<div id="console">
+
+
+<!--
+MAIN GAME PLOT
+-->
+<p id="message_begin">Welcome to Mazmorra Maestros. At any time you may type "help" for a list of commands that you can use.</p>
+
+<p id="message_help">Help: (replace italicized words)
+<br>music <i>on or off</i>: for in game music written hastily by Tony R (still a prototype)
+<br>take <i>object</i>: takes the specified object and puts it in your inventory<br />
+eat <i>food</i>: eats indicated food item<br />
+attack <i>creature</i> with <i>object</i>: kills indicated creature with specified object<br />
+inventory: lists everything you are currently carrying<br />
+unlock <i>door</i> with <i>object</i>: unlocks door with the object you specify<br />
+go <i>direction</i>: attempts to travel in direction (north, east, south, west, up, down)<br />
+move <i>object</i> : attempts to move an object (such objects are often hinted at)<br />
+search <i>object</i>: searches the indicated object for items<br>
+help <i>number</i>: give that page of help/ commands</p>
+
+<p id="message_help2">
+songs: lists songs once jukebox is found<br>
+hard mode on: sets health to one and makes monsters tougher <i>There is no off!!</i>
+<br>Health
+<br><i>The rest you'll have to get creative with as needed, think like I would</i>
+</p>
+
+<p id="message_songs">Here's a list of songs. (play <i>song name</i>)<br>
+<i>Still Alive</i><br><i>Portal Radio</i><br><i>Ambient piano</i><br>
+<i>zelda and chill</i><br><i>Portal 2</i>(sorry, because of commands I cant use the title)
+<br><i>Diamond City Radio</i><br><i>secret</i><br><i>elevator music</i><br><i>Adventure Line</i><br><i>doom song</i></p>
+
+<p id="area_main">You find yourself in a jail cell. You have no recollection of the events prior. Directly ahead of you to the north is the jail door. You hear the sound of metal drop and out of the corner of your eye you see a rat skidaddle into the shadows. You notice a paper clip. Scattered around the floor are some dead bugs as well as a lunch tray reminiscient of nasty cafeteria food.</p>
+
+<p id="area_hallway">You have entered a hallway. To the west and to the east the dark hallway continues. To the south is the jail room from where you came. The only source of light is a torch hanging on the wall. Beneath the torch lies a mysterious note. Perhaps it was left by your captors.</p>
+
+<p id="area_torture">You have entered a room that seems to be a place of great anguish. Strange and grotesque looking devices hang from the walls and ceiling. There's a whip hanging on the wall. After a quick observation, you notice that the room appears fairly large, and a table sits in the corner. To the south there is a doorway. To the west is the hallway that you came from.</p>
+
+<p id="area_morgue">
+As you advance south, you begin to hear gurgling noises. When you enter the room, you see a zombie feasting on the dead bodies of the morgue!
+</p>
+
+<p id="area_westhall">As you move west, you come upon another junction. There's ice cream on the floor, doesn't look bad actually... To the north and south are some dark rooms. You came from the east.</p>
+
+<p id="jukebox_find">You can now use the command "play <i>song</i>" to play a song during the game.<br> To view song choices, use "songs"<br><i>If a song does not play, it hasn't loaded properly or will notify you of its condition, like all Apple instuctions, turn it on and off again to fix the song.</i></p>
+
+<p id="area_exit">You enter a room with a strange and decorated door. The door appears to lead somewhere, but it also looks locked. Upon closer inspection, you discover that the lock cannot be picked and that a key is required to open it. To the south is the way you came from.</p>
+
+<p id="area_bonus">You enter what appears to be a storage room. It is empty except for a wheeled crate in the corner. It looks like it hasn't been touched in years.</p>
+
+<p id="area_hub">You enter a large circular room lined with 5 doors and a brick wall labeled 1-6 (3 being the wall).<br>All but the door labeled 1 seem locked<br><b>New command: go through <i>door number</i></b></p>
+
+<p id="message_inventory">
+</p>
+
+<p id="message_no"> Why would you do that? <br> I mean i can't stop you <br> You go so far in you disappear into yourself <br> and cease to exist</p>
+
+<p id="area_2Corridor"> You enter a hall where you thought you would escape. Your torch is running low but ahoy!- A lit tunnel lies to the north! You came from the south.</p>
+
+<!--
+ALLOWS CONTENT TO BE INSERTED BEFORE THIS
+-->
+<div id="placeholder"></div>
+
+</div>
+<!--
+INPUT
+-->
+<form onsubmit="return false;">
+<p style="text-align:center"><input type="text" id="command_line" size="50" autofocus="autofocus" /></p>
+</form>
+</div>
+<div id="yes">
+<!--radio audio slot-->
+    <div id="nope">
+    </div>
+<!--radio image slot-->
+</div>
+
+
+
+<p class="copyright"></p>
+
+<script type="text/javascript" src="scripts/game.js"></script>
+
+</body>
+
+</html>
