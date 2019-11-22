@@ -37,8 +37,9 @@ body {
 #console {
 	background-color:black; 
 	height: 300px; 
-	width: 800px; 
-	margin-left: 267px;
+	max-width: 500px;
+	margin-top: 5px;
+	margin: 0 auto;
 	overflow: auto;
 	color: white;
 }
