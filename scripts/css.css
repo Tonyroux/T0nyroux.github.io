@@ -16,7 +16,7 @@ body {
 	position: absolute;
 	height: 300px;
 	width: 800px; 
-	margin-left: 267px;
+	margin-left: 300px;
 	margin-top: -300;
 }
 
@@ -37,8 +37,7 @@ body {
 #console {
 	background-color:black; 
 	height: 300px; 
-	max-width: 500px;
-	margin-top: 5px;
+	width: 800px; 
 	margin: 0 auto;
 	overflow: auto;
 	color: white;
@@ -173,7 +172,7 @@ body {
 
 #yes {
 	position: absolute;
-	margin-top: 350px;
+	margin-top: 500px;
 }
 
 #command_line {
@@ -200,7 +199,7 @@ input:focus {
 	height: 20px;
 	width: 30px;
 	margin-top: 425px;
-	margin-left: 1190px;
+	margin-left: 1230px;
 }
 
 #hallway {
@@ -209,7 +208,7 @@ input:focus {
 	height: 8px;
 	width: 5px;
 	margin-top: 417px;
-	margin-left: 1205px;
+	margin-left: 1245px;
 	position: absolute;
 }
 
@@ -219,7 +218,7 @@ input:focus {
 	height: 8px;
 	width: 5px;
 	margin-top: 417px;
-	margin-left: 1167px;
+	margin-left: 1207px;
 	position: absolute;
 }
 
@@ -229,7 +228,7 @@ input:focus {
 	height: 8px;
 	width: 5px;
 	margin-top: 387px;
-	margin-left: 1167px;
+	margin-left: 1197px;
 	position: absolute;
 }
 
@@ -239,7 +238,7 @@ input:focus {
 	height: 5px;
 	width: 8px;
 	margin-top: 405px;
-	margin-left: 1182px;
+	margin-left: 1222px;
 	position: absolute;
 }
 
@@ -249,7 +248,7 @@ input:focus {
 	height: 5px;
 	width: 8px;
 	margin-top: 405px;
-	margin-left: 1222px;
+	margin-left: 1262px;
 	position: absolute;
 }
 
@@ -261,7 +260,7 @@ input:focus {
 	height: 20px;
 	width: 30px;
 	margin-top: 395px;
-	margin-left: 1190px;
+	margin-left: 1230px;
 }
 
 #map_box_WH {
@@ -272,7 +271,7 @@ input:focus {
 	height: 20px;
 	width: 30px;
 	margin-top: 395px;
-	margin-left: 1150px;
+	margin-left: 1190px;
 }
 
 #location_JC {
@@ -282,7 +281,7 @@ input:focus {
 	height: 5px;
 	width: 5px;
 	margin-top: 435px;
-	margin-left: 1200px;
+	margin-left: 1240px;
 	z-index: 1;
 }
 
@@ -293,7 +292,7 @@ input:focus {
 	height: 5px;
 	width: 5px;
 	margin-top: 405px;
-	margin-left: 1200px;
+	margin-left: 1240px;
 	z-index: 1;
 }
 
@@ -304,7 +303,7 @@ input:focus {
 	height: 5px;
 	width: 5px;
 	margin-top: 405px;
-	margin-left: 1158px;
+	margin-left: 1198px;
 	z-index: 1;
 }
 
@@ -316,13 +315,51 @@ input:focus {
 	height: 500px;
 	width: 250px;
 	margin-top: 30px;
-	margin-left: 1080px;
+	margin-left: 1120px;
 }
 
 #health_display {
+	display: none;
 	position: absolute;
-	margin-top: 540px;
-	margin-left: 1150px;
+	margin-top: 580px;
+	margin-left: 1190px;
 	height: 100px;
 	width: 110px;
+}
+
+#inventory {
+	position: absolute;
+	margin-left: 5px;
+	margin-top: 50px;
+	display: none;
+	border:1px solid whitesmoke;
+	font-family: "Times New Roman", Times, serif;
+	font-size: 17px;
+	color: white;
+	background-color: black;
+	height: 450px;
+	width: 200px;
+}
+
+#inventory_br {
+	display: none;
+	position: absolute;
+	background-color: grey;
+	height: 2px;
+	width: 190px;
+	margin-top: 250px;
+	margin-left: 5px;
+}
+
+#inv_box {
+	position: absolute;
+	background-color: black;
+	margin-top: 0px;
+	margin-left: 0px;
+	width: 200px;
+	height: 250px;
+	font-family: "Times New Roman", Times, serif;
+	font-size: 17px;
+	color: white;
+	overflow-y: auto;
 }

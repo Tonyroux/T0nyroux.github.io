@@ -35,6 +35,18 @@ powder = false;
 inventory = false;
 music = false;
 plying_m = false;
+//inventory listing
+listed_t = false;
+listed_pc = false;
+listed_tray = false;
+listed_n = false;
+listed_ic = false;
+listed_w = false;
+listed_kn = false;
+listed_ke = false;
+listed_pow = false;
+listed_burnt = false;
+
 //
 currentroom = "jail";
 searchtable = false;
@@ -54,6 +66,10 @@ $(document).ready(function() {
 	$("#area_main").fadeIn(3000);
 	$("#command_line").fadeIn(3000);
 	$("#map_back").fadeIn(3000);
+	$("#inventory").fadeIn(3000);
+	$("#inventory_br").fadeIn(3000);
+	$("#inventory_box").fadeIn(3000);
+	$("#health_display").fadeIn(3000);
 	$("#location_JC").fadeIn(3000);
 	$("#map_box_test").fadeIn(3000);
 	$("#hallway").fadeIn(3000);
@@ -189,30 +205,6 @@ $(document).ready(function() {
 		//
 		//ends songs
 		//
-
-		// do not touch or mention!!!!
-		else if (input.indexOf("butt fuck self") > -1) {
-			if (input == "butt fuck self") {
-				$("audio").detach("#yep");
-				$("img").detach("#yep");
-				$("video").detach("#screen");
-				$("#message_no").clone().insertBefore("#placeholder").fadeIn(1000);
-				$("#map_box_TH").fadeOut(3000);					$("#map_box_WH").fadeOut(3000);
-				$("#map_back").fadeOut(3000);
-				$("#hallway").fadeOut(3000);
-				$("#hallway_TH1").fadeOut(3000);
-				$("#hallway_TH2").fadeOut(3000);
-				$("#hallway_WH1").fadeOut(3000);
-				$("#hallway_WH2").fadeOut(3000);
-				$("#location_JC").fadeOut(3000);
-				$("#location_TH").fadeOut(3000);
-				$("#location_WH").fadeOut(3000);
-				$("#health_display").fadeOut(3000);$("#map_box_test").fadeOut(3000);
-				$("#container").fadeOut(9000, function() {
-					$("#killself").fadeIn(9000);
-				});
-			}
-		}
 		
 		
 		//
@@ -512,7 +504,9 @@ $(document).ready(function() {
 					$("#hallway_WH2").fadeOut(3000);
 					$("#location_JC").fadeOut(3000);
 					$("#location_TH").fadeOut(3000);
-					$("#location_WH").fadeOut(3000);
+					$("#inventory").fadeOut(3000);
+					$("#inventory_br").fadeOut(3000);
+					$("#inventory_box").fadeOut(3000);$("#location_WH").fadeOut(3000);
 					$("#health_display").fadeOut(3000);
 					$("#map_box_test").fadeOut(3000);
 					$("#container").fadeOut(9000, function() {
@@ -572,6 +566,9 @@ $(document).ready(function() {
 					$("#hallway_TH1").fadeOut(3000);
 					$("#hallway_TH2").fadeOut(3000);
 					$("#hallway_WH1").fadeOut(3000);
+					$("#inventory").fadeOut(3000);
+					$("#inventory_br").fadeOut(3000);
+					$("#inventory_box").fadeOut(3000);
 					$("#hallway_WH2").fadeOut(3000);
 					$("#location_JC").fadeOut(3000);
 					$("#location_TH").fadeOut(3000);
@@ -759,6 +756,9 @@ $(document).ready(function() {
 					$("#hallway_TH2").fadeOut(3000);
 					$("#hallway_WH1").fadeOut(3000);
 					$("#hallway_WH2").fadeOut(3000);
+					$("#inventory").fadeOut(3000);
+					$("#inventory_br").fadeOut(3000);
+					$("#inventory_box").fadeOut(3000);
 					$("#location_JC").fadeOut(3000);
 					$("#location_TH").fadeOut(3000);
 					$("#location_WH").fadeOut(3000);
@@ -791,6 +791,9 @@ $(document).ready(function() {
 					$("#hallway_TH2").fadeOut(3000);
 					$("#hallway_WH1").fadeOut(3000);
 					$("#hallway_WH2").fadeOut(3000);
+					$("#inventory").fadeOut(3000);
+					$("#inventory_br").fadeOut(3000);
+					$("#inventory_box").fadeOut(3000);
 					$("#location_JC").fadeOut(3000);
 					$("#location_TH").fadeOut(3000);
 					$("#location_WH").fadeOut(3000);
@@ -816,6 +819,9 @@ $(document).ready(function() {
 					$("#hallway").fadeOut(3000);
 					$("#hallway_TH1").fadeOut(3000);
 					$("#hallway_TH2").fadeOut(3000);
+					$("#inventory").fadeOut(3000);
+					$("#inventory_br").fadeOut(3000);
+					$("#inventory_box").fadeOut(3000);
 					$("#hallway_WH1").fadeOut(3000);
 					$("#hallway_WH2").fadeOut(3000);
 					$("#location_JC").fadeOut(3000);
@@ -843,6 +849,9 @@ $(document).ready(function() {
 				$("#hallway").fadeOut(3000);
 				$("#hallway_TH1").fadeOut(3000);
 				$("#hallway_TH2").fadeOut(3000);
+				$("#inventory").fadeOut(3000);
+				$("#inventory_br").fadeOut(3000);
+				$("#inventory_box").fadeOut(3000);
 				$("#hallway_WH1").fadeOut(3000);
 				$("#hallway_WH2").fadeOut(3000);
 				$("#location_JC").fadeOut(3000);
@@ -1806,6 +1815,56 @@ $(document).ready(function() {
 		}
 		//end of health display
 
+		
+		//inventory display
+		if (torch == true && listed_t == false) {
+			$('<p>Torch</p>').insertBefore('#inv_box_bottom');
+			listed_t = true;
+		}
+		if (deadbugs == true || deadbugs == "ate") {
+			$('<p>Deadbugs</p>').insertBefore('#inv_box_bottom');
+		}
+		if (paperclip == true && listed_pc == false) {
+			$('<p>Paperclip</p>').insertBefore('#inv_box_bottom');
+			listed_pc = true;
+		}
+		if (lunchtray == true && listed_tray == false) {
+			$('<p>Tray</p>').insertBefore('#inv_box_bottom');
+			listed_tray = true;
+		}
+		if (note == true && listed_n == false) {
+			$('<p>Note</p>').insertBefore('#inv_box_bottom');
+			listed_n = true;
+		}
+		if (knife == true && listed_kn == false) {
+			$('<p>Knife</p>').insertBefore('#inv_box_bottom');
+			listed_kn = true;
+		}
+		if (key_1 == true && listed_ke == false) {
+			$('<p>Key</p>').insertBefore('#inv_box_bottom');
+			listed_ke = true;
+		}
+		if (whip == true && listed_w == false) {
+			$('<p>Whip</p>').insertBefore('#inv_box_bottom');
+			listed_w = true;
+		}
+		if (powder == true && listed_pow == false) {
+			$('<p>Stramge Powder</p>').insertBefore('#inv_box_bottom');
+			listed_pow = true;
+		}
+
+
+
+
+
+
+
+
+
+
+
+
+		//something unecessary
 		if (music == true && plying_m == false) {
 
 			$('<audio autoplay loop id="background"><source src="audio/overall_1.mp3" type="audio/mpeg"></audio>').insertAfter("#nope");
@@ -1826,11 +1885,15 @@ $(document).ready(function() {
 			$("audio").detach("#yep");
 			$("img").detach("#yep");
 			$("video").detach("#screen");
+			$("#inventory").fadeOut(3000);
 			$("#map_box_TH").fadeOut(3000);
 			$("#map_box_WH").fadeOut(3000);
 			$("#map_back").fadeOut(3000);
 			$("#hallway").fadeOut(3000);
 			$("#hallway_TH1").fadeOut(3000);
+			$("#inventory").fadeOut(3000);
+			$("#inventory_br").fadeOut(3000);
+			$("#inventory_box").fadeOut(3000);
 			$("#hallway_TH2").fadeOut(3000);
 			$("#hallway_WH1").fadeOut(3000);
 			$("#hallway_WH2").fadeOut(3000);
@@ -1849,6 +1912,13 @@ $(document).ready(function() {
 		//scroll bar
 		//
 		$("#console").scrollTop($("#console")[0].scrollHeight);
+		$("#command_line").val("");
+		//
+
+		//
+		//inventory scroll bar
+		//
+		$("#inventory_br").scrollTop($("#inventory")[0].scrollHeight);
 		$("#command_line").val("");
 		//
 	});
