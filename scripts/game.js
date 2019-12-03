@@ -189,6 +189,9 @@ $(document).ready(function() {
 				burnttorch = true;
 				health = 21;
 			}
+			else if (input == "M@K# map show") {
+				$('#dev_map').fadeIn(1000);
+			}
 		}
 		//
 		//end variable edit
