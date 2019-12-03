@@ -25,6 +25,8 @@ body {
 	position: absolute;
 	margin-top: 0px;
 	margin-left: 0px;
+	width:1400px;
+	z-index: 1;
 }
 
 #container {
