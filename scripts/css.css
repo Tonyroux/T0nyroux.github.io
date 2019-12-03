@@ -20,9 +20,11 @@ body {
 	margin-top: -300;
 }
 
-.copyright {
-	color: #333333;
-	font-size: 13px;
+#dev_map {
+	display: none;
+	position: absolute;
+	margin-top: 0px;
+	margin-left: 0px;
 }
 
 #container {
