@@ -158,7 +158,7 @@ $(document).ready(function() {
 				$('<p>done</p>').insertBefore("#placeholder").fadeIn(1000);
 				health = 21;
 			}
-			else if (input == "M@K# cellunlocked true") {
+			else if (input == "M@K# jailcell unlock") {
 				$('<p>done</p>').insertBefore("#placeholder").fadeIn(1000);
 				cellunlocked = true
 			}
@@ -187,7 +187,7 @@ $(document).ready(function() {
 				crate = true;
 				zombiedead = true;
 				burnttorch = true;
-				health = 21;
+				icecream = true;
 			}
 			else if (input == "M@K# map show") {
 				$('#dev_map').fadeIn(1000);
@@ -1035,37 +1035,37 @@ $(document).ready(function() {
 						$("video").detach("#screen");
 						$("audio").detach("#jdoor");
 						$('<audio autoplay id="jdoor"><source src="soundfx/irondoor_1.mp3" type="audio/mpeg"></audio>').insertAfter("#nope");	
-						$('<video autoplay id="screen"><source src="video_JC/JCunlock_bug_tray.mp4" type="video/mp4">you cannot use screen</video>').insertBefore("#zero");
+						$('<video autoplay id="screen"><source src="videos/video_JC/JCunlock_bug_tray.mp4" type="video/mp4">you cannot use screen</video>').insertBefore("#zero");
 					}
 					else if (lunchtray == true && deadbugs == false) {
 						$("video").detach("#screen");
 						$("audio").detach("#jdoor");
 						$('<audio autoplay id="jdoor"><source src="soundfx/irondoor_1.mp3" type="audio/mpeg"></audio>').insertAfter("#nope");	
-						$('<video autoplay id="screen"><source src="video_JC/JCunlock_tray.mp4" type="video/mp4">you cannot use screen</video>').insertBefore("#zero");
+						$('<video autoplay id="screen"><source src="videos/video_JC/JCunlock_tray.mp4" type="video/mp4">you cannot use screen</video>').insertBefore("#zero");
 					}
 					else if (lunchtray == true && deadbugs == "ate") {
 						$("video").detach("#screen");
 						$("audio").detach("#jdoor");
 						$('<audio autoplay id="jdoor"><source src="soundfx/irondoor_1.mp3" type="audio/mpeg"></audio>').insertAfter("#nope");	
-						$('<video autoplay id="screen"><source src="video_JC/JCunlock_tray.mp4" type="video/mp4">you cannot use screen</video>').insertBefore("#zero");
+						$('<video autoplay id="screen"><source src="videos/video_JC/JCunlock_tray.mp4" type="video/mp4">you cannot use screen</video>').insertBefore("#zero");
 					}
 					else if (lunchtray == false && deadbugs == true) {
 						$("video").detach("#screen");
 						$("audio").detach("#jdoor");
 						$('<audio autoplay id="jdoor"><source src="soundfx/irondoor_1.mp3" type="audio/mpeg"></audio>').insertAfter("#nope");	
-						$('<video autoplay id="screen"><source src="video_JC/JCunlock_bug.mp4" type="video/mp4">you cannot use screen</video>').insertBefore("#zero");
+						$('<video autoplay id="screen"><source src="videos/video_JC/JCunlock_bug.mp4" type="video/mp4">you cannot use screen</video>').insertBefore("#zero");
 					}
 					else if (lunchtray == false && deadbugs == false) {
 						$("video").detach("#screen");
 						$("audio").detach("#jdoor");
 						$('<audio autoplay id="jdoor"><source src="soundfx/irondoor_1.mp3" type="audio/mpeg"></audio>').insertAfter("#nope");	
-						$('<video autoplay id="screen"><source src="video_JC/JCunlock.mp4" type="video/mp4">you cannot use screen</video>').insertBefore("#zero");
+						$('<video autoplay id="screen"><source src="videos/video_JC/JCunlock.mp4" type="video/mp4">you cannot use screen</video>').insertBefore("#zero");
 					}
 					else if (lunchtray == false && deadbugs == "ate") {
 						$("video").detach("#screen");
 						$("audio").detach("#jdoor");
 						$('<audio autoplay id="jdoor"><source src="soundfx/irondoor_1.mp3" type="audio/mpeg"></audio>').insertAfter("#nope");	
-						$('<video autoplay id="screen"><source src="video_JC/JCunlock.mp4" type="video/mp4">you cannot use screen</video>').insertBefore("#zero");
+						$('<video autoplay id="screen"><source src="videos/video_JC/JCunlock.mp4" type="video/mp4">you cannot use screen</video>').insertBefore("#zero");
 					}
 				}
 				else $('<p>The door cannot be unlocked.</p>').insertBefore("#placeholder").fadeIn(1000);
@@ -1132,37 +1132,37 @@ $(document).ready(function() {
 						currentroom = "hallway";
 						if (torch == true && note == true) {
 							$("video").detach("#screen");
-							$('<video autoplay id="screen"><source src="video_TH/TH_fade_torch_note.mp4" type="video/mp4">you cannot use screen</video>').insertBefore("#zero");
+							$('<video autoplay id="screen"><source src="videos/video_TH/TH_fade_torch_note.mp4" type="video/mp4">you cannot use screen</video>').insertBefore("#zero");
 							setTimeout(function(){TH_enter()}, 1000);
 							function TH_enter() {
 								$("video").detach("#screen");
-								$('<video autoplay loop id="screen"><source src="video_TH/TH_torch_note.mp4" type="video/mp4">you cannot use screen</video>').insertBefore("#zero");	
+								$('<video autoplay loop id="screen"><source src="videos/video_TH/TH_torch_note.mp4" type="video/mp4">you cannot use screen</video>').insertBefore("#zero");	
 						} }
 						else if (torch == true && note == false) {
 							$("video").detach("#screen");
-							$('<video autoplay id="screen"><source src="video_TH/TH_fade_torch.mp4" type="video/mp4">you cannot use screen</video>').insertBefore("#zero");
+							$('<video autoplay id="screen"><source src="videos/video_TH/TH_fade_torch.mp4" type="video/mp4">you cannot use screen</video>').insertBefore("#zero");
 							setTimeout(function(){TH_enter()}, 1000);
 							function TH_enter() {
 								$("video").detach("#screen");
-								$('<video autoplay loop id="screen"><source src="video_TH/TH_torch.mp4" type="video/mp4">you cannot use screen</video>').insertBefore("#zero");	
+								$('<video autoplay loop id="screen"><source src="videos/video_TH/TH_torch.mp4" type="video/mp4">you cannot use screen</video>').insertBefore("#zero");	
 						}
 						}
 						else if (torch == false && note == false) {
 							$("video").detach("#screen");
-							$('<video autoplay id="screen"><source src="video_TH/TH_fade.mp4" type="video/mp4">you cannot use screen</video>').insertBefore("#zero");
+							$('<video autoplay id="screen"><source src="videos/video_TH/TH_fade.mp4" type="video/mp4">you cannot use screen</video>').insertBefore("#zero");
 							setTimeout(function(){TH_enter()}, 1000);
 							function TH_enter() {
 								$("video").detach("#screen");
-								$('<video autoplay loop id="screen"><source src="video_TH/TH.mp4" type="video/mp4">you cannot use screen</video>').insertBefore("#zero");	
+								$('<video autoplay loop id="screen"><source src="videos/video_TH/TH.mp4" type="video/mp4">you cannot use screen</video>').insertBefore("#zero");	
 						}
 						}
 						else if (torch == false && note == true) {
 							$("video").detach("#screen");
-							$('<video autoplay id="screen"><source src="video_TH/TH_fade_note.mp4" type="video/mp4">you cannot use screen</video>').insertBefore("#zero");
+							$('<video autoplay id="screen"><source src="videos/video_TH/TH_fade_note.mp4" type="video/mp4">you cannot use screen</video>').insertBefore("#zero");
 							setTimeout(function(){TH_enter()}, 1000);
 							function TH_enter() {
 								$("video").detach("#screen");
-								$('<video autoplay loop id="screen"><source src="video_TH/TH_note.mp4" type="video/mp4">you cannot use screen</video>').insertBefore("#zero");	
+								$('<video autoplay loop id="screen"><source src="videos/video_TH/TH_note.mp4" type="video/mp4">you cannot use screen</video>').insertBefore("#zero");	
 						}
 						}
 					}
@@ -1174,11 +1174,11 @@ $(document).ready(function() {
 						currentroom = "hallway";
 						beentohallway = true;
 						$("video").detach("#screen");
-						$('<video autoplay id="screen"><source src="video_TH/TH_fade.mp4" type="video/mp4">you cannot use screen</video>').insertBefore("#zero");
+						$('<video autoplay id="screen"><source src="videos/video_TH/TH_fade.mp4" type="video/mp4">you cannot use screen</video>').insertBefore("#zero");
 						setTimeout(function(){TH_enter()}, 1000);
 						function TH_enter() {
 							$("video").detach("#screen");
-							$('<video autoplay loop id="screen"><source src="video_TH/TH.mp4" type="video/mp4">you cannot use screen</video>').insertBefore("#zero");
+							$('<video autoplay loop id="screen"><source src="videos/video_TH/TH.mp4" type="video/mp4">you cannot use screen</video>').insertBefore("#zero");
 						}
 				}
 				}
@@ -1219,19 +1219,19 @@ $(document).ready(function() {
 				currentroom = "jail";
 				if (deadbugs == false && lunchtray == false) {
 					$("video").detach("#screen");
-					$('<video autoplay loop id="screen"><source src="video_JC/JCclip.mp4" type="video/mp4">you cannot use screen</video>').insertBefore("#zero");
+					$('<video autoplay loop id="screen"><source src="videos/video_JC/JCclip.mp4" type="video/mp4">you cannot use screen</video>').insertBefore("#zero");
 				}
 				else if (deadbugs == false && lunchtray == true) {
 					$("video").detach("#screen");
-					$('<video autoplay loop id="screen"><source src="video_JC/JCclip_tray.mp4" type="video/mp4">you cannot use screen</video>').insertBefore("#zero");
+					$('<video autoplay loop id="screen"><source src="videos/video_JC/JCclip_tray.mp4" type="video/mp4">you cannot use screen</video>').insertBefore("#zero");
 				}
 				else if (deadbugs == true && lunchtray == true) {
 					$("video").detach("#screen");
-					$('<video autoplay loop id="screen"><source src="video_JC/JCclip_bug_tray.mp4" type="video/mp4">you cannot use screen</video>').insertBefore("#zero");
+					$('<video autoplay loop id="screen"><source src="videos/video_JC/JCclip_bug_tray.mp4" type="video/mp4">you cannot use screen</video>').insertBefore("#zero");
 				}
 				else if (deadbugs == true && lunchtray == false) {
 					$("video").detach("#screen");
-					$('<video autoplay loop id="screen"><source src="video_JC/JCclip_bug.mp4" type="video/mp4">you cannot use screen</video>').insertBefore("#zero");
+					$('<video autoplay loop id="screen"><source src="videos/video_JC/JCclip_bug.mp4" type="video/mp4">you cannot use screen</video>').insertBefore("#zero");
 				}
 				$("#location_TH").fadeOut(500);
 				$("#location_JC").fadeIn(500);
@@ -1258,23 +1258,23 @@ $(document).ready(function() {
 						currentroom = "torture";
 						$("video").detach("#screen");
 						if (searchtable == false && whip == false) {
-							$('<video autoplay loop id="screen"><source src="video_TR/TR.mp4" type="video/mp4">you cannot use screen</video>').insertBefore("#zero");
+							$('<video autoplay loop id="screen"><source src="videos/video_TR/TR.mp4" type="video/mp4">you cannot use screen</video>').insertBefore("#zero");
 						}
 						else if (searchtable == true && whip == false) {
-							$('<video autoplay loop id="screen"><source src="video_TR/TR_knife.mp4" type="video/mp4">you cannot use screen</video>').insertBefore("#zero");
+							$('<video autoplay loop id="screen"><source src="videos/video_TR/TR_knife.mp4" type="video/mp4">you cannot use screen</video>').insertBefore("#zero");
 						}
 						else if (searchtable == true && whip == true) {
-							$('<video autoplay loop id="screen"><source src="video_TR/TR_knife_whip.mp4" type="video/mp4">you cannot use screen</video>').insertBefore("#zero");
+							$('<video autoplay loop id="screen"><source src="videos/video_TR/TR_knife_whip.mp4" type="video/mp4">you cannot use screen</video>').insertBefore("#zero");
 						}
 						else if (searchtable == false && whip == true) {
-							$('<video autoplay loop id="screen"><source src="video_TR/TR_whip.mp4" type="video/mp4">you cannot use screen</video>').insertBefore("#zero");
+							$('<video autoplay loop id="screen"><source src="videos/video_TR/TR_whip.mp4" type="video/mp4">you cannot use screen</video>').insertBefore("#zero");
 						}
 					}
 					else {
 						$("#area_torture").clone().insertBefore("#placeholder").fadeIn(1000);
 						beentorture = true;
 						$("video").detach("#screen");
-						$('<video autoplay loop id="screen"><source src="video_TR/TR.mp4" type="video/mp4">you cannot use screen</video>').insertBefore("#zero");
+						$('<video autoplay loop id="screen"><source src="videos/video_TR/TR.mp4" type="video/mp4">you cannot use screen</video>').insertBefore("#zero");
 						currentroom = "torture";
 					}
 				}
@@ -1291,11 +1291,11 @@ $(document).ready(function() {
 						$("video").detach("#screen");
 						if (icecream == true || icecream == "ate") {
 						$('<p>You are back at the west hallway. To the east is where you came from. To the north and south are dark rooms.</p>').insertBefore("#placeholder").fadeIn(1000);
-						$('<video autoplay loop id="screen"><source src="video_WH/WH_cream.mp4" type="video/mp4">you cannot use screen</video>').insertBefore("#zero");
+						$('<video autoplay loop id="screen"><source src="videos/video_WH/WH_cream.mp4" type="video/mp4">you cannot use screen</video>').insertBefore("#zero");
 						currentroom = "westhall";
 						}
 						else if (icecream == false) {
-							$('<video autoplay loop id="screen"><source src="video_WH/WH.mp4" type="video/mp4">you cannot use screen</video>').insertBefore("#zero");
+							$('<video autoplay loop id="screen"><source src="videos/video_WH/WH.mp4" type="video/mp4">you cannot use screen</video>').insertBefore("#zero");
 							$('<p>You are back at the west hallway. The floor cream remains. To the east is where you came from. To the north and south are dark rooms.</p>').insertBefore("#placeholder").fadeIn(1000);
 							currentroom = "westhall";
 						}
@@ -1308,7 +1308,7 @@ $(document).ready(function() {
 						$("#hallway_WH2").fadeIn(500);
 						$("#hallway_WH1").fadeIn(500);
 						$("video").detach("#screen");
-						$('<video autoplay loop id="screen"><source src="video_WH/WH.mp4" type="video/mp4">you cannot use screen</video>').insertBefore("#zero");
+						$('<video autoplay loop id="screen"><source src="videos/video_WH/WH.mp4" type="video/mp4">you cannot use screen</video>').insertBefore("#zero");
 						beentowesthall = true;
 						currentroom = "westhall";
 					}
@@ -1340,12 +1340,12 @@ $(document).ready(function() {
 					if (icecream == true || icecream == "ate") {
 						$("video").detach("#screen");
 						$('<p>You are back at the west hallway. To the north is where you came from. To the south is a dark room and to the east the hallway continues.</p>').insertBefore("#placeholder").fadeIn(1000);
-						$('<video autoplay loop id="screen"><source src="video_WH/WH_cream.mp4" type="video/mp4">you cannot use screen</video>').insertBefore("#zero");
+						$('<video autoplay loop id="screen"><source src="videos/video_WH/WH_cream.mp4" type="video/mp4">you cannot use screen</video>').insertBefore("#zero");
 						currentroom = "westhall";
 						}
 						else if (icecream == false) {
 							$("video").detach("#screen");
-							$('<video autoplay loop id="screen"><source src="video_WH/WH.mp4" type="video/mp4">you cannot use screen</video>').insertBefore("#zero");
+							$('<video autoplay loop id="screen"><source src="videos/video_WH/WH.mp4" type="video/mp4">you cannot use screen</video>').insertBefore("#zero");
 							$('<p>You are back at the west hallway. The floor cream remains. To the north is where you came from. To the south is a dark room and to the east the hallway continues.</p>').insertBefore("#placeholder").fadeIn(1000);
 							currentroom = "westhall";
 					}
@@ -1452,10 +1452,10 @@ $(document).ready(function() {
 				$('<p>You are back in the main hallway. The hallway continues to the east and west. The jail room is to the south.' + hallnote + halltorch + '</p>').insertBefore("#placeholder").fadeIn(1000);
 				currentroom = "hallway";
 				if (note == false) {
-					$('<video autoplay loop id="screen"><source src="video_TH/TH_torch.mp4" type="video/mp4">you cannot use screen</video>').insertBefore("#zero");
+					$('<video autoplay loop id="screen"><source src="videos/video_TH/TH_torch.mp4" type="video/mp4">you cannot use screen</video>').insertBefore("#zero");
 				}
 				else if (note == true) {
-					$('<video autoplay loop id="screen"><source src="video_TH/TH_torch_note.mp4" type="video/mp4">you cannot use screen</video>').insertBefore("#zero");
+					$('<video autoplay loop id="screen"><source src="videos/video_TH/TH_torch_note.mp4" type="video/mp4">you cannot use screen</video>').insertBefore("#zero");
 				}
 			}
 			//
@@ -1517,13 +1517,13 @@ $(document).ready(function() {
 			else if (input == "go north" && currentroom == "bonus") {
 				if (icecream == true || icecream == "ate") {
 					$("video").detach("#screen");
-					$('<video autoplay loop id="screen"><source src="video_WH/WH_cream.mp4" type="video/mp4">you cannot use screen</video>').insertBefore("#zero");
+					$('<video autoplay loop id="screen"><source src="videos/video_WH/WH_cream.mp4" type="video/mp4">you cannot use screen</video>').insertBefore("#zero");
 					$('<p>You are back at the west hallway. To the south is where you came from. To the north is a dark room and to the east the hallway continues.</p>').insertBefore("#placeholder").fadeIn(1000);
 					currentroom = "westhall";
 					}
 					else if (icecream == false) {
 						$("video").detach("#screen");
-						$('<video autoplay loop id="screen"><source src="video_WH/WH.mp4" type="video/mp4">you cannot use screen</video>').insertBefore("#zero");
+						$('<video autoplay loop id="screen"><source src="videos/video_WH/WH.mp4" type="video/mp4">you cannot use screen</video>').insertBefore("#zero");
 						$('<p>You are back at the west hallway. The floor cream remains. To the south is where you came from. To the north is a dark room and to the east the hallway continues.</p>').insertBefore("#placeholder").fadeIn(1000);
 						currentroom = "westhall";
 					}
@@ -1548,10 +1548,10 @@ $(document).ready(function() {
 				$('<p>You are back in the main hallway. The hallway continues to the east and west. The jail room is to the south.' + hallnote + halltorch + '</p>').insertBefore("#placeholder").fadeIn(1000);
 				currentroom = "hallway";
 				if (note == false) {
-					$('<video autoplay loop id="screen"><source src="video_TH/TH_torch.mp4" type="video/mp4">you cannot use screen</video>').insertBefore("#zero");
+					$('<video autoplay loop id="screen"><source src="videos/video_TH/TH_torch.mp4" type="video/mp4">you cannot use screen</video>').insertBefore("#zero");
 				}
 				else if (note == true) {
-					$('<video autoplay loop id="screen"><source src="video_TH/TH_torch_note.mp4" type="video/mp4">you cannot use screen</video>').insertBefore("#zero");
+					$('<video autoplay loop id="screen"><source src="videos/video_TH/TH_torch_note.mp4" type="video/mp4">you cannot use screen</video>').insertBefore("#zero");
 				}
 			}
 			//
@@ -1596,16 +1596,16 @@ $(document).ready(function() {
 				$('<p>You are back in the room of strange devices. To the south is a doorway, and to the west is the hallway. ' + torturetable + torturewhip + '</p>').insertBefore("#placeholder").fadeIn(1000);
 				currentroom = "torture";
 				if (searchtable == false && whip == false) {
-					$('<video autoplay loop id="screen"><source src="video_TR/TR.mp4" type="video/mp4">you cannot use screen</video>').insertBefore("#zero");
+					$('<video autoplay loop id="screen"><source src="videos/video_TR/TR.mp4" type="video/mp4">you cannot use screen</video>').insertBefore("#zero");
 				}
 				else if (searchtable == true && whip == false) {
-					$('<video autoplay loop id="screen"><source src="video_TR/TR_knife.mp4" type="video/mp4">you cannot use screen</video>').insertBefore("#zero");
+					$('<video autoplay loop id="screen"><source src="videos/video_TR/TR_knife.mp4" type="video/mp4">you cannot use screen</video>').insertBefore("#zero");
 				}
 				else if (searchtable == true && whip == true) {
-					$('<video autoplay loop id="screen"><source src="video_TR/TR_knife_whip.mp4" type="video/mp4">you cannot use screen</video>').insertBefore("#zero");
+					$('<video autoplay loop id="screen"><source src="videos/video_TR/TR_knife_whip.mp4" type="video/mp4">you cannot use screen</video>').insertBefore("#zero");
 				}
 				else if (searchtable == false && whip == true) {
-					$('<video autoplay loop id="screen"><source src="video_TR/TR_whip.mp4" type="video/mp4">you cannot use screen</video>').insertBefore("#zero");
+					$('<video autoplay loop id="screen"><source src="videos/video_TR/TR_whip.mp4" type="video/mp4">you cannot use screen</video>').insertBefore("#zero");
 				}
 			}
 			//
