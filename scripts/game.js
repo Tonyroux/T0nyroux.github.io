@@ -75,7 +75,7 @@ $(document).ready(function() {
 	$("#hallway").fadeIn(3000);
 	$("#yes2").fadeIn(4000);
 	$('<img src="heart/heart start.png" style="width:100px;height:100px" id="health">').insertBefore('#placeholder_dos');
-	$('<video autoplay loop id="screen"><source src="video_JC/JCidle.mp4" type="video/mp4">you cannot use screen</video>').insertBefore("#zero");
+	$('<video autoplay loop id="screen"><source src="videos/video_JC/JCidle.mp4" type="video/mp4">you cannot use screen</video>').insertBefore("#zero");
 	$("#yes2").fadeOut(4000);
 	$("form").submit(function() {
 		var input = $("#command_line").val();
@@ -226,7 +226,7 @@ $(document).ready(function() {
 					$("video").detach("#screen");
 					$("audio").detach("#take");
 					$('<audio autoplay id="take"><source src="soundfx/sand4.mp3" type="audio/mpeg">you cannot use jukebox</audio>').insertAfter("#nope");
-					$('<video autoplay loop id="screen"><source src="video_JC/JCclip.mp4" type="video/mp4">you cannot use screen</video>').insertBefore("#zero");
+					$('<video autoplay loop id="screen"><source src="videos/video_JC/JCclip.mp4" type="video/mp4">you cannot use screen</video>').insertBefore("#zero");
 					$('<p>You picked up a paper clip.</p>').insertBefore("#placeholder").fadeIn(1000);
 				}
 				else if (currentroom == "jail" && paperclip == false && deadbugs == true && lunchtray == false) {
@@ -234,7 +234,7 @@ $(document).ready(function() {
 					$("video").detach("#screen");
 					$("audio").detach("#take");
 					$('<audio autoplay id="take"><source src="soundfx/sand4.mp3" type="audio/mpeg">you cannot use jukebox</audio>').insertAfter("#nope");
-					$('<video autoplay loop id="screen"><source src="video_JC/JCclip_bug.mp4" type="video/mp4">you cannot use screen</video>').insertBefore("#zero");
+					$('<video autoplay loop id="screen"><source src="videos/video_JC/JCclip_bug.mp4" type="video/mp4">you cannot use screen</video>').insertBefore("#zero");
 					$('<p>You picked up a paper clip.</p>').insertBefore("#placeholder").fadeIn(1000);
 				}
 				else if (currentroom == "jail" && paperclip == false && deadbugs == true && lunchtray == true) {
@@ -242,7 +242,7 @@ $(document).ready(function() {
 					$("video").detach("#screen");
 					$("audio").detach("#take");
 					$('<audio autoplay id="take"><source src="soundfx/sand4.mp3" type="audio/mpeg">you cannot use jukebox</audio>').insertAfter("#nope");
-					$('<video autoplay loop id="screen"><source src="video_JC/JCclip_bug_tray.mp4" type="video/mp4">you cannot use screen</video>').insertBefore("#zero");
+					$('<video autoplay loop id="screen"><source src="videos/video_JC/JCclip_bug_tray.mp4" type="video/mp4">you cannot use screen</video>').insertBefore("#zero");
 					$('<p>You picked up a paper clip.</p>').insertBefore("#placeholder").fadeIn(1000);
 				}
 				else if (currentroom == "jail" && paperclip == false && lunchtray == true && deadbugs == false) {
@@ -250,7 +250,7 @@ $(document).ready(function() {
 					$("video").detach("#screen");
 					$("audio").detach("#take");
 					$('<audio autoplay id="take"><source src="soundfx/sand4.mp3" type="audio/mpeg">you cannot use jukebox</audio>').insertAfter("#nope");
-					$('<video autoplay loop id="screen"><source src="video_JC/JCclip_tray.mp4" type="video/mp4">you cannot use screen</video>').insertBefore("#zero");
+					$('<video autoplay loop id="screen"><source src="videos/video_JC/JCclip_tray.mp4" type="video/mp4">you cannot use screen</video>').insertBefore("#zero");
 					$('<p>You picked up a paper clip.</p>').insertBefore("#placeholder").fadeIn(1000);
 				}
 				else $('<p>That item is not here!</p>').insertBefore("#placeholder").fadeIn(1000);
@@ -264,7 +264,7 @@ $(document).ready(function() {
 					$("video").detach("#screen");
 					$("audio").detach("#take");
 					$('<audio autoplay id="take"><source src="soundfx/sand4.mp3" type="audio/mpeg">you cannot use jukebox</audio>').insertAfter("#nope");
-					$('<video autoplay loop id="screen"><source src="video_JC/JCclip_bug_tray.mp4" type="video/mp4">you cannot use screen</video>').insertBefore("#zero");
+					$('<video autoplay loop id="screen"><source src="videos/video_JC/JCclip_bug_tray.mp4" type="video/mp4">you cannot use screen</video>').insertBefore("#zero");
 					$('<p>You picked up some dead bugs. Gross.</p>').insertBefore("#placeholder").fadeIn(1000);
 				}
 				else if (currentroom == "jail" && deadbugs == false && paperclip == true && lunchtray == false) {
@@ -272,7 +272,7 @@ $(document).ready(function() {
 					$("video").detach("#screen");
 					$("audio").detach("#take");
 					$('<audio autoplay id="take"><source src="soundfx/sand4.mp3" type="audio/mpeg">you cannot use jukebox</audio>').insertAfter("#nope");
-					$('<video autoplay loop id="screen"><source src="video_JC/JCclip_bug.mp4" type="video/mp4">you cannot use screen</video>').insertBefore("#zero");
+					$('<video autoplay loop id="screen"><source src="videos/video_JC/JCclip_bug.mp4" type="video/mp4">you cannot use screen</video>').insertBefore("#zero");
 					$('<p>You picked up some dead bugs. Gross.</p>').insertBefore("#placeholder").fadeIn(1000);
 				}
 				else if (currentroom == "jail" && deadbugs == false && paperclip == false && lunchtray == false) {
@@ -280,7 +280,7 @@ $(document).ready(function() {
 					$("video").detach("#screen");
 					$("audio").detach("#take");
 					$('<audio autoplay id="take"><source src="soundfx/sand4.mp3" type="audio/mpeg">you cannot use jukebox</audio>').insertAfter("#nope");
-					$('<video autoplay loop id="screen"><source src="video_JC/JCbug.mp4" type="video/mp4">you cannot use screen</video>').insertBefore("#zero");
+					$('<video autoplay loop id="screen"><source src="videos/video_JC/JCbug.mp4" type="video/mp4">you cannot use screen</video>').insertBefore("#zero");
 					$('<p>You picked up some dead bugs. Gross.</p>').insertBefore("#placeholder").fadeIn(1000);
 				}
 				else if (currentroom == "jail" && deadbugs == false && paperclip == false && lunchtray == true) {
@@ -288,7 +288,7 @@ $(document).ready(function() {
 					$("video").detach("#screen");
 					$("audio").detach("#take");
 					$('<audio autoplay id="take"><source src="soundfx/sand4.mp3" type="audio/mpeg">you cannot use jukebox</audio>').insertAfter("#nope");
-					$('<video autoplay loop id="screen"><source src="video_JC/JCbug_tray.mp4" type="video/mp4">you cannot use screen</video>').insertBefore("#zero");
+					$('<video autoplay loop id="screen"><source src="videos/video_JC/JCbug_tray.mp4" type="video/mp4">you cannot use screen</video>').insertBefore("#zero");
 					$('<p>You picked up some dead bugs. Gross.</p>').insertBefore("#placeholder").fadeIn(1000);
 				}
 				else $('<p>That item is not here!</p>').insertBefore("#placeholder").fadeIn(1000);
@@ -305,35 +305,35 @@ $(document).ready(function() {
 					$("audio").detach("#take");
 					$('<audio autoplay id="take"><source src="soundfx/sand4.mp3" type="audio/mpeg">you cannot use jukebox</audio>').insertAfter("#nope");
 					$('<p>You picked up a lunch tray.</p>').insertBefore("#placeholder").fadeIn(1000);
-					$('<video autoplay loop id="screen"><source src="video_JC/JCtray.mp4" type="video/mp4">you cannot use screen</video>').insertBefore("#zero");
+					$('<video autoplay loop id="screen"><source src="videos/video_JC/JCtray.mp4" type="video/mp4">you cannot use screen</video>').insertBefore("#zero");
 				}
 				else if (deadbugs == "ate" && paperclip == false) {
 					$("video").detach("#screen");
 					$("audio").detach("#take");
 					$('<audio autoplay id="take"><source src="soundfx/sand4.mp3" type="audio/mpeg">you cannot use jukebox</audio>').insertAfter("#nope");
 					$('<p>You picked up a lunch tray.</p>').insertBefore("#placeholder").fadeIn(1000);
-					$('<video autoplay loop id="screen"><source src="video_JC/JCtray.mp4" type="video/mp4">you cannot use screen</video>').insertBefore("#zero");
+					$('<video autoplay loop id="screen"><source src="videos/video_JC/JCtray.mp4" type="video/mp4">you cannot use screen</video>').insertBefore("#zero");
 				}
 				else if (deadbugs == true && paperclip == false) {
 					$("video").detach("#screen");
 					$("audio").detach("#take");
 					$('<audio autoplay id="take"><source src="soundfx/sand4.mp3" type="audio/mpeg">you cannot use jukebox</audio>').insertAfter("#nope");
 					$('<p>You picked up a lunch tray.</p>').insertBefore("#placeholder").fadeIn(1000);
-					$('<video autoplay loop id="screen"><source src="video_JC/JCbug_tray.mp4" type="video/mp4">you cannot use screen</video>').insertBefore("#zero");
+					$('<video autoplay loop id="screen"><source src="videos/video_JC/JCbug_tray.mp4" type="video/mp4">you cannot use screen</video>').insertBefore("#zero");
 				}
 				else if (deadbugs == true && paperclip == true) {
 					$("video").detach("#screen");
 					$("audio").detach("#take");
 					$('<audio autoplay id="take"><source src="soundfx/sand4.mp3" type="audio/mpeg">you cannot use jukebox</audio>').insertAfter("#nope");
 					$('<p>You picked up a lunch tray.</p>').insertBefore("#placeholder").fadeIn(1000);
-					$('<video autoplay loop id="screen"><source src="video_JC/JCclip_bug_tray.mp4" type="video/mp4">you cannot use screen</video>').insertBefore("#zero");
+					$('<video autoplay loop id="screen"><source src="videos/video_JC/JCclip_bug_tray.mp4" type="video/mp4">you cannot use screen</video>').insertBefore("#zero");
 				}
 				else if (deadbugs == false && paperclip == true) {
 					$("video").detach("#screen");
 					$("audio").detach("#take");
 					$('<audio autoplay id="take"><source src="soundfx/sand4.mp3" type="audio/mpeg">you cannot use jukebox</audio>').insertAfter("#nope");
 					$('<p>You picked up a lunch tray.</p>').insertBefore("#placeholder").fadeIn(1000);
-					$('<video autoplay loop id="screen"><source src="video_JC/JCclip_tray.mp4" type="video/mp4">you cannot use screen</video>').insertBefore("#zero");
+					$('<video autoplay loop id="screen"><source src="videos/video_JC/JCclip_tray.mp4" type="video/mp4">you cannot use screen</video>').insertBefore("#zero");
 				}
 				else if (deadbugs == "ate" && paperclip == true) {
 					$("video").detach("#screen");
@@ -357,11 +357,11 @@ $(document).ready(function() {
 					$("#hallway_TH2").fadeIn(500);
 					if (note == false) {
 						$("video").detach("#screen");
-						$('<video autoplay loop id="screen"><source src="video_TH/TH_torch.mp4" type="video/mp4">you cannot use screen</video>').insertBefore("#zero");		
+						$('<video autoplay loop id="screen"><source src="videos/video_TH/TH_torch.mp4" type="video/mp4">you cannot use screen</video>').insertBefore("#zero");		
 					}
 					else if (note == true) {
 						$("video").detach("#screen");
-						$('<video autoplay loop id="screen"><source src="video_TH/TH_torch_note.mp4" type="video/mp4">you cannot use screen</video>').insertBefore("#zero");		
+						$('<video autoplay loop id="screen"><source src="videos/video_TH/TH_torch_note.mp4" type="video/mp4">you cannot use screen</video>').insertBefore("#zero");		
 					}
 				}
 				else $('<p>That item is not here!</p>').insertBefore("#placeholder").fadeIn(1000);
@@ -376,7 +376,7 @@ $(document).ready(function() {
 					$('<audio autoplay id="take"><source src="soundfx/sand4.mp3" type="audio/mpeg">you cannot use jukebox</audio>').insertAfter("#nope");
 					$('<p>You picked up a note. It reads: <br />You asked for more excitement in your life, so we bashed your head in, gave you amnesia, and dragged you down into this dungeon, it shouldn\'t get too hard... for now...<br /><br />Sincerely,<br/>The Wish Granted Association<br /><br />P.S. Watch out for our zombie.</p>').insertBefore("#placeholder").fadeIn(1000);
 					$("video").detach("#screen");
-					$('<video autoplay loop id="screen"><source src="video_TH/TH_note.mp4" type="video/mp4">you cannot use screen</video>').insertBefore("#zero");	
+					$('<video autoplay loop id="screen"><source src="videos/video_TH/TH_note.mp4" type="video/mp4">you cannot use screen</video>').insertBefore("#zero");	
 				}
 				else if (currentroom == "hallway" && note == false && torch == true) {
 					note = true;
@@ -384,7 +384,7 @@ $(document).ready(function() {
 					$('<audio autoplay id="take"><source src="soundfx/sand4.mp3" type="audio/mpeg">you cannot use jukebox</audio>').insertAfter("#nope");
 					$('<p>You picked up a note. It reads: <br />You asked for more excitement in your life, so we bashed your head in, gave you amnesia, and dragged you down into this dungeon, it shouldn\'t get too hard... for now...<br /><br />Sincerely,<br/>The Wish Granted Association<br /><br />P.S. Watch out for our zombie.</p>').insertBefore("#placeholder").fadeIn(1000);
 					$("video").detach("#screen");
-					$('<video autoplay loop id="screen"><source src="video_TH/TH_torch_note.mp4" type="video/mp4">you cannot use screen</video>').insertBefore("#zero");	
+					$('<video autoplay loop id="screen"><source src="videos/video_TH/TH_torch_note.mp4" type="video/mp4">you cannot use screen</video>').insertBefore("#zero");	
 				}
 				else $('<p>That item is not here!</p>').insertBefore("#placeholder").fadeIn(1000);
 			}
@@ -397,7 +397,7 @@ $(document).ready(function() {
 					$("audio").detach("#take");
 					$('<audio autoplay id="take"><source src="soundfx/sand4.mp3" type="audio/mpeg">you cannot use jukebox</audio>').insertAfter("#nope");
 					$("video").detach("#screen");
-					$('<video autoplay loop id="screen"><source src="video_TR/TR_whip.mp4" type="video/mp4">you cannot use screen</video>').insertBefore("#zero");
+					$('<video autoplay loop id="screen"><source src="videos/video_TR/TR_whip.mp4" type="video/mp4">you cannot use screen</video>').insertBefore("#zero");
 					$('<p>You picked up a whip.</p>').insertBefore("#placeholder").fadeIn(1000);
 					if (whip == true && hat == true) {
 						$('<p>A whip and a hat? Come on Indy, no shenanigans here.</p>').insertBefore("#placeholder").fadeIn(1000);
@@ -414,7 +414,7 @@ $(document).ready(function() {
 					$("audio").detach("#take");
 					$('<audio autoplay id="take"><source src="soundfx/sand4.mp3" type="audio/mpeg">you cannot use jukebox</audio>').insertAfter("#nope");
 					$("video").detach("#screen");
-					$('<video autoplay loop id="screen"><source src="video_WH/WH_cream.mp4" type="video/mp4">you cannot use screen</video>').insertBefore("#zero");
+					$('<video autoplay loop id="screen"><source src="videos/video_WH/WH_cream.mp4" type="video/mp4">you cannot use screen</video>').insertBefore("#zero");
 					$('<p>You picked up some ice cream.</p>').insertBefore("#placeholder").fadeIn(1000);
 				}
 				else $('<p>That item is not here!</p>').insertBefore("#placeholder").fadeIn(1000);
@@ -451,11 +451,11 @@ $(document).ready(function() {
 					if (whip == true && hat == true) {
 						$('<p>come on Indy, this is no time for shenanigans</p>').insertBefore("#placeholder").fadeIn(1000);
 						$("video").detach("#screen");
-						$('<video autoplay loop id="screen"><source src="video_TR/TR_knife_whip.mp4" type="video/mp4">you cannot use screen</video>').insertBefore("#zero");
+						$('<video autoplay loop id="screen"><source src="videos/video_TR/TR_knife_whip.mp4" type="video/mp4">you cannot use screen</video>').insertBefore("#zero");
 					}
 					else if (whip == false && hat == true) {
 						$("video").detach("#screen");
-						$('<video autoplay loop id="screen"><source src="video_TR/TR_knife.mp4" type="video/mp4">you cannot use screen</video>').insertBefore("#zero");
+						$('<video autoplay loop id="screen"><source src="videos/video_TR/TR_knife.mp4" type="video/mp4">you cannot use screen</video>').insertBefore("#zero");
 					}
 					$('<p>You put the hat back on the table</p>').insertBefore("#placeholder").fadeIn(1000);
 					hat = false;
