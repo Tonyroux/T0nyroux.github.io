@@ -2,6 +2,7 @@
 //SETS ALL VARIABLES FOR THE GAME
 //
 bukShot = 0;
+currentArea = 1;
 cellunlocked = false;
 torch_ply = false;
 beentohallway = false;
@@ -105,8 +106,7 @@ $(document).ready(function() {
 	$("#inventory_box").fadeIn(3000);
 	$("#health_display").fadeIn(3000);
 	$("#location_JC").fadeIn(3000);
-	$("#map_box_test").fadeIn(3000);
-	$("#hallway").fadeIn(3000);
+	$(".Map_JC").fadeIn(3000);
 	$("#yes2").fadeIn(4000);
 	$('<img src="heart/heart start.png" style="width:100px;height:100px" id="health">').insertBefore('#placeholder_dos');
 	$('<video autoplay loop id="screen"><source src="videos/video_JC/JCidle.mp4" type="video/mp4">you cannot use screen</video>').insertBefore("#zero");
@@ -588,24 +588,10 @@ $(document).ready(function() {
 				if (powder == true && torch == true) {
 					$('<p>You lean in close with the torch to see the powder<br> like the Chinese in the 8th century,<br> you have discovered gunpowder</p>').insertBefore("#placeholder").fadeIn(1000);
 					//figure out stock explosion please
-					$("video").detach("#screen");
-					$("audio").detach("#yep");
-					$("img").detach("#yep");
-					$("#map_box_TH").fadeOut(3000);
-					$("#map_box_WH").fadeOut(3000);
-					$("#map_back").fadeOut(3000);
-					$("#hallway").fadeOut(3000);
-					$("#hallway_TH1").fadeOut(3000);
-					$("#hallway_TH2").fadeOut(3000);
-					$("#hallway_WH1").fadeOut(3000);
-					$("#hallway_WH2").fadeOut(3000);
-					$("#location_JC").fadeOut(3000);
-					$("#location_TH").fadeOut(3000);
-					$("#inventory").fadeOut(3000);
-					$("#inventory_br").fadeOut(3000);
-					$("#inventory_box").fadeOut(3000);$("#location_WH").fadeOut(3000);
-					$("#health_display").fadeOut(3000);
-					$("#map_box_test").fadeOut(3000);
+					$("audio").detach(".death");
+					$("img").detach(".death");
+					$("video").detach(".death");
+					$(".death").fadeOut(3000);
 					$("#container").fadeOut(9000, function() {
 					$("#killself").fadeIn(9000);
 					});
@@ -673,25 +659,10 @@ $(document).ready(function() {
 			//powder
 			else if (input == "eat powder" || input == "eat strange powder") {
 				if (powder == true) {
-					$("audio").detach("#yep");
-					$("img").detach("#yep");
-					$("video").detach("#screen");
-					$("#map_box_TH").fadeOut(3000);
-					$("#map_box_WH").fadeOut(3000);
-					$("#map_back").fadeOut(3000);
-					$("#hallway").fadeOut(3000);
-					$("#hallway_TH1").fadeOut(3000);
-					$("#hallway_TH2").fadeOut(3000);
-					$("#hallway_WH1").fadeOut(3000);
-					$("#inventory").fadeOut(3000);
-					$("#inventory_br").fadeOut(3000);
-					$("#inventory_box").fadeOut(3000);
-					$("#hallway_WH2").fadeOut(3000);
-					$("#location_JC").fadeOut(3000);
-					$("#location_TH").fadeOut(3000);
-					$("#location_WH").fadeOut(3000);
-					$("#health_display").fadeOut(3000);
-					$("#map_box_test").fadeOut(3000);
+					$("audio").detach(".death");
+					$("img").detach(".death");
+					$("video").detach(".death");
+					$(".death").fadeOut(3000);
 					$("#container").fadeOut(3000, function() {
 						$("#foodpoisoning").fadeIn(3000);
 					});
@@ -995,25 +966,10 @@ $(document).ready(function() {
 					bukShot = 2;
 				} else if (bukShot >= 2) {
 					$('<p>I warned you<br>You shot the bucket, and considering breaking the bucket renders the game unplayable<br>And you would\'nt listen to me<br>This is soviet Russia now,<br>And in soviet Russia, bucket shoots you<br><br>You have died<br>good job.</p>').insertBefore("#placeholder").fadeIn(1000);
-					$("audio").detach("#yep");
-					$("img").detach("#yep");
-					$("video").detach("#screen");
-					$("#map_box_TH").fadeOut(12000);
-					$("#map_box_WH").fadeOut(12000);
-					$("#map_back").fadeOut(12000);
-					$("#hallway").fadeOut(12000);
-					$("#hallway_TH1").fadeOut(12000);
-					$("#hallway_TH2").fadeOut(12000);
-					$("#hallway_WH1").fadeOut(12000);
-					$("#hallway_WH2").fadeOut(12000);
-					$("#inventory").fadeOut(12000);
-					$("#inventory_br").fadeOut(12000);
-					$("#inventory_box").fadeOut(12000);
-					$("#location_JC").fadeOut(12000);
-					$("#location_TH").fadeOut(12000);
-					$("#location_WH").fadeOut(12000);
-					$("#health_display").fadeOut(12000);
-					$("#map_box_test").fadeOut(12000);
+					$("audio").detach(".death");
+					$("img").detach(".death");
+					$("video").detach(".death");
+					$(".death").fadeOut(3000);
 					$("#container").fadeOut(12000, function() {
 						$("#killself").fadeIn(12000);
 					});
@@ -1025,25 +981,10 @@ $(document).ready(function() {
 			//kill self
 			else if (input == "attack self with lunch tray" || input == "attack self with lunchtray" || input == "attack self with tray") {
 				if (lunchtray == true && health == 1) {
-					$("audio").detach("#yep");
-					$("img").detach("#yep");
-					$("video").detach("#screen");
-					$("#map_box_TH").fadeOut(3000);
-					$("#map_box_WH").fadeOut(3000);
-					$("#map_back").fadeOut(3000);
-					$("#hallway").fadeOut(3000);
-					$("#hallway_TH1").fadeOut(3000);
-					$("#hallway_TH2").fadeOut(3000);
-					$("#hallway_WH1").fadeOut(3000);
-					$("#hallway_WH2").fadeOut(3000);
-					$("#inventory").fadeOut(3000);
-					$("#inventory_br").fadeOut(3000);
-					$("#inventory_box").fadeOut(3000);
-					$("#location_JC").fadeOut(3000);
-					$("#location_TH").fadeOut(3000);
-					$("#location_WH").fadeOut(3000);
-					$("#health_display").fadeOut(3000);
-					$("#map_box_test").fadeOut(3000);
+					$("audio").detach(".death");
+					$("img").detach(".death");
+					$("video").detach(".death");
+					$(".death").fadeOut(3000);
 					$("#container").fadeOut(3000, function() {
 						$("#killself").fadeIn(3000);
 					});
@@ -1059,25 +1000,10 @@ $(document).ready(function() {
 
 			else if (input == "attack self with knife") {
 				if (knife == true) {
-					$("audio").detach("#yep");
-					$("img").detach("#yep");
-					$("video").detach("#screen");
-					$("#map_box_test").fadeOut(3000);
-					$("#map_box_TH").fadeOut(3000);
-					$("#map_box_WH").fadeOut(3000);
-					$("#map_back").fadeOut(3000);
-					$("#hallway").fadeOut(3000);
-					$("#hallway_TH1").fadeOut(3000);
-					$("#hallway_TH2").fadeOut(3000);
-					$("#hallway_WH1").fadeOut(3000);
-					$("#hallway_WH2").fadeOut(3000);
-					$("#inventory").fadeOut(3000);
-					$("#inventory_br").fadeOut(3000);
-					$("#inventory_box").fadeOut(3000);
-					$("#location_JC").fadeOut(3000);
-					$("#location_TH").fadeOut(3000);
-					$("#location_WH").fadeOut(3000);
-					$("#health_display").fadeOut(3000);
+					$("audio").detach(".death");
+					$("img").detach(".death");
+					$("video").detach(".death");
+					$(".death").fadeOut(3000);
 					$("#container").fadeOut(3000, function() {
 						$("#killself").fadeIn(3000);
 					});
@@ -1089,25 +1015,10 @@ $(document).ready(function() {
 
 			else if (input == "attack self with whip") {
 				if (whip == true) {
-					$("audio").detach("#yep");
-					$("img").detach("#yep");
-					$("video").detach("#screen");
-					$("#map_box_test").fadeOut(3000);
-					$("#map_box_TH").fadeOut(3000);
-					$("#map_box_WH").fadeOut(3000);
-					$("#map_back").fadeOut(3000);
-					$("#hallway").fadeOut(3000);
-					$("#hallway_TH1").fadeOut(3000);
-					$("#hallway_TH2").fadeOut(3000);
-					$("#inventory").fadeOut(3000);
-					$("#inventory_br").fadeOut(3000);
-					$("#inventory_box").fadeOut(3000);
-					$("#hallway_WH1").fadeOut(3000);
-					$("#hallway_WH2").fadeOut(3000);
-					$("#location_JC").fadeOut(3000);
-					$("#location_TH").fadeOut(3000);
-					$("#location_WH").fadeOut(3000);
-					$("#health_display").fadeOut(3000);
+					$("audio").detach(".death");
+					$("img").detach(".death");
+					$("video").detach(".death");
+					$(".death").fadeOut(3000);
 					$("#container").fadeOut(3000, function() {
 						$("#killself").fadeIn(3000);
 					});
@@ -1118,26 +1029,11 @@ $(document).ready(function() {
 			}
 
 			else if (input == "attack self with gun") {
-				$("audio").detach("#yep");
-				$("img").detach("#yep");
-				$("video").detach("#screen");
 				$('<p>You shot yourself, i don\'t know where you got ammo<br> or a gun for that matter<br> but you shot yourself</p>').insertBefore("#placeholder").fadeIn(1000);
-				$("#map_box_test").fadeOut(3000);
-				$("#map_box_TH").fadeOut(3000);
-				$("#map_box_WH").fadeOut(3000);
-				$("#map_back").fadeOut(3000);
-				$("#hallway").fadeOut(3000);
-				$("#hallway_TH1").fadeOut(3000);
-				$("#hallway_TH2").fadeOut(3000);
-				$("#inventory").fadeOut(3000);
-				$("#inventory_br").fadeOut(3000);
-				$("#inventory_box").fadeOut(3000);
-				$("#hallway_WH1").fadeOut(3000);
-				$("#hallway_WH2").fadeOut(3000);
-				$("#location_JC").fadeOut(3000);
-				$("#location_TH").fadeOut(3000);
-				$("#location_WH").fadeOut(3000);
-				$("#health_display").fadeOut(3000);
+				$("audio").detach(".death");
+				$("img").detach(".death");
+				$("video").detach(".death");
+				$(".death").fadeOut(3000);
 				$("#container").fadeOut(9000, function() {
 				$("#killself").fadeIn(9000);
 			});
@@ -1432,8 +1328,6 @@ $(document).ready(function() {
 						else {
 							halltorch = "";
 						}
-						$("#location_JC").fadeOut(500);
-						$("#location_TH").fadeIn(500);
 						$('<p>You are back in the hallway. The hallway continues to the east and west. The jail room is to the south. ' + hallnote + halltorch + '</p>').insertBefore("#placeholder").fadeIn(1000);
 						currentroom = "hallway";
 						if (torch == true && note == true) {
@@ -1473,9 +1367,7 @@ $(document).ready(function() {
 						}
 					}
 					else {
-						$("#location_JC").fadeOut(500);
-						$("#location_TH").fadeIn(500);
-						$("#map_box_TH").fadeIn(500);
+						$(".Map_TH").fadeIn(500);
 						$("#area_hallway").clone().insertBefore("#placeholder").fadeIn(1000);
 						currentroom = "hallway";
 						beentohallway = true;
@@ -1539,8 +1431,6 @@ $(document).ready(function() {
 					$("video").detach("#screen");
 					$('<video autoplay loop id="screen"><source src="videos/video_JC/JCclip_bug.mp4" type="video/mp4">you cannot use screen</video>').insertBefore("#zero");
 				}
-				$("#location_TH").fadeOut(500);
-				$("#location_JC").fadeIn(500);
 			}
 			//
 
@@ -1581,6 +1471,7 @@ $(document).ready(function() {
 						beentorture = true;
 						$("video").detach("#screen");
 						$('<video autoplay loop id="screen"><source src="videos/video_TR/TR.mp4" type="video/mp4">you cannot use screen</video>').insertBefore("#zero");
+						$('.Map_TR').fadeIn(500);
 						currentroom = "torture";
 					}
 				}
@@ -1608,11 +1499,7 @@ $(document).ready(function() {
 					}
 					else {
 						$("#area_westhall").clone().insertBefore("#placeholder").fadeIn(1000);
-						$("#location_TH").fadeOut(500);
-						$("#location_WH").fadeIn(500);
-						$("#map_box_WH").fadeIn(500);
-						$("#hallway_WH2").fadeIn(500);
-						$("#hallway_WH1").fadeIn(500);
+						$(".Map_WH").fadeIn(500);
 						$("video").detach("#screen");
 						$('<video autoplay loop id="screen"><source src="videos/video_WH/WH.mp4" type="video/mp4">you cannot use screen</video>').insertBefore("#zero");
 						beentowesthall = true;
@@ -1668,10 +1555,11 @@ $(document).ready(function() {
 			else if (input == "go north" && currentroom == "exit_1") {
 				if (exit_1unlocked == true) {
 					$("#area_2Corridor").clone().insertBefore("#placeholder").fadeIn(1000);
-					burnttorch = true
-					torch = false
-					currentroom = "corridor_2"
-					beentocorridor_2 = true
+					burnttorch = true;
+					torch = false;
+					currentroom = "corridor_2";
+					beentocorridor_2 = true;
+					currentArea = 2;
 				}
 				else {
 					$('<p>The door is locked.</p>').insertBefore("#placeholder").fadeIn(1000);
@@ -2215,7 +2103,52 @@ $(document).ready(function() {
 			$('#key2_3Inv').fadeOut(10);
 		}
 
+		//location check
+		//tutorial area
+		if (currentArea == 1) {
+			if (currentroom == "jail") {
+				$("#location_TH").fadeOut(500);
+				$("#location_JC").fadeIn(500);
+			} else if (currentroom == "hallway") {
+				$("#location_JC").fadeOut(500);
+				$("#location_WH").fadeOut(500);
+				$("#location_TR").fadeOut(500);
+				$("#location_TH").fadeIn(500);
+			} else if (currentroom == "torture") {
 
+			} else if (currentroom == "morgue") {
+
+			} else if (currentroom == "westhall") {
+				$("#location_TH").fadeOut(500);
+				$("#location_WH").fadeIn(500);
+			} else if (currentroom == "bonus") {
+
+			} else if (currentroom == "exit_1") {
+
+			}
+			
+		}
+		//area 2: pantheon area 
+		else if (currentArea == 2) {
+			if (currentroom == "corridor_2") {
+
+			} else if (currentroom == "area_hub") {
+
+			} else if (currentroom == "2.2") {
+
+			} else if (currentroom == "2.3") {
+
+			} else if (currentroom == "2.4") {
+
+			} else if (currentroom == "2.5") {
+
+			} else if (currentroom == "2.6") {
+
+			} else if (currentroom == "2.7") {
+
+			}
+		}
+		//
 
 
 
@@ -2244,26 +2177,10 @@ $(document).ready(function() {
 		//should you ever somehow die
 		//
 		if (health <= 0) {
-			$("audio").detach("#yep");
-			$("img").detach("#yep");
-			$("video").detach("#screen");
-			$("#inventory").fadeOut(3000);
-			$("#map_box_TH").fadeOut(3000);
-			$("#map_box_WH").fadeOut(3000);
-			$("#map_back").fadeOut(3000);
-			$("#hallway").fadeOut(3000);
-			$("#hallway_TH1").fadeOut(3000);
-			$("#inventory").fadeOut(3000);
-			$("#inventory_br").fadeOut(3000);
-			$("#inventory_box").fadeOut(3000);
-			$("#hallway_TH2").fadeOut(3000);
-			$("#hallway_WH1").fadeOut(3000);
-			$("#hallway_WH2").fadeOut(3000);
-			$("#location_JC").fadeOut(3000);
-			$("#location_TH").fadeOut(3000);
-			$("#location_WH").fadeOut(3000);
-			$("#health_display").fadeOut(3000);
-			$("#map_box_test").fadeOut(3000);
+			$("audio").detach(".death");
+			$("img").detach(".death");
+			$("video").detach(".death");
+			$(".death").fadeOut(3000);
 			$("#container").fadeOut(3000, function() {
 			$("#health_die").fadeIn(3000);
 		});
