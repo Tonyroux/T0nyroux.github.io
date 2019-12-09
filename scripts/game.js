@@ -114,11 +114,6 @@ $(document).ready(function() {
 	$("form").submit(function() {
 		var input = $("#command_line").val();
 
-
-
-
-
-
 		//
 		//help
 		//
@@ -240,7 +235,6 @@ $(document).ready(function() {
 		//
 		//ends songs
 		//
-
 
 		//
 		//take
@@ -710,10 +704,6 @@ $(document).ready(function() {
 		//end eat
 		//
 
-
-
-
-
 		//
 		//attack
 		//
@@ -1049,9 +1039,6 @@ $(document).ready(function() {
 		//end attack
 		//
 
-
-
-
 		//
 		//inventory
 		//
@@ -1195,15 +1182,9 @@ $(document).ready(function() {
 		//end inventory
 		//
 
-
-
-
-
-
 		//
 		//unlock
 		//
-
 		else if (input.indexOf("unlock") > -1) {
 			if (input == "unlock" || input == "unlock door" || input == "unlock jail door" || input == "unlock jaildoor") {
 				$('<p>Unlock door with what? Be specific. Type "help" for a list of all commands.</p>').insertBefore("#placeholder").fadeIn(1000);
@@ -1297,12 +1278,6 @@ $(document).ready(function() {
 		//
 		//end unlock
 		//
-
-
-
-
-
-
 
 		//
 		//go
@@ -1934,8 +1909,6 @@ $(document).ready(function() {
 		}
 		//radio stop
 
-
-
 		//victory
 		//$("#container").fadeOut(3000, function() {
 		//	$("#wingame").fadeIn(3000);
@@ -1963,144 +1936,147 @@ $(document).ready(function() {
 		}
 
 		//heart display
-		if (health == 95) {
-			$("img").detach("#health")
-			$('<img src="heart/heart 95.png" style="width:100px;height:100px" id="health">').insertBefore('#placeholder_dos');
-		}
-		else if (health == 90) {
-			$("img").detach("#health")
-			$('<img src="heart/heart 90.png" style="width:100px;height:100px" id="health">').insertBefore('#placeholder_dos');
-		}
-		else if (health == 85) {
-			$("img").detach("#health")
-			$('<img src="heart/heart 85.png" style="width:100px;height:100px" id="health">').insertBefore('#placeholder_dos');
-		}
-		else if (health == 80) {
-			$("img").detach("#health")
-			$('<img src="heart/heart 80.png" style="width:100px;height:100px" id="health">').insertBefore('#placeholder_dos');
-		}
-		else if (health == 75) {
-			$("img").detach("#health")
-			$('<img src="heart/heart 75.png" style="width:100px;height:100px" id="health">').insertBefore('#placeholder_dos');
-		}
-		else if (health == 70) {
-			$("img").detach("#health")
-			$('<img src="heart/heart 70.png" style="width:100px;height:100px" id="health">').insertBefore('#placeholder_dos');
-		}
-		else if (health == 65) {
-			$("img").detach("#health")
-			$('<img src="heart/heart 65.png" style="width:100px;height:100px" id="health">').insertBefore('#placeholder_dos');
-		}
-		else if (health == 60) {
-			$("img").detach("#health")
-			$('<img src="heart/heart 60.png" style="width:100px;height:100px" id="health">').insertBefore('#placeholder_dos');
-		}
-		else if (health == 55) {
-			$("img").detach("#health")
-			$('<img src="heart/heart 55.png" style="width:100px;height:100px" id="health">').insertBefore('#placeholder_dos');
-		}
-		else if (health == 50) {
-			$("img").detach("#health")
-			$('<img src="heart/heart 50.png" style="width:100px;height:100px" id="health">').insertBefore('#placeholder_dos');
-		}
-		else if (health == 45) {
-			$("img").detach("#health")
-			$('<img src="heart/heart 45.png" style="width:100px;height:100px" id="health">').insertBefore('#placeholder_dos');
-		}
-		else if (health == 40) {
-			$("img").detach("#health")
-			$('<img src="heart/heart 40.png" style="width:100px;height:100px" id="health">').insertBefore('#placeholder_dos');
-		}
-		else if (health == 35) {
-			$("img").detach("#health")
-			$('<img src="heart/heart 35.png" style="width:100px;height:100px" id="health">').insertBefore('#placeholder_dos');
-		}
-		else if (health == 30) {
-			$("img").detach("#health")
-			$('<img src="heart/heart 30.png" style="width:100px;height:100px" id="health">').insertBefore('#placeholder_dos');
-		}
-		else if (health == 25) {
-			$("img").detach("#health")
-			$('<img src="heart/heart 25.png" style="width:100px;height:100px" id="health">').insertBefore('#placeholder_dos');
-		}
-		else if (health == 20) {
-			$("img").detach("#health")
-			$('<img src="heart/heart 20.png" style="width:100px;height:100px" id="health">').insertBefore('#placeholder_dos');
-		}
-		else if (health == 15) {
-			$("img").detach("#health")
-			$('<img src="heart/heart 15.png" style="width:100px;height:100px" id="health">').insertBefore('#placeholder_dos');
-		}
-		else if (health == 10) {
-			$("img").detach("#health")
-			$('<img src="heart/heart 10.png" style="width:100px;height:100px" id="health">').insertBefore('#placeholder_dos');
-		}
-		else if (health == 5) {
-			$("img").detach("#health")
-			$('<img src="heart/heart 5.png" style="width:100px;height:100px" id="health">').insertBefore('#placeholder_dos');
+		if (health > -100) {
+			if (health == 95) {
+				$("img").detach("#health")
+				$('<img src="heart/heart 95.png" style="width:100px;height:100px" id="health">').insertBefore('#placeholder_dos');
+			}
+			else if (health == 90) {
+				$("img").detach("#health")
+				$('<img src="heart/heart 90.png" style="width:100px;height:100px" id="health">').insertBefore('#placeholder_dos');
+			}
+			else if (health == 85) {
+				$("img").detach("#health")
+				$('<img src="heart/heart 85.png" style="width:100px;height:100px" id="health">').insertBefore('#placeholder_dos');
+			}
+			else if (health == 80) {
+				$("img").detach("#health")
+				$('<img src="heart/heart 80.png" style="width:100px;height:100px" id="health">').insertBefore('#placeholder_dos');
+			}
+			else if (health == 75) {
+				$("img").detach("#health")
+				$('<img src="heart/heart 75.png" style="width:100px;height:100px" id="health">').insertBefore('#placeholder_dos');
+			}
+			else if (health == 70) {
+				$("img").detach("#health")
+				$('<img src="heart/heart 70.png" style="width:100px;height:100px" id="health">').insertBefore('#placeholder_dos');
+			}
+			else if (health == 65) {
+				$("img").detach("#health")
+				$('<img src="heart/heart 65.png" style="width:100px;height:100px" id="health">').insertBefore('#placeholder_dos');
+			}
+			else if (health == 60) {
+				$("img").detach("#health")
+				$('<img src="heart/heart 60.png" style="width:100px;height:100px" id="health">').insertBefore('#placeholder_dos');
+			}
+			else if (health == 55) {
+				$("img").detach("#health")
+				$('<img src="heart/heart 55.png" style="width:100px;height:100px" id="health">').insertBefore('#placeholder_dos');
+			}
+			else if (health == 50) {
+				$("img").detach("#health")
+				$('<img src="heart/heart 50.png" style="width:100px;height:100px" id="health">').insertBefore('#placeholder_dos');
+			}
+			else if (health == 45) {
+				$("img").detach("#health")
+				$('<img src="heart/heart 45.png" style="width:100px;height:100px" id="health">').insertBefore('#placeholder_dos');
+			}
+			else if (health == 40) {
+				$("img").detach("#health")
+				$('<img src="heart/heart 40.png" style="width:100px;height:100px" id="health">').insertBefore('#placeholder_dos');
+			}
+			else if (health == 35) {
+				$("img").detach("#health")
+				$('<img src="heart/heart 35.png" style="width:100px;height:100px" id="health">').insertBefore('#placeholder_dos');
+			}
+			else if (health == 30) {
+				$("img").detach("#health")
+				$('<img src="heart/heart 30.png" style="width:100px;height:100px" id="health">').insertBefore('#placeholder_dos');
+			}
+			else if (health == 25) {
+				$("img").detach("#health")
+				$('<img src="heart/heart 25.png" style="width:100px;height:100px" id="health">').insertBefore('#placeholder_dos');
+			}
+			else if (health == 20) {
+				$("img").detach("#health")
+				$('<img src="heart/heart 20.png" style="width:100px;height:100px" id="health">').insertBefore('#placeholder_dos');
+			}
+			else if (health == 15) {
+				$("img").detach("#health")
+				$('<img src="heart/heart 15.png" style="width:100px;height:100px" id="health">').insertBefore('#placeholder_dos');
+			}
+			else if (health == 10) {
+				$("img").detach("#health")
+				$('<img src="heart/heart 10.png" style="width:100px;height:100px" id="health">').insertBefore('#placeholder_dos');
+			}
+			else if (health == 5) {
+				$("img").detach("#health")
+				$('<img src="heart/heart 5.png" style="width:100px;height:100px" id="health">').insertBefore('#placeholder_dos');
+			}
 		}
 		//end of health display
 
-
 		//inventory display
-		if (torch == true && listed_t == false) {
-			$('<p id="torchInv">Torch</p>').insertBefore('#inv_box_bottom');
-			listed_t = true;
-		}
-		if (deadbugs == true || deadbugs == "ate") {
-			$('<p>Deadbugs</p>').insertBefore('#inv_box_bottom');
-		}
-		if (paperclip == true && listed_pc == false) {
-			$('<p>Paperclip</p>').insertBefore('#inv_box_bottom');
-			listed_pc = true;
-		}
-		if (lunchtray == true && listed_tray == false) {
-			$('<p>Tray</p>').insertBefore('#inv_box_bottom');
-			listed_tray = true;
-		}
-		if (note == true && listed_n == false) {
-			$('<p>Note</p>').insertBefore('#inv_box_bottom');
-			listed_n = true;
-		}
-		if (knife == true && listed_kn == false) {
-			$('<p>Knife</p>').insertBefore('#inv_box_bottom');
-			listed_kn = true;
-		}
-		if (key_1 == true && listed_ke == false) {
-			$('<p id="A1Key">Key</p>').insertBefore('#inv_box_bottom');
-			listed_ke = true;
-		}
-		if (key_1 == "used" && listed_ke == true) {
-			$('#A1Key').fadeOut(10);
-		}
-		if (whip == true && listed_w == false) {
-			$('<p>Whip</p>').insertBefore('#inv_box_bottom');
-			listed_w = true;
-		}
-		if (powder == true && listed_pow == false) {
-			$('<p>Strange Powder</p>').insertBefore('#inv_box_bottom');
-			listed_pow = true;
-		}
-		if (bucket_e == true && listed_bucket_e == false) {
-			$('<p id="bukE">Empty bucket</p>').insertBefore('#inv_box_bottom');
-			listed_bucket_e = true;
-		}
-		if (bucket_f == true && listed_bucket_f == false) {
-			$('#bukE').fadeOut(10);
-			$('<p id="bukF">Bucket of Water</p>').insertBefore('#inv_box_bottom');
-			listed_bucket_f = true;
-		}
-		if (burnttorch == true && listed_burnt == false) {
-			$('#torchInv').fadeOut(10);
-			$('<p>Burnt Torch</p>').insertBefore('#inv_box_bottom');
-			listed_burnt = true;
-		}
-		if (key2_3 == true && listed_key2_3 == false) {
-			$('<p id="key2_3Inv">Door 2 key</p>').insertBefore('#inv_box_bottom');
-			listed_key2_3 = true;
-		}
-		if (key2_3 == "used" && listed_key2_3 == true) {
-			$('#key2_3Inv').fadeOut(10);
+		if (health > 0) {
+			if (torch == true && listed_t == false) {
+				$('<p id="torchInv">Torch</p>').insertBefore('#inv_box_bottom');
+				listed_t = true;
+			}
+			if (deadbugs == true || deadbugs == "ate") {
+				$('<p>Deadbugs</p>').insertBefore('#inv_box_bottom');
+			}
+			if (paperclip == true && listed_pc == false) {
+				$('<p>Paperclip</p>').insertBefore('#inv_box_bottom');
+				listed_pc = true;
+			}
+			if (lunchtray == true && listed_tray == false) {
+				$('<p>Tray</p>').insertBefore('#inv_box_bottom');
+				listed_tray = true;
+			}
+			if (note == true && listed_n == false) {
+				$('<p>Note</p>').insertBefore('#inv_box_bottom');
+				listed_n = true;
+			}
+			if (knife == true && listed_kn == false) {
+				$('<p>Knife</p>').insertBefore('#inv_box_bottom');
+				listed_kn = true;
+			}
+			if (key_1 == true && listed_ke == false) {
+				$('<p id="A1Key">Key</p>').insertBefore('#inv_box_bottom');
+				listed_ke = true;
+			}
+			if (key_1 == "used" && listed_ke == true) {
+				$('#A1Key').fadeOut(10);
+			}
+			if (whip == true && listed_w == false) {
+				$('<p>Whip</p>').insertBefore('#inv_box_bottom');
+				listed_w = true;
+			}
+			if (powder == true && listed_pow == false) {
+				$('<p>Strange Powder</p>').insertBefore('#inv_box_bottom');
+				listed_pow = true;
+			}
+			if (bucket_e == true && listed_bucket_e == false) {
+				$('<p id="bukE">Empty bucket</p>').insertBefore('#inv_box_bottom');
+				listed_bucket_e = true;
+			}
+			if (bucket_f == true && listed_bucket_f == false) {
+				$('#bukE').fadeOut(10);
+				$('<p id="bukF">Bucket of Water</p>').insertBefore('#inv_box_bottom');
+				listed_bucket_f = true;
+			}
+			if (burnttorch == true && listed_burnt == false) {
+				$('#torchInv').fadeOut(10);
+				$('<p>Burnt Torch</p>').insertBefore('#inv_box_bottom');
+				listed_burnt = true;
+			}
+			if (key2_3 == true && listed_key2_3 == false) {
+				$('<p id="key2_3Inv">Door 2 key</p>').insertBefore('#inv_box_bottom');
+				listed_key2_3 = true;
+			}
+			if (key2_3 == "used" && listed_key2_3 == true) {
+				$('#key2_3Inv').fadeOut(10);
+			}
 		}
 
 		//location check
@@ -2150,15 +2126,6 @@ $(document).ready(function() {
 		}
 		//
 
-
-
-
-
-
-
-
-
-
 		//something unecessary
 		if (music == true && plying_m == false) {
 
@@ -2171,7 +2138,6 @@ $(document).ready(function() {
 			$("audio").detach("#background");
 			plying_m = false
 		}
-
 
 		//
 		//should you ever somehow die
