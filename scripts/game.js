@@ -113,12 +113,12 @@ $(document).ready(function() {
 	$("#yes2").fadeOut(4000);
 	$("form").submit(function() {
 		var input = $("#command_line").val();
-	
-		 
-		
 
-		
-		
+
+
+
+
+
 		//
 		//help
 		//
@@ -141,7 +141,7 @@ $(document).ready(function() {
 			if (input == "music on" && music == false) {
 				$('<p>Playing game music.</p>').insertBefore("#placeholder").fadeIn(1000);
 				music = true;
-			
+
 			}
 			else if (input == "music off" && music == true) {
 				$('<p>Stopping game music.</p>').insertBefore("#placeholder").fadeIn(1000);
@@ -240,17 +240,17 @@ $(document).ready(function() {
 		//
 		//ends songs
 		//
-		
-		
+
+
 		//
 		//take
 		//
 		else if (input.indexOf("take") > -1 || input.indexOf("read") > -1 || input.indexOf("pick up") > -1 || input.indexOf("fill") > -1) {
-			
+
 			if (input == "take" || input == "pick up" || input == "read") {
 				$('<p>Take what? Be specific. Type "help" for a list of all commands.</p>').insertBefore("#placeholder").fadeIn(1000);
 			}
-			
+
 			//paperclip
 			else if (input == "take paperclip" || input == "take paper clip" || input == "pick up paperclip" || input == "pick up paper clip") {
 				if (currentroom == "jail" && paperclip == false && deadbugs == false && lunchtray == false) {
@@ -290,7 +290,7 @@ $(document).ready(function() {
 				}
 			}
 			//
-			
+
 			//dead bugs
 			else if (input == "take dead bugs" || input == "take deadbugs" || input == "pick up dead bugs" || input == "pick up deadbugs") {
 				if (currentroom == "jail" && deadbugs == false && paperclip == true && lunchtray == true) {
@@ -330,12 +330,12 @@ $(document).ready(function() {
 				}
 			}
 			//
-			
+
 			//lunch tray
 			else if (input == "take lunchtray" || input == "take lunch tray" || input == "take tray" || input == "pick up lunchtray" || input == "pick up lunch tray" || input == "pick up tray") {
 				if (currentroom == "jail" && lunchtray == false) {
 					lunchtray = true;
-				
+
 				if (deadbugs == false && paperclip == false) {
 					$("video").detach("#screen");
 					$("audio").detach("#take");
@@ -383,7 +383,7 @@ $(document).ready(function() {
 				}
 			}
 			//
-			
+
 			//torch
 			else if (input == "take torch" || input == "take the torch" || input == "pick up torch" || input == "pick up the torch") {
 				if (currentroom == "hallway" && torch == false) {
@@ -395,11 +395,11 @@ $(document).ready(function() {
 					$("#hallway_TH2").fadeIn(500);
 					if (note == false) {
 						$("video").detach("#screen");
-						$('<video autoplay loop id="screen"><source src="videos/video_TH/TH_torch.mp4" type="video/mp4">you cannot use screen</video>').insertBefore("#zero");		
+						$('<video autoplay loop id="screen"><source src="videos/video_TH/TH_torch.mp4" type="video/mp4">you cannot use screen</video>').insertBefore("#zero");
 					}
 					else if (note == true) {
 						$("video").detach("#screen");
-						$('<video autoplay loop id="screen"><source src="videos/video_TH/TH_torch_note.mp4" type="video/mp4">you cannot use screen</video>').insertBefore("#zero");		
+						$('<video autoplay loop id="screen"><source src="videos/video_TH/TH_torch_note.mp4" type="video/mp4">you cannot use screen</video>').insertBefore("#zero");
 					}
 				}
 				else {
@@ -407,7 +407,7 @@ $(document).ready(function() {
 				}
 			}
 			//
-			
+
 			//note
 			else if (input == "take note" || input == "read note" || input == "pick up note" || input == "pick up the note") {
 				if (currentroom == "hallway" && note == false && torch == false) {
@@ -416,7 +416,7 @@ $(document).ready(function() {
 					$('<audio autoplay id="take"><source src="soundfx/sand4.mp3" type="audio/mpeg">you cannot use jukebox</audio>').insertAfter("#nope");
 					$('<p>You picked up a note. It reads: <br />You asked for more excitement in your life, so we bashed your head in, gave you amnesia, and dragged you down into this dungeon, it shouldn\'t get too hard... for now...<br /><br />Sincerely,<br/>The Wish Granted Association<br /><br />P.S. Watch out for our zombie.</p>').insertBefore("#placeholder").fadeIn(1000);
 					$("video").detach("#screen");
-					$('<video autoplay loop id="screen"><source src="videos/video_TH/TH_note.mp4" type="video/mp4">you cannot use screen</video>').insertBefore("#zero");	
+					$('<video autoplay loop id="screen"><source src="videos/video_TH/TH_note.mp4" type="video/mp4">you cannot use screen</video>').insertBefore("#zero");
 				}
 				else if (currentroom == "hallway" && note == false && torch == true) {
 					note = true;
@@ -424,14 +424,14 @@ $(document).ready(function() {
 					$('<audio autoplay id="take"><source src="soundfx/sand4.mp3" type="audio/mpeg">you cannot use jukebox</audio>').insertAfter("#nope");
 					$('<p>You picked up a note. It reads: <br />You asked for more excitement in your life, so we bashed your head in, gave you amnesia, and dragged you down into this dungeon, it shouldn\'t get too hard... for now...<br /><br />Sincerely,<br/>The Wish Granted Association<br /><br />P.S. Watch out for our zombie.</p>').insertBefore("#placeholder").fadeIn(1000);
 					$("video").detach("#screen");
-					$('<video autoplay loop id="screen"><source src="videos/video_TH/TH_torch_note.mp4" type="video/mp4">you cannot use screen</video>').insertBefore("#zero");	
+					$('<video autoplay loop id="screen"><source src="videos/video_TH/TH_torch_note.mp4" type="video/mp4">you cannot use screen</video>').insertBefore("#zero");
 				}
 				else {
 					$('<p>That item is not here!</p>').insertBefore("#placeholder").fadeIn(1000);
 				}
 			}
 			//
-			
+
 			//whip
 			else if (input == "take whip" || input == "pick up whip") {
 				if (currentroom == "torture" && whip == false) {
@@ -492,12 +492,12 @@ $(document).ready(function() {
 			//
 
 			else $('<p>You can\'t do that.</p>').insertBefore("#placeholder").fadeIn(1000);
-		
+
 		}
 		//
 		//end take
 		//
-		
+
 		//place bucket
 		else if (input.indexOf("place") > -1) {
 			if (input == "place bucket") {
@@ -523,16 +523,16 @@ $(document).ready(function() {
 				}
 			}
 		}
-		
+
 		//
 		//search
 		//
 		else if (input.indexOf("search") > -1 || input.indexOf("check") > -1) {
-			
+
 			if (input == "search" || input == "check") {
 				$('<p>Search what? Be specific. Type "help" for a list of all commands.</p>').insertBefore("#placeholder").fadeIn(1000);
 			}
-			
+
 			//table
 			else if (input == "search table" || input == "check table") {
 				if (currentroom == "torture" && hat == false && knife == false) {
@@ -553,12 +553,12 @@ $(document).ready(function() {
 					}
 					$('<p>You put the hat back on the table</p>').insertBefore("#placeholder").fadeIn(1000);
 					hat = false;
-						
+
 				}
 				else $('<p>There is nothing to search for.</p>').insertBefore("#placeholder").fadeIn(1000);
 			}
 			//
-			
+
 			//zombie
 			else if (input == "search zombie" || input == "check zombie") {
 				if (currentroom == "morgue" && zombiedead == true) {
@@ -570,7 +570,7 @@ $(document).ready(function() {
 				else $('<p>There is nothing to search for.</p>').insertBefore("#placeholder").fadeIn(1000);
 			}
 			//
-			
+
 			//crate
 			else if (input == "search crate" || input == "check crate") {
 				if (currentroom == "bonus") {
@@ -614,7 +614,7 @@ $(document).ready(function() {
 					$('<p>What powder?</p>').insertBefore("#placeholder").fadeIn(1000);
 				}
 			}
-			
+
 			//rug 2.2
 			else if (input == "search rug") {
 				if (solved2_2 == false) {
@@ -627,15 +627,15 @@ $(document).ready(function() {
 					$('<p>You already have.</p>').insertBefore('#placeholder').fadeIn(1000);
 				}
 			}
-			
+
 
 			else $('<p>There is nothing to search for.</p>').insertBefore("#placeholder").fadeIn(1000);
-		
+
 		}
 		//
 		//end search
 		//
-		
+
 		//
 		//move
 		//
@@ -645,12 +645,12 @@ $(document).ready(function() {
 				$('<audio autoplay id="move"><source src="soundfx/move_crate.mp3" type="audio/mpeg">you cannot use jukebox</audio>').insertAfter("#nope");
 				$('<p>You reveal a ladder downwards.</p>').insertBefore("#placeholder").fadeIn(1000);
 				cratemove = true
-				
+
 			}
 			else if (input == "move stone" && currentroom == "2.2") {
 				if (solved2_2 == false) {
 					$('<p>I mean yeah, if a bucket of water can lift it I guess it can\'t be too heavy.</p>').insertBefore('#placeholder').fadeIn(1000);
-					solved2_2 == true;
+					solved2_2 = true;
 				} else if (solved2_2 == true || solved2_2 == "complete") {
 					$('<p>It\'s already moved.</p>').insertBefore('#placeholder').fadeIn(1000);
 				}
@@ -660,16 +660,16 @@ $(document).ready(function() {
 		//
 		//end move
 		//
-		
+
 		//
 		//eat
 		//
 		else if (input.indexOf("eat") > -1) {
-			
+
 			if (input == "eat") {
 				$('<p>Eat what? Be specific. Type "help" for a list of all commands.</p>').insertBefore("#placeholder").fadeIn(1000);
 			}
-			
+
 			//powder
 			else if (input == "eat powder" || input == "eat strange powder") {
 				if (powder == true) {
@@ -699,8 +699,8 @@ $(document).ready(function() {
 				else $('<p>You can\'t do that.</p>').insertBefore("#placeholder").fadeIn(1000);
 			}
 			//
-			
-			
+
+
 			//bugs
 			else if (input == "eat bugs" || input == "eat dead bugs") {
 				if (deadbugs == true) {
@@ -731,23 +731,23 @@ $(document).ready(function() {
 				}
 			}
 			//
-			
+
 			else $('<p>I don\'t understand "' + input + '</p>').insertBefore("#placeholder").fadeIn(1000);
-		
+
 		}
 		//
 		//end eat
 		//
-		
-		
-		
-		
-		
+
+
+
+
+
 		//
 		//attack
 		//
 		else if (input.indexOf("attack") > -1) {
-			
+
 			if (input == "attack") {
 				$('<p>attack what with what? Be specific. Type "help" for a list of all commands.</p>').insertBefore("#placeholder").fadeIn(1000);
 			}
@@ -757,7 +757,7 @@ $(document).ready(function() {
 			else if (input == "attack bucket" && currentroom == "2.2") {
 				$('<p>attack bucket with what?</p>').insertBefore("#placeholder").fadeIn(1000);
 			}
-			
+
 			//zombie
 			else if (input == "attack zombie with knife") {
 				if (currentroom == "morgue" && knife == true && zombiedead == false) {
@@ -767,7 +767,7 @@ $(document).ready(function() {
 							zombiedead = true;
 							$('<p>You hit the zombie.</p>').insertBefore("#placeholder").fadeIn(1000);
 							$('<p>You did it! The zombie is dead! <br> You see a glimmer in the zombie\'s torso?</p>').insertBefore("#placeholder").fadeIn(1000);
-						} else { 
+						} else {
 							z_health -= 1;
 							$('<p>You hit the zombie.</p>').insertBefore("#placeholder").fadeIn(1000);
 							$('<p>He\'s looking pretty beat up too. Keep going!</p>').insertBefore("#placeholder").fadeIn(1000);
@@ -798,7 +798,7 @@ $(document).ready(function() {
 					$('<p>You can\'t do that.</p>').insertBefore("#placeholder").fadeIn(1000);
 				}
 			}
-					
+
 			else if (input == "attack zombie with lunch tray" || input == "attack zombie with lunchtray" || input == "attack zombie with tray") {
 				if (currentroom == "morgue" && lunchtray == true && zombiedead == false) {
 					ATK_z(array_z);
@@ -807,7 +807,7 @@ $(document).ready(function() {
 							zombiedead = true;
 							$('<p>You hit the zombie.</p>').insertBefore("#placeholder").fadeIn(1000);
 							$('<p>You did it! The zombie is dead! <br> You see a glimmer in the zombie\'s torso?</p>').insertBefore("#placeholder").fadeIn(1000);
-						} else { 
+						} else {
 							z_health -= 1;
 							$('<p>You hit the zombie.</p>').insertBefore("#placeholder").fadeIn(1000);
 							$('<p>He\'s looking pretty beat up too. Keep going!</p>').insertBefore("#placeholder").fadeIn(1000);
@@ -829,7 +829,7 @@ $(document).ready(function() {
 				}
 			}
 			//
-			
+
 			//attack with whip
 			else if (input == "attack zombie with whip") {
 				if (currentroom == "morgue" && whip == true && zombiedead == false) {
@@ -839,7 +839,7 @@ $(document).ready(function() {
 							zombiedead = true;
 							$('<p>You hit the zombie.</p>').insertBefore("#placeholder").fadeIn(1000);
 							$('<p>You did it! The zombie is dead! <br> You see a glimmer in the zombie\'s torso?</p>').insertBefore("#placeholder").fadeIn(1000);
-						} else { 
+						} else {
 							z_health -= 1;
 							$('<p>You hit the zombie.</p>').insertBefore("#placeholder").fadeIn(1000);
 							$('<p>He\'s looking pretty beat up too. Keep going!</p>').insertBefore("#placeholder").fadeIn(1000);
@@ -879,7 +879,7 @@ $(document).ready(function() {
 							buk_health -= 2;
 							$('<p>The bucket tripped trying to attack and took double damage.</p>').insertBefore("#placeholder").fadeIn(1000);
 						}
-					} else if (bukDam != 1 && (bukDam - 8) < playDam) {
+					} else if (bukDam != 1 && (bukDam - 4) < playDam) {
 						buk_health -= 1;
 						$('<p>You stike the bucket with your knife.</p>').insertBefore("#placeholder").fadeIn(1000);
 					} else if (bukDam != 20 && bukDam > playDam) {
@@ -895,7 +895,7 @@ $(document).ready(function() {
 						buk_health = 0;
 						$('<p>The bucket literally fell over and died.<br>You pick up the bucket.</p>').insertBefore("#placeholder").fadeIn(1000);
 						bucket_e = true;
-					} else if (bukDam != 1 && (bukDam - 8) < playDam) {
+					} else if (bukDam != 1 && (bukDam - 4) < playDam) {
 						buk_health = 0;
 						$('<p>You struck the bucket and killed it.<br>You pick up the bucket</p>').insertBefore("#placeholder").fadeIn(1000);
 						bucket_e = true;
@@ -920,7 +920,7 @@ $(document).ready(function() {
 							buk_health -= 2;
 							$('<p>The bucket tripped trying to attack and took double damage.</p>').insertBefore("#placeholder").fadeIn(1000);
 						}
-					} else if (bukDam != 1 && (bukDam - 8) < playDam) {
+					} else if (bukDam != 1 && (bukDam - 4) < playDam) {
 						buk_health -= 1;
 						$('<p>You whip the bucket.</p>').insertBefore("#placeholder").fadeIn(1000);
 					} else if (bukDam != 20 && bukDam > playDam) {
@@ -936,7 +936,7 @@ $(document).ready(function() {
 						buk_health = 0;
 						$('<p>The bucket literally fell over and died.<br>You pick up the bucket.</p>').insertBefore("#placeholder").fadeIn(1000);
 						bucket_e = true;
-					} else if (bukDam != 1 && (bukDam - 8) < playDam) {
+					} else if (bukDam != 1 && (bukDam - 4) < playDam) {
 						buk_health = 0;
 						$('<p>You whipped the bucket and killed it.<br>You pick up the bucket</p>').insertBefore("#placeholder").fadeIn(1000);
 						bucket_e = true;
@@ -961,7 +961,7 @@ $(document).ready(function() {
 							buk_health -= 2;
 							$('<p>The bucket tripped trying to attack and took double damage.</p>').insertBefore("#placeholder").fadeIn(1000);
 						}
-					} else if (bukDam != 1 && (bukDam - 8) < playDam) {
+					} else if (bukDam != 1 && (bukDam - 4) < playDam) {
 						buk_health -= 1;
 						$('<p>You whack the bucket with your tray.</p>').insertBefore("#placeholder").fadeIn(1000);
 					} else if (bukDam != 20 && bukDam > playDam) {
@@ -977,7 +977,7 @@ $(document).ready(function() {
 						buk_health = 0;
 						$('<p>The bucket literally fell over and died.<br>You pick up the bucket.</p>').insertBefore("#placeholder").fadeIn(1000);
 						bucket_e = true;
-					} else if (bukDam != 1 && (bukDam - 8) < playDam) {
+					} else if (bukDam != 1 && (bukDam - 4) < playDam) {
 						buk_health = 0;
 						$('<p>You smacked the bucket one final time and killed the helpless bucket.<br>You pick up the bucket</p>').insertBefore("#placeholder").fadeIn(1000);
 						bucket_e = true;
@@ -1056,7 +1056,7 @@ $(document).ready(function() {
 					$('<p>You can\'t do that.</p>').insertBefore("#placeholder").fadeIn(1000);
 				}
 			}
-			
+
 			else if (input == "attack self with knife") {
 				if (knife == true) {
 					$("audio").detach("#yep");
@@ -1086,7 +1086,7 @@ $(document).ready(function() {
 					$('<p>You can\'t do that.</p>').insertBefore("#placeholder").fadeIn(1000);
 				}
 			}
-			
+
 			else if (input == "attack self with whip") {
 				if (whip == true) {
 					$("audio").detach("#yep");
@@ -1142,26 +1142,26 @@ $(document).ready(function() {
 				$("#killself").fadeIn(9000);
 			});
 			}
-			
+
 			//
-			
+
 			else $('<p>You can\'t do that!</p>').insertBefore("#placeholder").fadeIn(1000);
-			
-		
+
+
 		}
 		//
 		//end attack
 		//
-		
-		
-		
-		
+
+
+
+
 		//
 		//inventory
 		//
 		else if (input.indexOf("inventory") > -1) {
 			if (input == "inventory") {
-				
+
 				//paperclips
 				if (paperclip == true) {
 					pclip = "Paper Clip<br />";
@@ -1170,7 +1170,7 @@ $(document).ready(function() {
 					pclip = "";
 				}
 				//
-				
+
 				//dead bugs
 				if (deadbugs == true) {
 					dbugs = "Dead Bugs<br />";
@@ -1179,7 +1179,7 @@ $(document).ready(function() {
 					dbugs = "";
 				}
 				//
-				
+
 				//lunch tray
 				if (lunchtray == true) {
 					ltray = "Lunch Tray<br />";
@@ -1188,7 +1188,7 @@ $(document).ready(function() {
 					ltray = "";
 				}
 				//
-				
+
 				//torch
 				if (torch == true) {
 					tch = "Torch<br />";
@@ -1197,7 +1197,7 @@ $(document).ready(function() {
 					tch = "";
 				}
 				//
-		
+
 				//burnt torch
 				if (burnttorch == true) {
 					btch = "Burnt torch<br />";
@@ -1206,7 +1206,7 @@ $(document).ready(function() {
 					btch = "";
 				};
 				//
-				
+
 				//note
 				if (note == true) {
 					nt = "Note from Captors<br />";
@@ -1223,7 +1223,7 @@ $(document).ready(function() {
 				else {
 					icre = "";
 				}
-				
+
 				//hat
 				if (hat == true) {
 					ht = "Hat<br />";
@@ -1232,7 +1232,7 @@ $(document).ready(function() {
 					ht = "";
 				}
 				//
-								
+
 				//knife
 				if (knife == true) {
 					knf = "Knife<br />";
@@ -1241,7 +1241,7 @@ $(document).ready(function() {
 					knf = "";
 				}
 				//
-				
+
 				//whip
 				if (whip == true) {
 					whp = "Whip<br />";
@@ -1250,7 +1250,7 @@ $(document).ready(function() {
 					whp = "";
 				}
 				//
-				
+
 				//key
 				if (key_1 == true) {
 					ky_1 = "Key<br />";
@@ -1259,7 +1259,7 @@ $(document).ready(function() {
 					ky_1 = "";
 				};
 				//
-				
+
 				//powder
 				if (powder == true) {
 					powd = "Strange Powder<br />";
@@ -1285,7 +1285,7 @@ $(document).ready(function() {
 				} else {
 					ky2_3 = "";
 				}
-				
+
 				if (pclip == "" && dbugs == "" && ltray == "") {
 					$('<p>Inventory:<br /><i>There is nothing in your inventory</i></p>').insertBefore("#placeholder").fadeIn(1000);
 				}
@@ -1298,21 +1298,21 @@ $(document).ready(function() {
 		//
 		//end inventory
 		//
-		
 
-		
 
-		
-		
+
+
+
+
 		//
 		//unlock
 		//
-		
+
 		else if (input.indexOf("unlock") > -1) {
 			if (input == "unlock" || input == "unlock door" || input == "unlock jail door" || input == "unlock jaildoor") {
 				$('<p>Unlock door with what? Be specific. Type "help" for a list of all commands.</p>').insertBefore("#placeholder").fadeIn(1000);
 			}
-			
+
 			//jail door
 			else if (input == "unlock jail door with paperclip" || input == "unlock jaildoor with paperclip" || input == "unlock jail door with paper clip" || input == "unlock jaildoor with paper clip" || input == "unlock door with paper clip" || input == "unlock door with paperclip") {
 				if (currentroom != "jail") {
@@ -1323,49 +1323,49 @@ $(document).ready(function() {
 				}
 				else if (paperclip == true && cellunlocked == false) {
 					cellunlocked = true;
-					
+
 					$('<p>You unlocked the jail door successfully. You can now proceed north.</p>').insertBefore("#placeholder").fadeIn(1000);
 					if (lunchtray == true && deadbugs == true) {
 						$("video").detach("#screen");
 						$("audio").detach("#jdoor");
-						$('<audio autoplay id="jdoor"><source src="soundfx/irondoor_1.mp3" type="audio/mpeg"></audio>').insertAfter("#nope");	
+						$('<audio autoplay id="jdoor"><source src="soundfx/irondoor_1.mp3" type="audio/mpeg"></audio>').insertAfter("#nope");
 						$('<video autoplay id="screen"><source src="videos/video_JC/JCunlock_bug_tray.mp4" type="video/mp4">you cannot use screen</video>').insertBefore("#zero");
 					}
 					else if (lunchtray == true && deadbugs == false) {
 						$("video").detach("#screen");
 						$("audio").detach("#jdoor");
-						$('<audio autoplay id="jdoor"><source src="soundfx/irondoor_1.mp3" type="audio/mpeg"></audio>').insertAfter("#nope");	
+						$('<audio autoplay id="jdoor"><source src="soundfx/irondoor_1.mp3" type="audio/mpeg"></audio>').insertAfter("#nope");
 						$('<video autoplay id="screen"><source src="videos/video_JC/JCunlock_tray.mp4" type="video/mp4">you cannot use screen</video>').insertBefore("#zero");
 					}
 					else if (lunchtray == true && deadbugs == "ate") {
 						$("video").detach("#screen");
 						$("audio").detach("#jdoor");
-						$('<audio autoplay id="jdoor"><source src="soundfx/irondoor_1.mp3" type="audio/mpeg"></audio>').insertAfter("#nope");	
+						$('<audio autoplay id="jdoor"><source src="soundfx/irondoor_1.mp3" type="audio/mpeg"></audio>').insertAfter("#nope");
 						$('<video autoplay id="screen"><source src="videos/video_JC/JCunlock_tray.mp4" type="video/mp4">you cannot use screen</video>').insertBefore("#zero");
 					}
 					else if (lunchtray == false && deadbugs == true) {
 						$("video").detach("#screen");
 						$("audio").detach("#jdoor");
-						$('<audio autoplay id="jdoor"><source src="soundfx/irondoor_1.mp3" type="audio/mpeg"></audio>').insertAfter("#nope");	
+						$('<audio autoplay id="jdoor"><source src="soundfx/irondoor_1.mp3" type="audio/mpeg"></audio>').insertAfter("#nope");
 						$('<video autoplay id="screen"><source src="videos/video_JC/JCunlock_bug.mp4" type="video/mp4">you cannot use screen</video>').insertBefore("#zero");
 					}
 					else if (lunchtray == false && deadbugs == false) {
 						$("video").detach("#screen");
 						$("audio").detach("#jdoor");
-						$('<audio autoplay id="jdoor"><source src="soundfx/irondoor_1.mp3" type="audio/mpeg"></audio>').insertAfter("#nope");	
+						$('<audio autoplay id="jdoor"><source src="soundfx/irondoor_1.mp3" type="audio/mpeg"></audio>').insertAfter("#nope");
 						$('<video autoplay id="screen"><source src="videos/video_JC/JCunlock.mp4" type="video/mp4">you cannot use screen</video>').insertBefore("#zero");
 					}
 					else if (lunchtray == false && deadbugs == "ate") {
 						$("video").detach("#screen");
 						$("audio").detach("#jdoor");
-						$('<audio autoplay id="jdoor"><source src="soundfx/irondoor_1.mp3" type="audio/mpeg"></audio>').insertAfter("#nope");	
+						$('<audio autoplay id="jdoor"><source src="soundfx/irondoor_1.mp3" type="audio/mpeg"></audio>').insertAfter("#nope");
 						$('<video autoplay id="screen"><source src="videos/video_JC/JCunlock.mp4" type="video/mp4">you cannot use screen</video>').insertBefore("#zero");
 					}
 				}
 				else $('<p>The door cannot be unlocked.</p>').insertBefore("#placeholder").fadeIn(1000);
 			}
 			//
-			
+
 			//A1 exit door
 			else if (input == "unlock door with key") {
 				if (currentroom != "exit_1") {
@@ -1382,7 +1382,7 @@ $(document).ready(function() {
 				else $('<p>The door cannot be unlocked.</p>').insertBefore("#placeholder").fadeIn(1000);
 			}
 			//
-			
+
 			//door to 2.3
 			else if (input == "unlock door 2 with key") {
 				if (key2_3 == true) {
@@ -1396,18 +1396,18 @@ $(document).ready(function() {
 			//
 
 			else $('<p>I don\'t understand "' + input + '"</p>').insertBefore("#placeholder").fadeIn(1000);
-			
+
 		}
 		//
 		//end unlock
 		//
-		
-		
-		
-		
-		
-		
-		
+
+
+
+
+
+
+
 		//
 		//go
 		//
@@ -1415,7 +1415,7 @@ $(document).ready(function() {
 			if (input == "go") {
 				$('<p>Go in which direction?</p>').insertBefore("#placeholder").fadeIn(1000);
 			}
-			
+
 			//go to hall way
 			else if (input == "go north" && currentroom == "jail") {
 				if (cellunlocked == true) {
@@ -1442,7 +1442,7 @@ $(document).ready(function() {
 							setTimeout(function(){TH_enter()}, 1000);
 							function TH_enter() {
 								$("video").detach("#screen");
-								$('<video autoplay loop id="screen"><source src="videos/video_TH/TH_torch_note.mp4" type="video/mp4">you cannot use screen</video>').insertBefore("#zero");	
+								$('<video autoplay loop id="screen"><source src="videos/video_TH/TH_torch_note.mp4" type="video/mp4">you cannot use screen</video>').insertBefore("#zero");
 						} }
 						else if (torch == true && note == false) {
 							$("video").detach("#screen");
@@ -1450,7 +1450,7 @@ $(document).ready(function() {
 							setTimeout(function(){TH_enter()}, 1000);
 							function TH_enter() {
 								$("video").detach("#screen");
-								$('<video autoplay loop id="screen"><source src="videos/video_TH/TH_torch.mp4" type="video/mp4">you cannot use screen</video>').insertBefore("#zero");	
+								$('<video autoplay loop id="screen"><source src="videos/video_TH/TH_torch.mp4" type="video/mp4">you cannot use screen</video>').insertBefore("#zero");
 						}
 						}
 						else if (torch == false && note == false) {
@@ -1459,7 +1459,7 @@ $(document).ready(function() {
 							setTimeout(function(){TH_enter()}, 1000);
 							function TH_enter() {
 								$("video").detach("#screen");
-								$('<video autoplay loop id="screen"><source src="videos/video_TH/TH.mp4" type="video/mp4">you cannot use screen</video>').insertBefore("#zero");	
+								$('<video autoplay loop id="screen"><source src="videos/video_TH/TH.mp4" type="video/mp4">you cannot use screen</video>').insertBefore("#zero");
 						}
 						}
 						else if (torch == false && note == true) {
@@ -1468,7 +1468,7 @@ $(document).ready(function() {
 							setTimeout(function(){TH_enter()}, 1000);
 							function TH_enter() {
 								$("video").detach("#screen");
-								$('<video autoplay loop id="screen"><source src="videos/video_TH/TH_note.mp4" type="video/mp4">you cannot use screen</video>').insertBefore("#zero");	
+								$('<video autoplay loop id="screen"><source src="videos/video_TH/TH_note.mp4" type="video/mp4">you cannot use screen</video>').insertBefore("#zero");
 						}
 						}
 					}
@@ -1491,9 +1491,9 @@ $(document).ready(function() {
 				else {
 					$('<p>The door is locked.</p>').insertBefore("#placeholder").fadeIn(1000);
 				}
-			}		
+			}
 			//
-			
+
 			//go back to jail cell
 			else if (input == "go south" && currentroom == "hallway") {
 				if (deadbugs == false) {
@@ -1543,7 +1543,7 @@ $(document).ready(function() {
 				$("#location_JC").fadeIn(500);
 			}
 			//
-			
+
 			//go to torture room from hallway
 			else if (input == "go east" && currentroom == "hallway") {
 				if (torch == true) {
@@ -1589,7 +1589,7 @@ $(document).ready(function() {
 				}
 			}
 			//
-			
+
 			//go to westhall from hallway
 			else if (input == "go west" && currentroom == "hallway") {
 				if (torch == true) {
@@ -1624,7 +1624,7 @@ $(document).ready(function() {
 				}
 			}
 			//
-			
+
 			//go to exit from westhallway
 			else if (input == "go north" && currentroom == "westhall") {
 				$("video").detach("#screen");
@@ -1639,7 +1639,7 @@ $(document).ready(function() {
 				}
 			}
 			//
-			
+
 			//go to westhallway from exit
 			else if (input == "go south" && currentroom == "exit_1") {
 				if (beentowesthall == true) {
@@ -1663,7 +1663,7 @@ $(document).ready(function() {
 				}
 			}
 			//
-			
+
 			//go north from tutorial
 			else if (input == "go north" && currentroom == "exit_1") {
 				if (exit_1unlocked == true) {
@@ -1678,7 +1678,7 @@ $(document).ready(function() {
 				}
 			}
 			//
-			
+
 			//can't return
 			else if (input == "go south" && currentroom == "corridor_2") {
 				$('<p>I\'m afraid you cannot return through the door, it\'s too dark for your dim torch</p>').insertBefore("#placeholder").fadeIn(1000);
@@ -1731,7 +1731,7 @@ $(document).ready(function() {
 			else if (input == "go through door 1" && currentroom == "area_hub") {
 				if (beento2_2 == false) {
 					$('<p>You enter a room that is obviously the first of many.<br> Agaist the left wall, there sits a large scale.<br>On one arm, a stone, and on the other, a standard scale platform.<br>In the back right corner, is a small fountain, with a bucket to its side.</p>').insertBefore("#placeholder").fadeIn(1000);
-					
+
 					beento2_2 = true;
 				}
 				else {
@@ -1744,7 +1744,11 @@ $(document).ready(function() {
 					} else if (bucket_e == true && solved2_2 == true) {
 						$("<p>This room is done, I guess there could be a reason to be back here, but that's on you.</p>").insertBefore("#placeholder").fadeIn(1000);
 					} else if (bucket_f == true && solved2_2 == true) {
+						$("<p>You're back in the first challenge room<br>All you\'re missing is the key</p>").insertBefore("#placeholder").fadeIn(1000);
+					} else if (bucket_f == true && solved2_2 == "complete") {
 						$("<p>You're back in the first challenge room<br>There's nothing left to do here, but you're back.</p>").insertBefore("#placeholder").fadeIn(1000);
+					} else if (bucket_e == true && solved2_2 == "complete") {
+						$("<p>You're back in the first challenge room<br>I guess you could fill the bucket, but everything else is done.</p>").insertBefore("#placeholder").fadeIn(1000);
 					} else {
 						$("<p>You're back in the first challenge room, if you\'re seeing this, you have done such a series of choices that I didn't write specific code for you.<br>Sorry, but also well done.</p>").insertBefore("#placeholder").fadeIn(1000);
 					}
@@ -1757,7 +1761,7 @@ $(document).ready(function() {
 			//got to room 2.3
 
 			//
-			
+
 			//return to corridor_2
 			else if (input == "go south" && currentroom == "area_hub" && beentocorridor_2 == true) {
 				$('<p>You are back at the corridor. There is literally no reason for you to be back here. You came from the north.</p>').insertBefore("#placeholder").fadeIn(1000);
@@ -1790,7 +1794,7 @@ $(document).ready(function() {
 				}
 			}
 			//
-			
+
 			//go to bonus room from westhall
 			else if (input == "go south" && currentroom == "westhall") {
 				$("video").detach("#screen");
@@ -1811,7 +1815,7 @@ $(document).ready(function() {
 					else if (powder == true ) {
 						bonuscrate = "The crate sits empty and shifted, ladder revealed.";
 					}
-					
+
 					$('<p>You are back in the small storage room. You came from the north. ' + bonuscrate + '</p>').insertBefore("#placeholder").fadeIn(1000);
 					currentroom = "bonus";
 				}
@@ -1822,7 +1826,7 @@ $(document).ready(function() {
 				}
 			}
 			//
-			
+
 			//go down ladder
 			else if (input == "go down" && currentroom == "bonus" && cratemove == true) {
 				if (beentojukebox == false) {
@@ -1860,7 +1864,7 @@ $(document).ready(function() {
 					}
 			}
 			//
-			
+
 			//go back to hallway from torture room
 			else if (input == "go west" && currentroom == "torture") {
 				$("video").detach("#screen");
@@ -1886,8 +1890,8 @@ $(document).ready(function() {
 				}
 			}
 			//
-			
-			
+
+
 			//go to morgue from torture room
 			else if (input == "go south" && currentroom == "torture") {
 				$("video").detach("#screen");
@@ -1908,7 +1912,7 @@ $(document).ready(function() {
 				}
 			}
 			//
-			
+
 			//go to torture room from morgue
 			else if (input == "go north" && currentroom == "morgue") {
 				$("video").detach("#screen");
@@ -1940,15 +1944,15 @@ $(document).ready(function() {
 				}
 			}
 			//
-			
-			
-			
+
+
+
 			else $('<p>You can\'t go that way.</p>').insertBefore("#placeholder").fadeIn(1000);
 		}
 		//
 		//end go
 		//
-		
+
 		//
 		//radio
 		//
@@ -1967,7 +1971,7 @@ $(document).ready(function() {
 				$('<p>Playing Portal Radio. Performer: I dunno, some mariachi band?</p>').insertBefore("#placeholder").fadeIn(1000);
 				$('<img src="images/pr.png" style="width:250px;height:250px" id="yep">').insertBefore("#nope");
 				playing = true
-			
+
 			}
 			else if (input == "play ambient piano") {
 				$("audio").detach("#yep");
@@ -2026,7 +2030,7 @@ $(document).ready(function() {
 				$('<img src="images/GIR.png" style="width:250px;height:250px" id="yep">').insertBefore("#nope");
 			}
 			else { $('<p>I\'m afraid "' + input + '" is either not a possible song <br>or at least not one I have ready for you.</p>').insertBefore("#placeholder").fadeIn(1000);}
-			
+
 		}
 		//
 
@@ -2041,14 +2045,14 @@ $(document).ready(function() {
 			else { $('<p>Stop song is the proper command my liege.</p>').insertBefore("#placeholder").fadeIn(1000);}
 		}
 		//radio stop
-		
+
 
 
 		//victory
 		//$("#container").fadeOut(3000, function() {
 		//	$("#wingame").fadeIn(3000);
-		//})	
-		
+		//})
+
 		else if (input != "") {
 			$('<p>I\'m sorry, what kind of simpleton tries to use "' + input + '"?</p>').insertBefore("#placeholder").fadeIn(1000);
 		}
@@ -2067,7 +2071,7 @@ $(document).ready(function() {
 		}
 		else if (torch == false && currentroom != "hallway") {
 			$("audio").detach("#torch");
-			
+
 		}
 
 		//heart display
@@ -2149,7 +2153,7 @@ $(document).ready(function() {
 		}
 		//end of health display
 
-		
+
 		//inventory display
 		if (torch == true && listed_t == false) {
 			$('<p id="torchInv">Torch</p>').insertBefore('#inv_box_bottom');
