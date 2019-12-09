@@ -1730,7 +1730,7 @@ $(document).ready(function() {
 			//go to room 2.2
 			else if (input == "go through door 1" && currentroom == "area_hub") {
 				if (beento2_2 == false) {
-					$('<p>You enter a room that is obviously the first of many.<br> Agaist the left wall, there sits a large scale.<br>On one arm, a stone, and on the other, a standard scale platform.<br>In the back right corner, is a small fountain, with a bucket to its side.</p>').insertBefore("#placeholder").fadeIn(1000);
+					$('<p>You enter a room that is obviously the first of many.<br> Agaist the left wall, there sits a large scale.<br>On one arm, a stone, and on the other, a standard scale platform.<br>In the back right corner, is a small fountain, with a bucket to its side.<br>Finally, under the stone, there lies a rug with a small tag visible beneath.</p>').insertBefore("#placeholder").fadeIn(1000);
 
 					beento2_2 = true;
 				}
@@ -2182,7 +2182,7 @@ $(document).ready(function() {
 			$('<p id="A1Key">Key</p>').insertBefore('#inv_box_bottom');
 			listed_ke = true;
 		}
-		if (key_1 == "used" && listed_ke == false) {
+		if (key_1 == "used" && listed_ke == true) {
 			$('#A1Key').fadeOut(10);
 		}
 		if (whip == true && listed_w == false) {
