@@ -1,6 +1,7 @@
 //
 //SETS ALL VARIABLES FOR THE GAME
 //
+bukShot = 0;
 cellunlocked = false;
 torch_ply = false;
 beentohallway = false;
@@ -19,6 +20,12 @@ unlocked_4 = false;
 unlocked_5 = false;
 unlocked_6 = false;
 cratemove = false;
+beento2_2 = false;
+beento2_3 = false;
+beento2_4 = false;
+beento2_5 = false;
+beento2_6 = false;
+beento2_7 = false;
 //inventory
 paperclip = false;
 icecream = false;
@@ -32,6 +39,13 @@ hat = false;
 whip = false;
 key_1 = false;
 powder = false;
+bucket_e = false;
+bucket_f = false;
+key2_3 = false;
+key2_4 = false;
+key2_5 = false;
+key2_6 = false;
+key2_7 = false;
 inventory = false;
 music = false;
 plying_m = false;
@@ -46,18 +60,38 @@ listed_kn = false;
 listed_ke = false;
 listed_pow = false;
 listed_burnt = false;
+listed_bucket_e = false;
+listed_bucket_f = false;
+listed_key2_3 = false;
+listed_key2_4 = false;
+listed_key2_5 = false;
+listed_key2_6 = false;
+listed_key2_7 = false;
+//puzzle solving for room re-entering
+solved2_2 = false;
+solved2_3 = false;
+solved2_4 = false;
+solved2_5 = false;
+solved2_6 = false;
+solved2_7 = false;
 
 //
 currentroom = "jail";
+bukFight = false;
 searchtable = false;
 crate = false;
 zombiedead = false;
 health = 100;
 z_health = 2;
+buk_health = 5;
 Xtra = 0;
 //array variables
 var array_z = [2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 1, 1, 1, 1, 1, 1, 1, 1, 0];
 function ATK_z(array_z) { return array_z[Math.floor(Math.random() * array_z.length)]; };
+var ary_stndrd = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20];
+var ary_player = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20];
+function ATK(ary_stndrd) { return ary_stndrd[Math.floor(Math.random() * ary_stndrd.length)]; };
+function ATK_P(ary_player) { return ary_player[Math.floor(Math.random() * ary_player.length)]; };
 //
 //
 //
@@ -175,13 +209,11 @@ $(document).ready(function() {
 				beentoexit_1 = true;
 				cratemove = true;
 				paperclip = true;
-				deadbugs = true;
 				lunchtray = true;
 				torch = true;
 				knife = true;
 				hat = true;
 				whip = true;
-				key_1 = true;
 				powder = true;
 				searchtable = true;
 				crate = true;
@@ -213,7 +245,7 @@ $(document).ready(function() {
 		//
 		//take
 		//
-		else if (input.indexOf("take") > -1 || input.indexOf("read") > -1 || input.indexOf("pick up") > -1) {
+		else if (input.indexOf("take") > -1 || input.indexOf("read") > -1 || input.indexOf("pick up") > -1 || input.indexOf("fill") > -1) {
 			
 			if (input == "take" || input == "pick up" || input == "read") {
 				$('<p>Take what? Be specific. Type "help" for a list of all commands.</p>').insertBefore("#placeholder").fadeIn(1000);
@@ -253,7 +285,9 @@ $(document).ready(function() {
 					$('<video autoplay loop id="screen"><source src="videos/video_JC/JCclip_tray.mp4" type="video/mp4">you cannot use screen</video>').insertBefore("#zero");
 					$('<p>You picked up a paper clip.</p>').insertBefore("#placeholder").fadeIn(1000);
 				}
-				else $('<p>That item is not here!</p>').insertBefore("#placeholder").fadeIn(1000);
+				else {
+					$('<p>That item is not here!</p>').insertBefore("#placeholder").fadeIn(1000);
+				}
 			}
 			//
 			
@@ -291,7 +325,9 @@ $(document).ready(function() {
 					$('<video autoplay loop id="screen"><source src="videos/video_JC/JCbug_tray.mp4" type="video/mp4">you cannot use screen</video>').insertBefore("#zero");
 					$('<p>You picked up some dead bugs. Gross.</p>').insertBefore("#placeholder").fadeIn(1000);
 				}
-				else $('<p>That item is not here!</p>').insertBefore("#placeholder").fadeIn(1000);
+				else {
+					$('<p>That item is not here!</p>').insertBefore("#placeholder").fadeIn(1000);
+				}
 			}
 			//
 			
@@ -342,7 +378,9 @@ $(document).ready(function() {
 					$('<p>You picked up a lunch tray.</p>').insertBefore("#placeholder").fadeIn(1000);
 				}
 			}
-				else $('<p>That item is not here!</p>').insertBefore("#placeholder").fadeIn(1000);
+				else {
+					$('<p>That item is not here!</p>').insertBefore("#placeholder").fadeIn(1000);
+				}
 			}
 			//
 			
@@ -364,7 +402,9 @@ $(document).ready(function() {
 						$('<video autoplay loop id="screen"><source src="videos/video_TH/TH_torch_note.mp4" type="video/mp4">you cannot use screen</video>').insertBefore("#zero");		
 					}
 				}
-				else $('<p>That item is not here!</p>').insertBefore("#placeholder").fadeIn(1000);
+				else {
+					$('<p>That item is not here!</p>').insertBefore("#placeholder").fadeIn(1000);
+				}
 			}
 			//
 			
@@ -386,7 +426,9 @@ $(document).ready(function() {
 					$("video").detach("#screen");
 					$('<video autoplay loop id="screen"><source src="videos/video_TH/TH_torch_note.mp4" type="video/mp4">you cannot use screen</video>').insertBefore("#zero");	
 				}
-				else $('<p>That item is not here!</p>').insertBefore("#placeholder").fadeIn(1000);
+				else {
+					$('<p>That item is not here!</p>').insertBefore("#placeholder").fadeIn(1000);
+				}
 			}
 			//
 			
@@ -403,7 +445,9 @@ $(document).ready(function() {
 						$('<p>A whip and a hat? Come on Indy, no shenanigans here.</p>').insertBefore("#placeholder").fadeIn(1000);
 					}
 				}
-				else $('<p>That item is not here!</p>').insertBefore("#placeholder").fadeIn(1000);
+				else {
+					$('<p>That item is not here!</p>').insertBefore("#placeholder").fadeIn(1000);
+				}
 			}
 			//
 
@@ -417,8 +461,33 @@ $(document).ready(function() {
 					$('<video autoplay loop id="screen"><source src="videos/video_WH/WH_cream.mp4" type="video/mp4">you cannot use screen</video>').insertBefore("#zero");
 					$('<p>You picked up some ice cream.</p>').insertBefore("#placeholder").fadeIn(1000);
 				}
-				else $('<p>That item is not here!</p>').insertBefore("#placeholder").fadeIn(1000);
+				else {
+					$('<p>That item is not here!</p>').insertBefore("#placeholder").fadeIn(1000);
+				}
 
+			}
+			//
+
+			//take bucket
+			else if (input == "take bucket") {
+				if (currentroom == "2.2" && bukFight == false) {
+					$('<p>OH MY GOD! THE BUCKET IS ALIVE!<br>AS NARRATOR AND DEVELOPER OF THIS GAME, I <i>NEVER</i> COULD HAVE SEEN THIS COMING!</p>').insertBefore("#placeholder").fadeIn(1000);
+					bukFight = true;
+				} else if (currentroom == "2.2" && bukFight == true && bucket_e == true) {
+					$('<p>That item is not here!</p>').insertBefore("#placeholder").fadeIn(1000);
+				}
+			}
+			//
+
+			//take water
+			else if (input == "take water" || input == "fill bucket") {
+				if (bucket_e == true) {
+					$("<p>You filled the bucket with water.<br>You can <i>place</i> that <i>bucket</i> if you so choose.</p>").insertBefore('#placeholder').fadeIn(1000);
+					bucket_f = true;
+					bucket_e = false;
+				} else if (bucket_f == true) {
+					$("<p>The bucket is already full.</p>").insertBefore('#placeholder').fadeIn(1000);
+				}
 			}
 			//
 
@@ -429,6 +498,31 @@ $(document).ready(function() {
 		//end take
 		//
 		
+		//place bucket
+		else if (input.indexOf("place") > -1) {
+			if (input == "place bucket") {
+				if (currentroom == "2.2") {
+					if (bucket_e == true) {
+						$('<p>Why? There\'s nothing in your bucket.</p>').insertBefore('#placeholder').fadeIn(1000);
+					} else if (bucket_f == true) {
+						$('<p>You place your bucket on the scale and watch it slowly tip.<br>Below the stone, you see a small rug, with a tag sticking out from underneath</p>').insertBefore('#placeholder').fadeIn(1000);
+						bucket_f = false;
+						$('#bukF').fadeOut(10);
+						solved2_2 = true;
+					} else {
+						$('<p>What bucket?</p>').insertBefore('#placeholder').fadeIn(1000);
+					}
+				} else {
+					if (bucket_e == true) {
+						$('<p>Why? There\'s nowhere to do that here, plus, your bucket is empty.</p>').insertBefore('#placeholder').fadeIn(1000);
+					} else if (bucket_f == true) {
+						$('<p>Why? There\'s nowhere to do that here.</p>').insertBefore('#placeholder').fadeIn(1000);
+					}  else {
+						$('<p>What bucket?</p>').insertBefore('#placeholder').fadeIn(1000);
+					}
+				}
+			}
+		}
 		
 		//
 		//search
@@ -521,6 +615,18 @@ $(document).ready(function() {
 				}
 			}
 			
+			//rug 2.2
+			else if (input == "search rug") {
+				if (solved2_2 == false) {
+					$('<p>You can\'t, the stone is still down.</p>').insertBefore("#placeholder").fadeIn(1000);
+				} else if (solved2_2 == true) {
+					$('<p>You search the rug and find a key labeled <b>"Room 2"</b></p>').insertBefore("#placeholder").fadeIn(1000);
+					key2_3 = true;
+					solved2_2 = "complete";
+				} else {
+					$('<p>You already have.</p>').insertBefore('#placeholder').fadeIn(1000);
+				}
+			}
 			
 
 			else $('<p>There is nothing to search for.</p>').insertBefore("#placeholder").fadeIn(1000);
@@ -540,6 +646,14 @@ $(document).ready(function() {
 				$('<p>You reveal a ladder downwards.</p>').insertBefore("#placeholder").fadeIn(1000);
 				cratemove = true
 				
+			}
+			else if (input == "move stone" && currentroom == "2.2") {
+				if (solved2_2 == false) {
+					$('<p>I mean yeah, if a bucket of water can lift it I guess it can\'t be too heavy.</p>').insertBefore('#placeholder').fadeIn(1000);
+					solved2_2 == true;
+				} else if (solved2_2 == true || solved2_2 == "complete") {
+					$('<p>It\'s already moved.</p>').insertBefore('#placeholder').fadeIn(1000);
+				}
 			}
 			else $('<p>You can\'t do that</p>').insertBefore("#placeholder").fadeIn(1000);
 		}
@@ -630,7 +744,7 @@ $(document).ready(function() {
 		
 		
 		//
-		//kill
+		//attack
 		//
 		else if (input.indexOf("attack") > -1) {
 			
@@ -639,6 +753,9 @@ $(document).ready(function() {
 			}
 			else if (input == "attack zombie" && currentroom == "morgue") {
 				$('<p>attack zombie with what?</p>').insertBefore("#placeholder").fadeIn(1000);
+			}
+			else if (input == "attack bucket" && currentroom == "2.2") {
+				$('<p>attack bucket with what?</p>').insertBefore("#placeholder").fadeIn(1000);
 			}
 			
 			//zombie
@@ -713,7 +830,7 @@ $(document).ready(function() {
 			}
 			//
 			
-			//attack whip
+			//attack with whip
 			else if (input == "attack zombie with whip") {
 				if (currentroom == "morgue" && whip == true && zombiedead == false) {
 					ATK_z(array_z);
@@ -744,6 +861,166 @@ $(document).ready(function() {
 				}
 			}
 			//
+
+			//attack bucket
+			else if (input == "attack bucket with knife" && currentroom == "2.2" && bukFight == true && bucket_e == false && bucket_f == false) {
+				if (buk_health >= 2) {
+					bukDam = Math.ceil(Math.random() * 20);
+					playDam = Math.ceil(Math.random() * 20);
+					if (bukDam == 20) {
+						health -= 5;
+						$('<p>The bucket kicks you in the shins and you take 5 damage.</p>').insertBefore("#placeholder").fadeIn(1000);
+					} else if (bukDam == 1) {
+						if (buk_health == 2) {
+							buk_health = 0;
+							$('<p>The bucket literally fell over and died.<br>You pick up the bucket.</p>').insertBefore("#placeholder").fadeIn(1000);
+							bucket_e = true;
+						} else {
+							buk_health -= 2;
+							$('<p>The bucket tripped trying to attack and took double damage.</p>').insertBefore("#placeholder").fadeIn(1000);
+						}
+					} else if (bukDam != 1 && (bukDam - 8) < playDam) {
+						buk_health -= 1;
+						$('<p>You stike the bucket with your knife.</p>').insertBefore("#placeholder").fadeIn(1000);
+					} else if (bukDam != 20 && bukDam > playDam) {
+						$('<p>The bucket evaded your attempt.</p>').insertBefore("#placeholder").fadeIn(1000);
+					}
+				} else if (buk_health < 2) {
+					bukDam = ATK(ary_stndrd);
+					playDam = ATK_P(ary_player);
+					if (bukDam == 20) {
+						health -= 5;
+						$('<p>The bucket kicks you in the shins and you take 5 damage.</p>').insertBefore("#placeholder").fadeIn(1000);
+					} else if (bukDam == 1) {
+						buk_health = 0;
+						$('<p>The bucket literally fell over and died.<br>You pick up the bucket.</p>').insertBefore("#placeholder").fadeIn(1000);
+						bucket_e = true;
+					} else if (bukDam != 1 && (bukDam - 8) < playDam) {
+						buk_health = 0;
+						$('<p>You struck the bucket and killed it.<br>You pick up the bucket</p>').insertBefore("#placeholder").fadeIn(1000);
+						bucket_e = true;
+					} else if (bukDam != 20 && bukDam > playDam) {
+						$('<p>The bucket dodged your advance!</p>').insertBefore("#placeholder").fadeIn(1000);
+					}
+				}
+			}
+			else if (input == "attack bucket with whip" && currentroom == "2.2" && bukFight == true) {
+				if (buk_health >= 2) {
+					bukDam = Math.ceil(Math.random() * 20);
+					playDam = Math.ceil(Math.random() * 20);
+					if (bukDam == 20) {
+						health -= 5;
+						$('<p>The bucket kicks you in the shins and you take 5 damage.</p>').insertBefore("#placeholder").fadeIn(1000);
+					} else if (bukDam == 1) {
+						if (buk_health == 2) {
+							buk_health = 0;
+							$('<p>The bucket literally fell over and died.<br>You pick up the bucket.</p>').insertBefore("#placeholder").fadeIn(1000);
+							bucket_e = true;
+						} else {
+							buk_health -= 2;
+							$('<p>The bucket tripped trying to attack and took double damage.</p>').insertBefore("#placeholder").fadeIn(1000);
+						}
+					} else if (bukDam != 1 && (bukDam - 8) < playDam) {
+						buk_health -= 1;
+						$('<p>You whip the bucket.</p>').insertBefore("#placeholder").fadeIn(1000);
+					} else if (bukDam != 20 && bukDam > playDam) {
+						$('<p>The bucket evaded your attempt.</p>').insertBefore("#placeholder").fadeIn(1000);
+					}
+				} else if (buk_health < 2) {
+					bukDam = ATK(ary_stndrd);
+					playDam = ATK_P(ary_player);
+					if (bukDam == 20) {
+						health -= 5;
+						$('<p>The bucket kicks you in the shins and you take 5 damage.</p>').insertBefore("#placeholder").fadeIn(1000);
+					} else if (bukDam == 1) {
+						buk_health = 0;
+						$('<p>The bucket literally fell over and died.<br>You pick up the bucket.</p>').insertBefore("#placeholder").fadeIn(1000);
+						bucket_e = true;
+					} else if (bukDam != 1 && (bukDam - 8) < playDam) {
+						buk_health = 0;
+						$('<p>You whipped the bucket and killed it.<br>You pick up the bucket</p>').insertBefore("#placeholder").fadeIn(1000);
+						bucket_e = true;
+					} else if (bukDam != 20 && bukDam > playDam) {
+						$('<p>The bucket dodged your advance!</p>').insertBefore("#placeholder").fadeIn(1000);
+					}
+				}
+			}
+			else if (input == "attack bucket with tray" && currentroom == "2.2" && bukFight == true) {
+				if (buk_health >= 2) {
+					bukDam = Math.ceil(Math.random() * 20);
+					playDam = Math.ceil(Math.random() * 20);
+					if (bukDam == 20) {
+						health -= 5;
+						$('<p>The bucket kicks you in the shins and you take 5 damage.</p>').insertBefore("#placeholder").fadeIn(1000);
+					} else if (bukDam == 1) {
+						if (buk_health == 2) {
+							buk_health = 0;
+							$('<p>The bucket literally fell over and died.<br>You pick up the bucket.</p>').insertBefore("#placeholder").fadeIn(1000);
+							bucket_e = true;
+						} else {
+							buk_health -= 2;
+							$('<p>The bucket tripped trying to attack and took double damage.</p>').insertBefore("#placeholder").fadeIn(1000);
+						}
+					} else if (bukDam != 1 && (bukDam - 8) < playDam) {
+						buk_health -= 1;
+						$('<p>You whack the bucket with your tray.</p>').insertBefore("#placeholder").fadeIn(1000);
+					} else if (bukDam != 20 && bukDam > playDam) {
+						$('<p>The bucket evaded your attempt.</p>').insertBefore("#placeholder").fadeIn(1000);
+					}
+				} else if (buk_health < 2) {
+					bukDam = ATK(ary_stndrd);
+					playDam = ATK_P(ary_player);
+					if (bukDam == 20) {
+						health -= 5;
+						$('<p>The bucket kicks you in the shins and you take 5 damage.</p>').insertBefore("#placeholder").fadeIn(1000);
+					} else if (bukDam == 1) {
+						buk_health = 0;
+						$('<p>The bucket literally fell over and died.<br>You pick up the bucket.</p>').insertBefore("#placeholder").fadeIn(1000);
+						bucket_e = true;
+					} else if (bukDam != 1 && (bukDam - 8) < playDam) {
+						buk_health = 0;
+						$('<p>You smacked the bucket one final time and killed the helpless bucket.<br>You pick up the bucket</p>').insertBefore("#placeholder").fadeIn(1000);
+						bucket_e = true;
+					} else if (bukDam != 20 && bukDam > playDam) {
+						$('<p>The bucket dodged your advance!</p>').insertBefore("#placeholder").fadeIn(1000);
+					}
+				}
+			}
+			else if (input == "attack bucket with gun" && currentroom == "2.2" && bukFight == true) {
+				if (bukShot == 0) {
+					$('<p>Dude.<br>You just put a hole, in the bucket that you need to <i>fill</i> to solve this puzzle<br>Like yeah, it\'s dead now, but you ruined it<br><br>You know what?<br>no<br>I brought it back to life so you can try that agin, I mean come on, really</p>').insertBefore("#placeholder").fadeIn(1000);
+					bukShot = 1;
+				} else if (bukShot == 1) {
+					$('<p>Seriously<br>Stop<br>I brought it back again but this was the last time.</p>').insertBefore("#placeholder").fadeIn(1000);
+					bukShot = 2;
+				} else if (bukShot >= 2) {
+					$('<p>I warned you<br>You shot the bucket, and considering breaking the bucket renders the game unplayable<br>And you would\'nt listen to me<br>This is soviet Russia now,<br>And in soviet Russia, bucket shoots you<br><br>You have died<br>good job.</p>').insertBefore("#placeholder").fadeIn(1000);
+					$("audio").detach("#yep");
+					$("img").detach("#yep");
+					$("video").detach("#screen");
+					$("#map_box_TH").fadeOut(12000);
+					$("#map_box_WH").fadeOut(12000);
+					$("#map_back").fadeOut(12000);
+					$("#hallway").fadeOut(12000);
+					$("#hallway_TH1").fadeOut(12000);
+					$("#hallway_TH2").fadeOut(12000);
+					$("#hallway_WH1").fadeOut(12000);
+					$("#hallway_WH2").fadeOut(12000);
+					$("#inventory").fadeOut(12000);
+					$("#inventory_br").fadeOut(12000);
+					$("#inventory_box").fadeOut(12000);
+					$("#location_JC").fadeOut(12000);
+					$("#location_TH").fadeOut(12000);
+					$("#location_WH").fadeOut(12000);
+					$("#health_display").fadeOut(12000);
+					$("#map_box_test").fadeOut(12000);
+					$("#container").fadeOut(12000, function() {
+						$("#killself").fadeIn(12000);
+					});
+				}
+			}
+			//
+
 
 			//kill self
 			else if (input == "attack self with lunch tray" || input == "attack self with lunchtray" || input == "attack self with tray") {
@@ -873,7 +1150,7 @@ $(document).ready(function() {
 		
 		}
 		//
-		//end kill
+		//end attack
 		//
 		
 		
@@ -983,7 +1260,7 @@ $(document).ready(function() {
 				};
 				//
 				
-				//goo
+				//powder
 				if (powder == true) {
 					powd = "Strange Powder<br />";
 				}
@@ -991,12 +1268,29 @@ $(document).ready(function() {
 					powd = "";
 				}
 				//
+
+				//bucket
+				if (bucket_e == true) {
+					buk = "empty bucket";
+				} else if (bucket_f == true) {
+					buk = "bucket of water";
+				} else {
+					buk = "";
+				}
+				//
+
+				//key2_3
+				if(key2_3 == true){
+					ky2_3 = 'a key labeled "2"';
+				} else {
+					ky2_3 = "";
+				}
 				
 				if (pclip == "" && dbugs == "" && ltray == "") {
 					$('<p>Inventory:<br /><i>There is nothing in your inventory</i></p>').insertBefore("#placeholder").fadeIn(1000);
 				}
 				else {
-					 $('<p>Inventory:<br />' + pclip + dbugs + ltray + tch + btch + nt + ht + whp + knf + ky_1 + powd + icre + '</p>').insertBefore("#placeholder").fadeIn(1000);
+					 $('<p>Inventory:<br />' + pclip + dbugs + ltray + tch + btch + nt + ht + whp + knf + ky_1 + powd + icre + buk + ky2_3 + '</p>').insertBefore("#placeholder").fadeIn(1000);
 				}
 			}
 			else $('<p>I don\'t understand "' + input + '"</p>').insertBefore("#placeholder").fadeIn(1000);
@@ -1072,7 +1366,7 @@ $(document).ready(function() {
 			}
 			//
 			
-			//exit door
+			//A1 exit door
 			else if (input == "unlock door with key") {
 				if (currentroom != "exit_1") {
 					$('<p>You can\'t do that.</p>').insertBefore("#placeholder").fadeIn(1000);
@@ -1089,6 +1383,18 @@ $(document).ready(function() {
 			}
 			//
 			
+			//door to 2.3
+			else if (input == "unlock door 2 with key") {
+				if (key2_3 == true) {
+					$('<p>You successfully unlocked the second door</p>').insertBefore('#placeholder').fadeIn(1000);
+					key2_3 = "used";
+					unlocked_2 = true;
+				} else {
+					$('<p>You don\'t have that key.</p>').insertBefore('#placeholder').fadeIn(1000);
+				}
+			}
+			//
+
 			else $('<p>I don\'t understand "' + input + '"</p>').insertBefore("#placeholder").fadeIn(1000);
 			
 		}
@@ -1380,19 +1686,12 @@ $(document).ready(function() {
 			//
 
 			//go to hub
-			else if (input == "go north" && currentroom == "corridor_2") {
+			else if (input == "go north" && currentroom == "corridor_2" || input == "go back" && currentroom == "2.2" || input == "go back" && currentroom == "2.3" || input == "go back" && currentroom == "2.4" || input == "go back" && currentroom == "2.5" || input == "go back" && currentroom == "2.6" || input == "go back" && currentroom == "2.7") {
 				if (beentohub == false) {
 				$("#area_hub").clone().insertBefore("#placeholder").fadeIn(1000);
-				currentroom = "area_hub";
 				beentohub = true;
 				}
 				else {
-					if (unlocked_2 == true) {
-						ulo2 = "";
-					}
-					else {
-						ulo2 = "2,";
-					}
 					if (unlocked_3 == true) {
 						ulo3 = "";
 					}
@@ -1418,13 +1717,45 @@ $(document).ready(function() {
 						ulo6 = "6";
 					}
 					if (unlocked_2 == false) {
-						$('<p>All but the first door are locked.</p>').insertBefore("#placeholder").fadeIn(1000);
+						$('<p>You return to the hub, south the corridor,<br>All but the first door are locked.</p>').insertBefore("#placeholder").fadeIn(1000);
 					}
 					else {
-						$('<p>You return to the hub room. <br>Doors 1, ' + ulo2 + ulo3 + ulo4 + ulo5 + ulo6 +' are still locked.</p>').insertBefore("#placeholder").fadeIn(1000);
+						$('<p>You return to the hub room. <br>Doors ' + ulo3 + ulo4 + ulo5 + ulo6 +' are still locked.</p>').insertBefore("#placeholder").fadeIn(1000);
 					}
 				}
+				currentroom = "area_hub";
 			}
+			//
+
+			//go to room 2.2
+			else if (input == "go through door 1" && currentroom == "area_hub") {
+				if (beento2_2 == false) {
+					$('<p>You enter a room that is obviously the first of many.<br> Agaist the left wall, there sits a large scale.<br>On one arm, a stone, and on the other, a standard scale platform.<br>In the back right corner, is a small fountain, with a bucket to its side.</p>').insertBefore("#placeholder").fadeIn(1000);
+					
+					beento2_2 = true;
+				}
+				else {
+					if (bucket_e == false && solved2_2 == false && bucket_f == false) {
+						$("<p>You return to the first challenge room, the bucket remains, the puzzle unsolved.<br>It's as if you've done nothing.</p>").insertBefore("#placeholder").fadeIn(1000);
+					} else if (bucket_e == true && solved2_2 == false) {
+						$("<p>You walk back into the first challenge room,<br>You have the pieces to solve this puzzle, but you haven't<br>Why is that?</p>").insertBefore("#placeholder").fadeIn(1000);
+					} else if (bucket_f == true && solved2_2 == false) {
+						$("<p>Come on now. The bucket is full. One command will complete this puzzle<br>What are you waiting for?!</p>").insertBefore("#placeholder").fadeIn(1000);
+					} else if (bucket_e == true && solved2_2 == true) {
+						$("<p>This room is done, I guess there could be a reason to be back here, but that's on you.</p>").insertBefore("#placeholder").fadeIn(1000);
+					} else if (bucket_f == true && solved2_2 == true) {
+						$("<p>You're back in the first challenge room<br>There's nothing left to do here, but you're back.</p>").insertBefore("#placeholder").fadeIn(1000);
+					} else {
+						$("<p>You're back in the first challenge room, if you\'re seeing this, you have done such a series of choices that I didn't write specific code for you.<br>Sorry, but also well done.</p>").insertBefore("#placeholder").fadeIn(1000);
+					}
+				}
+				currentroom = "2.2";
+			}
+
+			//
+
+			//got to room 2.3
+
 			//
 			
 			//return to corridor_2
@@ -1821,7 +2152,7 @@ $(document).ready(function() {
 		
 		//inventory display
 		if (torch == true && listed_t == false) {
-			$('<p>Torch</p>').insertBefore('#inv_box_bottom');
+			$('<p id="torchInv">Torch</p>').insertBefore('#inv_box_bottom');
 			listed_t = true;
 		}
 		if (deadbugs == true || deadbugs == "ate") {
@@ -1844,16 +2175,40 @@ $(document).ready(function() {
 			listed_kn = true;
 		}
 		if (key_1 == true && listed_ke == false) {
-			$('<p>Key</p>').insertBefore('#inv_box_bottom');
+			$('<p id="A1Key">Key</p>').insertBefore('#inv_box_bottom');
 			listed_ke = true;
+		}
+		if (key_1 == "used" && listed_ke == false) {
+			$('#A1Key').fadeOut(10);
 		}
 		if (whip == true && listed_w == false) {
 			$('<p>Whip</p>').insertBefore('#inv_box_bottom');
 			listed_w = true;
 		}
 		if (powder == true && listed_pow == false) {
-			$('<p>Stramge Powder</p>').insertBefore('#inv_box_bottom');
+			$('<p>Strange Powder</p>').insertBefore('#inv_box_bottom');
 			listed_pow = true;
+		}
+		if (bucket_e == true && listed_bucket_e == false) {
+			$('<p id="bukE">Empty bucket</p>').insertBefore('#inv_box_bottom');
+			listed_bucket_e = true;
+		}
+		if (bucket_f == true && listed_bucket_f == false) {
+			$('#bukE').fadeOut(10);
+			$('<p id="bukF">Bucket of Water</p>').insertBefore('#inv_box_bottom');
+			listed_bucket_f = true;
+		}
+		if (burnttorch == true && listed_burnt == false) {
+			$('#torchInv').fadeOut(10);
+			$('<p>Burnt Torch</p>').insertBefore('#inv_box_bottom');
+			listed_burnt = true;
+		}
+		if (key2_3 == true && listed_key2_3 == false) {
+			$('<p id="key2_3Inv">Door 2 key</p>').insertBefore('#inv_box_bottom');
+			listed_key2_3 = true;
+		}
+		if (key2_3 == "used" && listed_key2_3 == true) {
+			$('#key2_3Inv').fadeOut(10);
 		}
 
 
