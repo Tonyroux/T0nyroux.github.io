@@ -1556,31 +1556,31 @@ $(document).ready(function() {
 						ulo3 = "";
 					}
 					else {
-						ulo3 = "3,";
+						ulo3 = " 3,";
 					}
 					if (unlocked_4 == true) {
 						ulo4 = "";
 					}
 					else {
-						ulo4 = "4,";
+						ulo4 = " 4,";
 					}
 					if (unlocked_5 == true) {
 						ulo5 = "";
 					}
 					else {
-						ulo5 = "5,";
+						ulo5 = " 5,";
 					}
 					if (unlocked_6 == true) {
 						ulo6 = "";
 					}
 					else {
-						ulo6 = "6";
+						ulo6 = " 6";
 					}
 					if (unlocked_2 == false) {
 						$('<p>You return to the hub, south the corridor,<br>All but the first door are locked.</p>').insertBefore("#placeholder").fadeIn(1000);
 					}
 					else {
-						$('<p>You return to the hub room. <br>Doors ' + ulo3 + ulo4 + ulo5 + ulo6 +' are still locked.</p>').insertBefore("#placeholder").fadeIn(1000);
+						$('<p>You return to the hub room. <br>Doors' + ulo3  + ulo4 + ulo5 + ulo6 +' are still locked.</p>').insertBefore("#placeholder").fadeIn(1000);
 					}
 				}
 				currentroom = "area_hub";
@@ -1618,8 +1618,16 @@ $(document).ready(function() {
 
 			//
 
-			//got to room 2.3
-
+			//go to room 2.3
+			else if (input == "go through door 2" && currentroom == "area_hub") {
+				if (beento2_3 == false) {
+					beento2_3 = true;
+					$("<p>I have no idea why you're here, there's no content yet, sorry, but I am coding this alone.</p>").insertBefore('#placeholder').fadeIn(1000);
+				} else {
+					$("<p>Still nothing here, I appreciate the dedication though.</p>").insertBefore('#placeholder').fadeIn(1000);
+				}
+				currentroom = "2.3"
+			}
 			//
 
 			//return to corridor_2
@@ -2119,20 +2127,62 @@ $(document).ready(function() {
 		else if (currentArea == 2) {
 			if (currentroom == "corridor_2") {
 				$('.A1').fadeOut(500);
-			} else if (currentroom == "area_hub") {
-
+				$('#location2_1').fadeOut(500);
+				$('#location2_0').fadeIn(500);
+				$('#room2_0').fadeIn(500);
+			} else if (currentroom == "area_hub" && unlocked_2 == false) {
+				$('#location2_0').fadeOut(500);
+				$('#location2_2').fadeOut(500);
+				$('#location2_1').fadeIn(500);
+				$('#room2_1').fadeIn(500);
+				$('#doors1').fadeIn(500);
+			} else if (currentroom == "area_hub" && unlocked_2 == true) {
+				$('#location2_0').fadeOut(500);
+				$('#location2_2').fadeOut(500);
+				$('#location2_3').fadeOut(500);
+				$('#location2_4').fadeOut(500);
+				$('#location2_5').fadeOut(500);
+				$('#location2_6').fadeOut(500);
+				$('#location2_7').fadeOut(500);
+				$('#location2_1').fadeIn(500);
+				$('#room2_1').fadeIn(500);
 			} else if (currentroom == "2.2") {
-
+				$('#location2_1').fadeOut(500);
+				$('#location2_2').fadeIn(500);
+				$('#room2_2').fadeIn(500);
 			} else if (currentroom == "2.3") {
-
+				$('#location2_1').fadeOut(500);
+				$('#location2_3').fadeIn(500);
+				$('#room2_3').fadeIn(500);
 			} else if (currentroom == "2.4") {
-
+				$('#location2_1').fadeOut(500);
+				$('#location2_4').fadeIn(500);
+				$('#room2_4').fadeIn(500);
 			} else if (currentroom == "2.5") {
-
+				$('#location2_1').fadeOut(500);
+				$('#location2_5').fadeIn(500);
+				$('#room2_5').fadeIn(500);
 			} else if (currentroom == "2.6") {
-
+				$('#location2_1').fadeOut(500);
+				$('#location2_6').fadeIn(500);
+				$('#room2_6').fadeIn(500);
 			} else if (currentroom == "2.7") {
-
+				$('#location2_1').fadeOut(500);
+				$('#location2_7').fadeIn(500);
+				$('#room2_7').fadeIn(500);
+			}
+			if (unlocked_2 == true) {
+				$('#doors2').fadeIn(500);
+			} else if (unlocked_3 == true) {
+				$('#doors3').fadeIn(500);
+			} else if (unlocked_4 == true) {
+				$('#doors4').fadeIn(500);
+			} else if (unlocked_5 == true) {
+				$('#doors5').fadeIn(500);
+			} else if (unlocked_6 == true) {
+				$('#doors6').fadeIn(500);
+			} else if (solved2_6 == "complete") {
+				$('#A2Exit').fadeIn(500);
 			}
 		}
 		//
