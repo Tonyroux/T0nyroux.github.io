@@ -256,6 +256,26 @@ input:focus {
 	position: absolute;
 }
 
+#hallway_A1E {
+	background-color: lightgreen;
+	display: none;
+	height: 3px;
+	width: 12px;
+	margin-top: 362px;
+	margin-left: 1200px;
+	position: absolute;
+}
+
+#hallway_TR {
+	background-color: gray;
+	display: none;
+	height: 8px;
+	width: 5px;
+	margin-top: 417px;
+	margin-left: 1285px;
+	position: absolute;
+}
+
 #map_box_TH {
 	background-color: white;
 	border:2px solid rgb(172, 145, 73);
@@ -276,6 +296,50 @@ input:focus {
 	width: 30px;
 	margin-top: 395px;
 	margin-left: 1190px;
+}
+
+#map_box_A1E {
+	background-color: white;
+	border:2px solid rgb(172, 145, 73);
+	display: none;
+	position: absolute;
+	height: 20px;
+	width: 30px;
+	margin-top: 365px;
+	margin-left: 1190px;
+}
+
+#map_box_CR {
+	background-color: white;
+	border:2px solid rgb(172, 145, 73);
+	display: none;
+	position: absolute;
+	height: 20px;
+	width: 30px;
+	margin-top: 425px;
+	margin-left: 1190px;
+}
+
+#map_box_TR {
+	background-color: white;
+	border:2px solid rgb(172, 145, 73);
+	display: none;
+	position: absolute;
+	height: 20px;
+	width: 30px;
+	margin-top: 395px;
+	margin-left: 1270px;
+}
+
+#map_box_MG {
+	background-color: white;
+	border:2px solid rgb(172, 145, 73);
+	display: none;
+	position: absolute;
+	height: 20px;
+	width: 30px;
+	margin-top: 425px;
+	margin-left: 1270px;
 }
 
 #location_JC {
@@ -308,6 +372,50 @@ input:focus {
 	width: 5px;
 	margin-top: 405px;
 	margin-left: 1198px;
+	z-index: 1;
+}
+
+#location_CR {
+	background-color: blue;
+	display: none;
+	position: absolute;
+	height: 5px;
+	width: 5px;
+	margin-top: 435px;
+	margin-left: 1198px;
+	z-index: 1;
+}
+
+#location_A1E {
+	background-color: blue;
+	display: none;
+	position: absolute;
+	height: 5px;
+	width: 5px;
+	margin-top: 375px;
+	margin-left: 1198px;
+	z-index: 1;
+}
+
+#location_MG {
+	background-color: blue;
+	display: none;
+	position: absolute;
+	height: 5px;
+	width: 5px;
+	margin-top: 435px;
+	margin-left: 1282px;
+	z-index: 1;
+}
+
+#location_TR {
+	background-color: blue;
+	display: none;
+	position: absolute;
+	height: 5px;
+	width: 5px;
+	margin-top: 405px;
+	margin-left: 1282px;
 	z-index: 1;
 }
 

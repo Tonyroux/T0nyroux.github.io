@@ -959,7 +959,7 @@ $(document).ready(function() {
 					$("audio").detach(".death");
 					$("img").detach(".death");
 					$("video").detach(".death");
-					$(".death").fadeOut(3000);
+					$(".death").fadeOut(12000);
 					$("#container").fadeOut(12000, function() {
 						$("#killself").fadeIn(12000);
 					});
@@ -1342,7 +1342,6 @@ $(document).ready(function() {
 						}
 					}
 					else {
-						$(".Map_TH").fadeIn(500);
 						$("#area_hallway").clone().insertBefore("#placeholder").fadeIn(1000);
 						currentroom = "hallway";
 						beentohallway = true;
@@ -1446,7 +1445,6 @@ $(document).ready(function() {
 						beentorture = true;
 						$("video").detach("#screen");
 						$('<video autoplay loop id="screen"><source src="videos/video_TR/TR.mp4" type="video/mp4">you cannot use screen</video>').insertBefore("#zero");
-						$('.Map_TR').fadeIn(500);
 						currentroom = "torture";
 					}
 				}
@@ -1474,7 +1472,6 @@ $(document).ready(function() {
 					}
 					else {
 						$("#area_westhall").clone().insertBefore("#placeholder").fadeIn(1000);
-						$(".Map_WH").fadeIn(500);
 						$("video").detach("#screen");
 						$('<video autoplay loop id="screen"><source src="videos/video_WH/WH.mp4" type="video/mp4">you cannot use screen</video>').insertBefore("#zero");
 						beentowesthall = true;
@@ -2085,29 +2082,43 @@ $(document).ready(function() {
 			if (currentroom == "jail") {
 				$("#location_TH").fadeOut(500);
 				$("#location_JC").fadeIn(500);
+				$(".Map_JC").fadeIn(500);
 			} else if (currentroom == "hallway") {
 				$("#location_JC").fadeOut(500);
 				$("#location_WH").fadeOut(500);
 				$("#location_TR").fadeOut(500);
 				$("#location_TH").fadeIn(500);
+				$(".Map_TH").fadeIn(500);
 			} else if (currentroom == "torture") {
-
+				$('#location_TH').fadeOut(500);
+				$('#location_MG').fadeOut(500);
+				$('#location_TR').fadeIn(500);
+				$(".Map_TR").fadeIn(500);
 			} else if (currentroom == "morgue") {
-
+				$('#location_TR').fadeOut(500);
+				$('#location_MG').fadeIn(500);
+				$(".Map_MG").fadeIn(500);
 			} else if (currentroom == "westhall") {
 				$("#location_TH").fadeOut(500);
+				$('#location_CR').fadeOut(500);
+				$('#location_A1E').fadeOut(500);
 				$("#location_WH").fadeIn(500);
+				$(".Map_WH").fadeIn(500);
 			} else if (currentroom == "bonus") {
-
+				$('#location_WH').fadeOut(500);
+				$('#location_CR').fadeIn(500);
+				$(".Map_CR").fadeIn(500);
 			} else if (currentroom == "exit_1") {
-
+				$('#location_WH').fadeOut(500);
+				$('#location_A1E').fadeIn(500);
+				$(".Map_A1E").fadeIn(500);
 			}
 			
 		}
 		//area 2: pantheon area 
 		else if (currentArea == 2) {
 			if (currentroom == "corridor_2") {
-
+				$('.A1').fadeOut(500);
 			} else if (currentroom == "area_hub") {
 
 			} else if (currentroom == "2.2") {
