@@ -1,6 +1,8 @@
 //
 //SETS ALL VARIABLES FOR THE GAME
 //
+var timedDialogue = "";
+var timedDialogue2 = "";
 bukShot = 0;
 currentArea = 1;
 cellunlocked = false;
@@ -1621,8 +1623,14 @@ $(document).ready(function() {
 			//go to room 2.3
 			else if (input == "go through door 2" && currentroom == "area_hub") {
 				if (beento2_3 == false) {
+					$("<p id='Gnome1'>You enter another of the challenge rooms,<br>In one corner, you see a small pile of bananas<br>In the other, a gnoblin wi-</p>").insertBefore('#placeholder').fadeIn(1000);
 					beento2_3 = true;
-					$("<p>I have no idea why you're here, there's no content yet, sorry, but I am coding this alone.</p>").insertBefore('#placeholder').fadeIn(1000);
+					timedDialogue = setTimeout(function () {
+						$('<p>I\'M NOT A GNOBLIN, I\'M A GNOME!</p>').insertBefore("#placeholder").fadeIn(1000);
+						$("#console").scrollTop($("#console")[0].scrollHeight);}, 2000);
+					timedDialogue2 = setTimeout(function () {
+						$("<p>Fine. A gnome. Weilding a 15 pound sledgehammer (keep in mind even 10 pounds is alot for a sledgehammer)<br>Like really, he\'s just a 1-foot, standard clay lawn gnome, but he\'s very good with that hammer. It\'s scary.</p>").insertBefore('#placeholder').fadeIn(1000);
+						$("#console").scrollTop($("#console")[0].scrollHeight);}, 4000);
 				} else {
 					$("<p>Still nothing here, I appreciate the dedication though.</p>").insertBefore('#placeholder').fadeIn(1000);
 				}
@@ -2082,6 +2090,10 @@ $(document).ready(function() {
 			if (key2_3 == "used" && listed_key2_3 == true) {
 				$('#key2_3Inv').fadeOut(10);
 			}
+			if (icecream == true && listed_ic == false) {
+				$('<p id="IceC">Ice Cream</p>').insertBefore('#inv_food_bottom');
+				listed_ic = true;
+			}
 		}
 
 		//location check
@@ -2213,6 +2225,7 @@ $(document).ready(function() {
 		});
 		}
 		//
+
 
 		//
 		//scroll bar

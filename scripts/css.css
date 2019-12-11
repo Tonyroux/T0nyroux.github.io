@@ -583,7 +583,7 @@ input:focus {
 	font-size: 17px;
 	color: white;
 	background-color: black;
-	height: 450px;
+	height: 460px;
 	width: 200px;
 }
 
@@ -595,6 +595,19 @@ input:focus {
 	width: 190px;
 	margin-top: 250px;
 	margin-left: 5px;
+}
+
+#inv_food_box {
+	position: absolute;
+	background-color: black;
+	margin-top: 275px;
+	margin-left: 0px;
+	width: 200px;
+	height: 133px;
+	font-family: "Times New Roman", Times, serif;
+	font-size: 17px;
+	color: white;
+	overflow-y: auto;
 }
 
 #inv_box {
