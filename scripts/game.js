@@ -4,6 +4,8 @@
 var timedDialogue = "";
 var timedDialogue2 = "";
 bukShot = 0;
+GnomeHealth = 1;
+GnomeTrip = false;
 currentArea = 1;
 cellunlocked = false;
 torch_ply = false;
@@ -30,6 +32,9 @@ beento2_5 = false;
 beento2_6 = false;
 beento2_7 = false;
 //inventory
+banana = false;
+peel = false;
+hammer = false;
 paperclip = false;
 icecream = false;
 deadbugs = false;
@@ -70,6 +75,9 @@ listed_key2_4 = false;
 listed_key2_5 = false;
 listed_key2_6 = false;
 listed_key2_7 = false;
+listed_hammer = false;
+listed_banana = false;
+listed_peel = false;
 //puzzle solving for room re-entering
 solved2_2 = false;
 solved2_3 = false;
@@ -477,12 +485,42 @@ $(document).ready(function() {
 
 			//take water
 			else if (input == "take water" || input == "fill bucket") {
-				if (bucket_e == true) {
-					$("<p>You filled the bucket with water.<br>You can <i>place</i> that <i>bucket</i> if you so choose.</p>").insertBefore('#placeholder').fadeIn(1000);
-					bucket_f = true;
-					bucket_e = false;
-				} else if (bucket_f == true) {
-					$("<p>The bucket is already full.</p>").insertBefore('#placeholder').fadeIn(1000);
+				if (currentroom == "2.2") {
+					if (bucket_e == true) {
+						$("<p>You filled the bucket with water.<br>You can <i>place</i> that <i>bucket</i> if you so choose.</p>").insertBefore('#placeholder').fadeIn(1000);
+						bucket_f = true;
+						bucket_e = false;
+					} else if (bucket_f == true) {
+						$("<p>The bucket is already full.</p>").insertBefore('#placeholder').fadeIn(1000);
+					}
+				}
+			}
+			//
+
+			//take banana
+			else if (input == "take banana" || input == "take bananas") {
+				if (currentroom == "2.3") {
+					if (banana == true || peel == true) {
+						$('<p>You already got a banana.<br>Don\'t be greedy</p>').insertBefore('#placeholder').fadeIn(1000);
+					} else if (banana == false) {
+						banana = true;
+						$('<p>You pick up a banana, good job, maybe it can help you with some particular<br>ahem...<br>gnoblin.</p>').insertBefore('#placeholder').fadeIn(1000);
+					}
+				}
+			}
+			//
+
+			//take hammer
+			else if (input == "take hammer" || input == "take sledgehammer" || input == "take sledge hammer") {
+				if (currentroom == "2.3") {
+					if (hammer == false && GnomeHealth != 1) {
+						$('<p>You took the Gnome\'s hammer. dang it\'s heavy.<br>Almost like it\'s begging you to <i>tear down a wall with it.</i></p>').insertBefore('#placeholder').fadeIn(1000);
+						hammer = true;
+					} else if (hammer == false && GnomeHealth > 0) {
+						$('<p>But the Gnoblin is still alive, I don\'t think he\'ll appreciate that</p>').insertBefore('#placeholder').fadeIn(1000);
+					}
+				} else {
+					$('<p>but there\'s no hammer here.</p>').insertBefore('#placeholder').fadeIn(1000);
 				}
 			}
 			//
@@ -494,7 +532,7 @@ $(document).ready(function() {
 		//end take
 		//
 
-		//place bucket
+		//place
 		else if (input.indexOf("place") > -1) {
 			if (input == "place bucket") {
 				if (currentroom == "2.2") {
@@ -516,6 +554,21 @@ $(document).ready(function() {
 					}  else {
 						$('<p>What bucket?</p>').insertBefore('#placeholder').fadeIn(1000);
 					}
+				}
+			}
+			else if (input == "place banana" || input == "place peel" || input == "place banana peel") {
+				if (currentroom == "2.3") {
+					if (peel == true) {
+						peel = "used";
+						GnomeTrip = true;
+						$('<p>You set the banana peel down and the Gnoblin, so angry that I keep calling him a gnoblin, gets distracted and slips.<br>His sledgehammer has been dropped and he looks <i>pretty defenseless</i></p>').insertBefore('#placeholder').fadeIn(1000);
+					} else if (banana == true) {
+						$('<p>Really? A perfectly good banana? Atleast eat it first</p>').insertBefore('#placeholder').fadeIn(1000);
+					} else if (peel == false && banana == false) {
+						$('<p>What peel? I can\'t just keep creating stuff for you.</p>').insertBefore('#placeholder').fadeIn(1000);
+					}
+				} else {
+					$('<p>why would you put that here? that doesn\'t go here...</p>').insertBefore('#placeholder').fadeIn(1000);
 				}
 			}
 		}
@@ -699,6 +752,23 @@ $(document).ready(function() {
 			}
 			//
 
+			//banana
+			else if (input == "eat banana") {
+				if (banana == true) {
+					$('<p>You eat the banana, how tasty, it recovers 15 health, and now you have the peel<br>But there\'s no trashcan...</p>').insertBefore("#placeholder").fadeIn(1000);
+					health += 15;
+					peel = true;
+					banana = false;
+				} else if (banana == false && peel == true) {
+					$('<p>But you already ate it...</p>').insertBefore("#placeholder").fadeIn(1000);
+				} else if (banana == false && peel == false) {
+					$('<p>You aren\'t holding any bananas.</p>').insertBefore("#placeholder").fadeIn(1000);
+				} else {
+					$('<p>Somehow you braoke the code and now you get no bananas.</p>').insertBefore("#placeholder").fadeIn(1000);
+				}
+			}
+			//
+
 			else $('<p>I don\'t understand "' + input + '</p>').insertBefore("#placeholder").fadeIn(1000);
 
 		}
@@ -826,7 +896,7 @@ $(document).ready(function() {
 			//
 
 			//attack bucket
-			else if (input == "attack bucket with knife" && currentroom == "2.2" && bukFight == true && bucket_e == false && bucket_f == false) {
+			else if (input == "attack bucket with knife" && currentroom == "2.2" && bukFight == true && bucketHealth > 0 && knife == true) {
 				if (buk_health >= 2) {
 					bukDam = Math.ceil(Math.random() * 20);
 					playDam = Math.ceil(Math.random() * 20);
@@ -867,7 +937,7 @@ $(document).ready(function() {
 					}
 				}
 			}
-			else if (input == "attack bucket with whip" && currentroom == "2.2" && bukFight == true) {
+			else if (input == "attack bucket with whip" && currentroom == "2.2" && bukFight == true && bucketHealth > 0 && whip == true) {
 				if (buk_health >= 2) {
 					bukDam = Math.ceil(Math.random() * 20);
 					playDam = Math.ceil(Math.random() * 20);
@@ -908,7 +978,7 @@ $(document).ready(function() {
 					}
 				}
 			}
-			else if (input == "attack bucket with tray" && currentroom == "2.2" && bukFight == true) {
+			else if (input == "attack bucket with tray" && currentroom == "2.2" && bukFight == true && bucketHealth > 0 && lunchtray == true) {
 				if (buk_health >= 2) {
 					bukDam = Math.ceil(Math.random() * 20);
 					playDam = Math.ceil(Math.random() * 20);
@@ -949,7 +1019,7 @@ $(document).ready(function() {
 					}
 				}
 			}
-			else if (input == "attack bucket with gun" && currentroom == "2.2" && bukFight == true) {
+			else if (input == "attack bucket with gun" && currentroom == "2.2" && bukFight == true && bucketHealth > 0) {
 				if (bukShot == 0) {
 					$('<p>Dude.<br>You just put a hole, in the bucket that you need to <i>fill</i> to solve this puzzle<br>Like yeah, it\'s dead now, but you ruined it<br><br>You know what?<br>no<br>I brought it back to life so you can try that agin, I mean come on, really</p>').insertBefore("#placeholder").fadeIn(1000);
 					bukShot = 1;
@@ -965,6 +1035,66 @@ $(document).ready(function() {
 					$("#container").fadeOut(12000, function() {
 						$("#killself").fadeIn(12000);
 					});
+				}
+			}
+			//
+
+			//attack Gnoblin-Gnome
+			else if (input == "attack gnome with knife" && currentroom == "2.3" && GnomeHealth > 0 && knife == true) {
+				if (GnomeTrip == false) {
+					EnmyDam = Math.ceil(Math.random() * 20);
+					if (EnmyDam == 20) {
+						health -= 20;
+						$('<p>Oh dang, he did 20 damage, go figure a 15 lb. sledgehammer is bad news.</p>').insertBefore('#placeholder').fadeIn(1000);
+					} else {
+						$('<p>He dodged with shocking grace.</p>').insertBefore('#placeholder').fadeIn(1000);
+					}
+				} else if (GnomeTrip == true) {
+					GnomeHealth = 0;
+					$('<p>You killed the gnome!<br>now his hammer lays untouched and all that remains of him are his scattered fragments</p>').insertBefore('#placeholder').fadeIn(1000);
+				}
+			}
+			else if (input == "attack gnome with whip" && currentroom == "2.3" && GnomeHealth > 0 && whip == true) {
+				if (GnomeTrip == false) {
+					EnmyDam = Math.ceil(Math.random() * 20);
+					if (EnmyDam == 20) {
+						health -= 20;
+						$('<p>Ouch, he did 20 damage, a 15 lb. sledgehammer is painful.</p>').insertBefore('#placeholder').fadeIn(1000);
+					} else {
+						$('<p>He practically danced around the whip tails, weird.</p>').insertBefore('#placeholder').fadeIn(1000);
+					}
+				} else if (GnomeTrip == true) {
+					GnomeHealth = 0;
+					$('<p>You killed the gnome!<br>now his hammer lays untouched and all that remains of him are his scattered fragments</p>').insertBefore('#placeholder').fadeIn(1000);
+				}
+			}
+			else if (input == "attack gnome with tray" && currentroom == "2.3" && GnomeHealth > 0 && lunchtray == true) {
+				if (GnomeTrip == false) {
+					EnmyDam = Math.ceil(Math.random() * 20);
+					if (EnmyDam == 20) {
+						health -= 20;
+						$('<p>Well then, he did 20 damage, I\'m not surprised that a 15 lb. sledgehammer is bad news.</p>').insertBefore('#placeholder').fadeIn(1000);
+					} else {
+						$('<p>He dodged with shocking grace.</p>').insertBefore('#placeholder').fadeIn(1000);
+					}
+				} else if (GnomeTrip == true) {
+					GnomeHealth = 0;
+					$('<p>No, we aren\'t doing that anymore, I get it the tray is funny,<br>but I\'m over it, Jenny is over it, we\'re done with the tray, use something else.</p>').insertBefore('#placeholder').fadeIn(1000);
+				}
+			}
+			else if (input == "attack gnome with gun" && currentroom == "2.3" && GnomeHealth > 0) {
+				if (GnomeTrip == false) {
+					EnmyDam = Math.ceil(Math.random() * 20);
+					if (EnmyDam == 20) {
+						health -= 20;
+						$('<p>Oh dang, he did 20 damage, go figure a 15 lb. sledgehammer is bad news.</p>').insertBefore('#placeholder').fadeIn(1000);
+					} else {
+						$('<p>He spun the hammer <i>so</i> fast that he deflected the bullet like a light saber, I told you this gnoblin is scary.</p>').insertBefore('#placeholder').fadeIn(1000);
+					}
+				} else if (GnomeTrip == true) {
+					GnomeHealth = 0;
+					health -= 5;
+					$('<p>Listen dude, the gun is a bit overkill, the clay practically explodes and the fragments scratch you up for 5 damage<br>now his hammer lays untouched and all that remains of him are his scattered fragments</p>').insertBefore('#placeholder').fadeIn(1000);
 				}
 			}
 			//
@@ -1263,16 +1393,36 @@ $(document).ready(function() {
 			//
 
 			//door to 2.3
-			else if (input == "unlock door 2 with key") {
-				if (key2_3 == true) {
-					$('<p>You successfully unlocked the second door</p>').insertBefore('#placeholder').fadeIn(1000);
-					key2_3 = "used";
-					unlocked_2 = true;
+			else if (input == "unlock door 2 with key" || input == "unlock door 2") {
+				if (currentroom == "area_hub") {
+					if (key2_3 == true) {
+						$('<p>You successfully unlocked the second door</p>').insertBefore('#placeholder').fadeIn(1000);
+						key2_3 = "used";
+						unlocked_2 = true;
+					} else {
+						$('<p>You don\'t have that key.</p>').insertBefore('#placeholder').fadeIn(1000);
+					}
 				} else {
-					$('<p>You don\'t have that key.</p>').insertBefore('#placeholder').fadeIn(1000);
+					$('<p>There\'s literally a map, you know you aren\'t in the right room.</p>').insertBefore('#placeholder').fadeIn(1000);
 				}
 			}
 			//
+
+			//door to 2.4
+			else if (input == "unlock door 3 with hammer" || input == "unlock door 3" || input == "unlock door 3 with sledgehammer" || input == "unlock door 3 with sledge hammer") {
+				if (currentroom == "area_hub") {
+					if (hammer == true && unlocked_3 == false) {
+						$('<p>you knock door the wall painted 3 and reveal the next challenge room, looks a little...<br>would ancient be the right word?</p>').insertBefore('#placeholder').fadeIn(1000);
+						unlocked_3 = true;
+					} else if (hammer == false && unlocked_3 == false) {
+						$('<p>You can\'t unlock that door yet</p>').insertBefore('#placeholder').fadeIn(1000);
+					} else {
+						$('<p>It is already unlocked tho.</p>').insertBefore('#placeholder').fadeIn(1000);
+					}
+				} else {
+					$('<p>There\'s literally a map, you know you aren\'t in the right room.</p>').insertBefore('#placeholder').fadeIn(1000);
+				}
+			}
 
 			else $('<p>I don\'t understand "' + input + '"</p>').insertBefore("#placeholder").fadeIn(1000);
 
@@ -1622,19 +1772,52 @@ $(document).ready(function() {
 
 			//go to room 2.3
 			else if (input == "go through door 2" && currentroom == "area_hub") {
-				if (beento2_3 == false) {
-					$("<p id='Gnome1'>You enter another of the challenge rooms,<br>In one corner, you see a small pile of bananas<br>In the other, a gnoblin wi-</p>").insertBefore('#placeholder').fadeIn(1000);
-					beento2_3 = true;
-					timedDialogue = setTimeout(function () {
-						$('<p>I\'M NOT A GNOBLIN, I\'M A GNOME!</p>').insertBefore("#placeholder").fadeIn(1000);
-						$("#console").scrollTop($("#console")[0].scrollHeight);}, 2000);
-					timedDialogue2 = setTimeout(function () {
-						$("<p>Fine. A gnome. Weilding a 15 pound sledgehammer (keep in mind even 10 pounds is alot for a sledgehammer)<br>Like really, he\'s just a 1-foot, standard clay lawn gnome, but he\'s very good with that hammer. It\'s scary.</p>").insertBefore('#placeholder').fadeIn(1000);
-						$("#console").scrollTop($("#console")[0].scrollHeight);}, 4000);
+				if (unlocked_2 == false) {
+					$('<p>But it\'s still locked</p>').insertBefore('#placeholder').fadeIn(1000);
 				} else {
-					$("<p>Still nothing here, I appreciate the dedication though.</p>").insertBefore('#placeholder').fadeIn(1000);
+					if (beento2_3 == false) {
+						$("<p id='Gnome1'>You enter another of the challenge rooms,<br>In one corner, you see a small pile of bananas<br>In the other, a gnoblin wi-</p>").insertBefore('#placeholder').fadeIn(1000);
+						beento2_3 = true;
+						timedDialogue = setTimeout(function () {
+							$('<p>I\'M NOT A GNOBLIN, I\'M A GNOME!</p>').insertBefore("#placeholder").fadeIn(1000);
+							$("#console").scrollTop($("#console")[0].scrollHeight);}, 2000);
+						timedDialogue2 = setTimeout(function () {
+							$("<p>Fine. A gnome. Weilding a 15 pound sledgehammer (keep in mind even 10 pounds is alot for a sledgehammer)<br>Like really, he\'s just a 1-foot, standard clay lawn gnome, but he\'s very good with that hammer. It\'s scary.</p>").insertBefore('#placeholder').fadeIn(1000);
+							$("#console").scrollTop($("#console")[0].scrollHeight);}, 4000);
+					} else {
+						if (GnomeHealth > 0 && banana == false && peel == false) {
+							$("<p>Everything is still here, the gnoblin lives, the bananas remain.</p>").insertBefore('#placeholder').fadeIn(1000);
+						} else if (GnomeHealth > 0 && peel == true) {
+							$("<p>The Gnoblin is alive, and you have the right tools, just kill him.</p>").insertBefore('#placeholder').fadeIn(1000);
+						} else if (GnomeHealth > 0 && banana == true) {
+							$("<p>You don't have what you need to beat the gnoblin-gnome yet, but go ahead, keep fighting him I dare you.</p>").insertBefore('#placeholder').fadeIn(1000);
+						} else if (GnomeHealth <= 0 && hammer == false) {
+							$("<p>You killed the Gnoblin...<br>good he can't correct me anymore...<br>All that's left is his beefy hammer boi.</p>").insertBefore('#placeholder').fadeIn(1000);
+						} else if (GnomeHealth <= 0 && hammer == true) {
+							$("<p>THere's nothing left here but the shattered remains of your foe<br>I can still hear his faint gnoblin-y screams as if he were here.<br>How sad.</p>").insertBefore('#placeholder').fadeIn(1000);
+						} else {
+							$("<p>I don't know what you did, but you got to the last resort else statement, the code doesn't know what to do with you.</p>").insertBefore('#placeholder').fadeIn(1000);
+						}
+					}
+					currentroom = "2.3"
 				}
-				currentroom = "2.3"
+			}
+			//
+
+			//go to room 2.4
+			else if (input == "go through door 3" && currentroom == "area_hub") {
+				if (unlocked_3 == false) {
+					$('<p>But it\'s still locked</p>').insertBefore('#placeholder').fadeIn(1000);
+				} else {
+					if (beento2_4 == false) {
+						$('<p>You enter what was a sealed room until you so viciously tore it open.<br>There sits a small frog, so cute, as well as spores and mushrooms growing in the corner, so funky.<br>You notice the wallpaper is tearing away and the mushrooms seem very active.</p>').insertBefore('#placeholder').fadeIn(1000);
+						$('<p>Unfortunately, there isn\'t actually anything to play in this room yet, and trust me, I\'m working as fast as possible, but I think you\' re going to like this one, it requires video.</p>').insertBefore('#placeholder').fadeIn(1000);
+						beento2_4 = true;
+					} else {
+						$('<p>Still nothing, but thanks for checking :)</p>').insertBefore('#placeholder').fadeIn(1000);
+					}
+					currentroom = "2.4";
+				}
 			}
 			//
 
@@ -1949,7 +2132,7 @@ $(document).ready(function() {
 		}
 
 		//heart display
-		if (health > -100) {
+		if (health > -100) {			
 			if (health == 95) {
 				$("img").detach("#health")
 				$('<img src="heart/heart 95.png" style="width:100px;height:100px" id="health">').insertBefore('#placeholder_dos');
@@ -2026,6 +2209,9 @@ $(document).ready(function() {
 				$("img").detach("#health")
 				$('<img src="heart/heart 5.png" style="width:100px;height:100px" id="health">').insertBefore('#placeholder_dos');
 			}
+			else if (health > 100) {
+				health = 100;
+			}
 		}
 		//end of health display
 
@@ -2093,6 +2279,25 @@ $(document).ready(function() {
 			if (icecream == true && listed_ic == false) {
 				$('<p id="IceC">Ice Cream</p>').insertBefore('#inv_food_bottom');
 				listed_ic = true;
+			}
+			if (icecream == "ate" && listed_ic == true) {
+				$('#iceC').fadeOut(1000);
+			}
+			if (banana == true && listed_banana == false) {
+				$('<p id="banana">Banana</p>').insertBefore('#inv_food_bottom');
+				listed_banana = true;
+			}
+			if (peel == true && listed_peel == false) {
+				$('#banana').fadeOut(1000);
+				$('<p id="Bpeel">Banana Peel</p>').insertBefore('#inv_box_bottom');
+				listed_peel = true;
+			}
+			if (peel == "used" && listed_peel == true) {
+				$('#Bpeel').fadeOut(1000);
+			}
+			if (hammer == true && listed_hammer == false) {
+				$('<p>Hammer</p>').insertBefore('#inv_box_bottom');
+				listed_hammer = true;
 			}
 		}
 
@@ -2185,15 +2390,20 @@ $(document).ready(function() {
 			}
 			if (unlocked_2 == true) {
 				$('#doors2').fadeIn(500);
-			} else if (unlocked_3 == true) {
+			}
+			if (unlocked_3 == true) {
 				$('#doors3').fadeIn(500);
-			} else if (unlocked_4 == true) {
+			}
+			if (unlocked_4 == true) {
 				$('#doors4').fadeIn(500);
-			} else if (unlocked_5 == true) {
+			}
+			if (unlocked_5 == true) {
 				$('#doors5').fadeIn(500);
-			} else if (unlocked_6 == true) {
+			}
+			if (unlocked_6 == true) {
 				$('#doors6').fadeIn(500);
-			} else if (solved2_6 == "complete") {
+			}
+			if (solved2_6 == "complete") {
 				$('#A2Exit').fadeIn(500);
 			}
 		}

@@ -529,8 +529,8 @@ input:focus {
 	position: absolute;
 	height: 5px;
 	width: 5px;
-	margin-top: 375px;
-	margin-left: 1198px;
+	margin-top: 221px;
+	margin-left: 1227px;
 	z-index: 1;
 }
 #location2_5 {
@@ -582,7 +582,6 @@ input:focus {
 	font-family: "Times New Roman", Times, serif;
 	font-size: 17px;
 	color: white;
-	background-color: black;
 	height: 460px;
 	width: 200px;
 }
@@ -603,7 +602,7 @@ input:focus {
 	margin-top: 275px;
 	margin-left: 0px;
 	width: 200px;
-	height: 133px;
+	height: 130px;
 	font-family: "Times New Roman", Times, serif;
 	font-size: 17px;
 	color: white;
