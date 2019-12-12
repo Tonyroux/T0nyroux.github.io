@@ -896,7 +896,7 @@ $(document).ready(function() {
 			//
 
 			//attack bucket
-			else if (input == "attack bucket with knife" && currentroom == "2.2" && bukFight == true && bucketHealth != 0 && knife == true) {
+			else if (input == "attack bucket with knife" && currentroom == "2.2" && bukFight == true && buk_health != 0 && knife == true) {
 				if (buk_health >= 2) {
 					bukDam = Math.ceil(Math.random() * 20);
 					playDam = Math.ceil(Math.random() * 20);
@@ -937,7 +937,7 @@ $(document).ready(function() {
 					}
 				}
 			}
-			else if (input == "attack bucket with whip" && currentroom == "2.2" && bukFight == true && bucketHealth != 0 && whip == true) {
+			else if (input == "attack bucket with whip" && currentroom == "2.2" && bukFight == true && buk_health != 0 && whip == true) {
 				if (buk_health >= 2) {
 					bukDam = Math.ceil(Math.random() * 20);
 					playDam = Math.ceil(Math.random() * 20);
@@ -978,7 +978,7 @@ $(document).ready(function() {
 					}
 				}
 			}
-			else if (input == "attack bucket with tray" && currentroom == "2.2" && bukFight == true && bucketHealth != 0 && lunchtray == true) {
+			else if (input == "attack bucket with tray" && currentroom == "2.2" && bukFight == true && buk_health != 0 && lunchtray == true) {
 				if (buk_health >= 2) {
 					bukDam = Math.ceil(Math.random() * 20);
 					playDam = Math.ceil(Math.random() * 20);
@@ -1019,7 +1019,7 @@ $(document).ready(function() {
 					}
 				}
 			}
-			else if (input == "attack bucket with gun" && currentroom == "2.2" && bukFight == true && bucketHealth != 0) {
+			else if (input == "attack bucket with gun" && currentroom == "2.2" && bukFight == true && buk_health != 0) {
 				if (bukShot == 0) {
 					$('<p>Dude.<br>You just put a hole, in the bucket that you need to <i>fill</i> to solve this puzzle<br>Like yeah, it\'s dead now, but you ruined it<br><br>You know what?<br>no<br>I brought it back to life so you can try that agin, I mean come on, really</p>').insertBefore("#placeholder").fadeIn(1000);
 					bukShot = 1;
