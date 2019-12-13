@@ -430,6 +430,140 @@ input:focus {
 	margin-left: 1120px;
 }
 
+.A2Maps {
+	z-index: 0;
+	display: none;
+	position: absolute;
+	height: 500px;
+	width: 250px;
+	margin-top: 30px;
+	margin-left: 1120px;
+}
+
+#room2_0 {
+	display: none;
+}
+#room2_1 {
+	display: none;
+}
+#doors1 {
+	display: none;
+}
+#doors2 {
+	display: none;
+}
+#doors3 {
+	display: none;
+}
+#doors4 {
+	display: none;
+}
+#doors5 {
+	display: none;
+}
+#doors6 {
+	display: none;
+}
+#A2Exit {
+	display: none;
+}
+#room2_3 {
+	display: none;
+}
+#room2_4 {
+	display: none;
+}
+#room2_5 {
+	display: none;
+}
+#room2_6 {
+	display: none;
+}
+#room2_7 {
+	display: none;
+}
+
+#location2_0 {
+	background-color: blue;
+	display: none;
+	position: absolute;
+	height: 5px;
+	width: 5px;
+	margin-top: 375px;
+	margin-left: 1240px;
+	z-index: 1;
+}
+#location2_1 {
+	background-color: blue;
+	display: none;
+	position: absolute;
+	height: 5px;
+	width: 5px;
+	margin-top: 300px;
+	margin-left: 1240px;
+	z-index: 1;
+}
+#location2_2 {
+	background-color: blue;
+	display: none;
+	position: absolute;
+	height: 5px;
+	width: 5px;
+	margin-top: 320px;
+	margin-left: 1205px;
+	z-index: 1;
+}
+#location2_3 {
+	background-color: blue;
+	display: none;
+	position: absolute;
+	height: 5px;
+	width: 5px;
+	margin-top: 275px;
+	margin-left: 1184px;
+	z-index: 1;
+}
+#location2_4 {
+	background-color: blue;
+	display: none;
+	position: absolute;
+	height: 5px;
+	width: 5px;
+	margin-top: 221px;
+	margin-left: 1227px;
+	z-index: 1;
+}
+#location2_5 {
+	background-color: blue;
+	display: none;
+	position: absolute;
+	height: 5px;
+	width: 5px;
+	margin-top: 375px;
+	margin-left: 1198px;
+	z-index: 1;
+}
+#location2_6 {
+	background-color: blue;
+	display: none;
+	position: absolute;
+	height: 5px;
+	width: 5px;
+	margin-top: 375px;
+	margin-left: 1198px;
+	z-index: 1;
+}
+#location2_7 {
+	background-color: blue;
+	display: none;
+	position: absolute;
+	height: 5px;
+	width: 5px;
+	margin-top: 375px;
+	margin-left: 1198px;
+	z-index: 1;
+}
+
 #health_display {
 	display: none;
 	position: absolute;
@@ -448,8 +582,7 @@ input:focus {
 	font-family: "Times New Roman", Times, serif;
 	font-size: 17px;
 	color: white;
-	background-color: black;
-	height: 450px;
+	height: 460px;
 	width: 200px;
 }
 
@@ -461,6 +594,19 @@ input:focus {
 	width: 190px;
 	margin-top: 250px;
 	margin-left: 5px;
+}
+
+#inv_food_box {
+	position: absolute;
+	background-color: black;
+	margin-top: 275px;
+	margin-left: 0px;
+	width: 200px;
+	height: 130px;
+	font-family: "Times New Roman", Times, serif;
+	font-size: 17px;
+	color: white;
+	overflow-y: auto;
 }
 
 #inv_box {
