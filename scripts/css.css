@@ -621,3 +621,6 @@ input:focus {
 	color: white;
 	overflow-y: auto;
 }
+#screen {
+	z-index: -1;
+}
