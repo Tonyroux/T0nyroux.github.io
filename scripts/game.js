@@ -1929,14 +1929,17 @@ $(document).ready(function() {
 
 			//go to westhall from bonus room
 			else if (input == "go north" && currentroom == "bonus") {
+				$("video").detach("#screen");
+				$("img").detach("#screen_crate");
+				$("img").detach("#screen_powder");
+				$("img").detach("#screen_obj1");
+				$("img").detach("#screen_obj2");
 				if (icecream == true || icecream == "ate") {
-					$("video").detach("#screen");
 					$('<video autoplay loop id="screen"><source src="videos/video_WH/WH_cream.mp4" type="video/mp4">you cannot use screen</video>').insertBefore("#zero");
 					$('<p>You are back at the west hallway. To the south is where you came from. To the north is a dark room and to the east the hallway continues.</p>').insertBefore("#placeholder").fadeIn(1000);
 					currentroom = "westhall";
 					}
 					else if (icecream == false) {
-						$("video").detach("#screen");
 						$('<video autoplay loop id="screen"><source src="videos/video_WH/WH.mp4" type="video/mp4">you cannot use screen</video>').insertBefore("#zero");
 						$('<p>You are back at the west hallway. The floor cream remains. To the south is where you came from. To the north is a dark room and to the east the hallway continues.</p>').insertBefore("#placeholder").fadeIn(1000);
 						currentroom = "westhall";
