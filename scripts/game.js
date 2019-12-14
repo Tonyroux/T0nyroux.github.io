@@ -56,6 +56,7 @@ key2_6 = false;
 key2_7 = false;
 inventory = false;
 music = false;
+mControl = false;
 plying_m = false;
 //inventory listing
 listed_t = false;
@@ -151,6 +152,7 @@ $(document).ready(function() {
 			else if (input == "music off" && music == true) {
 				$('<p>Stopping game music.</p>').insertBefore("#placeholder").fadeIn(1000);
 				music = false;
+				mControl = true;
 			}
 			else {
 				$('<p>You can\'t do that</p>').insertBefore("#placeholder").fadeIn(1000);
@@ -625,6 +627,8 @@ $(document).ready(function() {
 				if (currentroom == "bonus") {
 					powder = true;
 					$("audio").detach("#take");
+					$('img').detach('#screen_obj2');
+					$('img').detach('#screen_powder');
 					$('<audio autoplay id="take"><source src="soundfx/sand4.mp3" type="audio/mpeg">you cannot use jukebox</audio>').insertAfter("#nope");
 					$('<p>You found a strange powder. What use could that possibly have?</p>').insertBefore("#placeholder").fadeIn(1000);
 				}
@@ -680,13 +684,13 @@ $(document).ready(function() {
 				$('<audio autoplay id="move"><source src="soundfx/move_crate.mp3" type="audio/mpeg">you cannot use jukebox</audio>').insertAfter("#nope");
 				if (powder == true) {
 					$("img").detach("#screen_crate");
-					$('<img id="screen_obj1" src="videos/video_1_6/crateMove.gif">').insertBefore("#zero");
+					$('<img id="screen_obj1" src="videos/video_1_6/crateMove.gif" class="screen">').insertBefore("#zero");
 
 				} else if (powder == false) {
 					$("img").detach("#screen_crate");
 					$("img").detach("#screen_powder");
-					$('<img id="screen_obj1" src="videos/video_1_6/crateMove.gif" style="position:absolute">').insertBefore("#zero");
-					$('<img id="screen_obj2" src="videos/video_1_6/powderMove.gif" style="position:absolute;width:800px;height:300px">').insertBefore("#zero");
+					$('<img id="screen_obj1" src="videos/video_1_6/crateMove.gif" style="position:absolute" class="screen">').insertBefore("#zero");
+					$('<img id="screen_obj2" src="videos/video_1_6/powderMove.gif" style="position:absolute;width:800px;height:300px" class="screen">').insertBefore("#zero");
 				}
 				$('<p>You reveal a ladder downwards.</p>').insertBefore("#placeholder").fadeIn(1000);
 				cratemove = true
@@ -1396,7 +1400,11 @@ $(document).ready(function() {
 				else if (currentroom == "exit_1" && key_1 == true) {
 					exit_1unlocked = true;
 					key_1 = "used";
+					$("img").detach("#screen_guy");
+					$("img").detach("#screen_door");
+					$('<img src="videos/video_1_7/1_7unlock.gif" style="width:800px;height:300px;position:absolute" id="screen_unlock" class="screen">').insertBefore("#zero");
 					$('<p>You unlocked the door successfully. You can now proceed northward.</p>').insertBefore("#placeholder").fadeIn(1000);
+					setTimeout(function () {$('.screen').fadeOut(2000)}, 5000);
 				}
 				else $('<p>The door cannot be unlocked.</p>').insertBefore("#placeholder").fadeIn(1000);
 			}
@@ -1452,6 +1460,9 @@ $(document).ready(function() {
 			//go to hall way
 			else if (input == "go north" && currentroom == "jail") {
 				if (cellunlocked == true) {
+					if (mControl == false) {
+						music = true;
+					}
 					if (beentohallway == true) {
 						if (note == false) {
 							hallnote = " The note is still here. ";
@@ -1649,6 +1660,10 @@ $(document).ready(function() {
 			//go to exit from westhallway
 			else if (input == "go north" && currentroom == "westhall") {
 				$("video").detach("#screen");
+				$("img").detach("#screen");
+				$('<img src="videos/video_1_7/1_7back.gif" style="width:800px;height:300px;position:absolute" id="screen" class="screen">').insertBefore("#zero");
+				$('<img src="videos/video_1_7/1_7idle.gif" style="width:800px;height:300px;position:absolute" id="screen_guy" class="screen">').insertBefore("#zero");
+				$('<img src="videos/video_1_7/1_7door.png" style="width:800px;height:300px;position:absolute" id="screen_door" class="screen">').insertBefore("#zero");
 				if (beentoexit_1 == true) {
 					$('<p>You are back at the room with the strange door. To the south is the hallway you came from.</p>').insertBefore("#placeholder").fadeIn(1000);
 					currentroom = "exit_1";
@@ -1663,6 +1678,7 @@ $(document).ready(function() {
 
 			//go to westhallway from exit
 			else if (input == "go south" && currentroom == "exit_1") {
+				$("img").detach(".screen");
 				if (beentowesthall == true) {
 					if (icecream == true || icecream == "ate") {
 						$("video").detach("#screen");
@@ -1687,6 +1703,7 @@ $(document).ready(function() {
 
 			//go north from tutorial
 			else if (input == "go north" && currentroom == "exit_1") {
+				$("img").detach(".screen");
 				if (exit_1unlocked == true) {
 					$("#area_2Corridor").clone().insertBefore("#placeholder").fadeIn(1000);
 					burnttorch = true;
@@ -1868,16 +1885,17 @@ $(document).ready(function() {
 			else if (input == "go south" && currentroom == "westhall") {
 				$("video").detach("#screen");
 				$("img").detach("#screen");
-				$('<img src="videos/video_1_6/1_6back.png" style="width:800px;height:300px;position:absolute" id="screen">').insertBefore("#zero");
+				$('<img src="videos/video_1_6/1_6back.png" style="width:800px;height:300px;position:absolute" id="screen" class="screen">').insertBefore("#zero");
+				$('<img src="videos/video_1_6/1_6idle.gif" style="width:800px;height:300px;position:absolute" id="screen_guy" class="screen">').insertBefore("#zero");
 				if (beentobonus == true && cratemove == false) {
 					if (powder == false) {
 						bonuscrate = "The lone wheeled crate in the corner looks untouched.";
-						$('<img src="videos/video_1_6/1_6crate.png" style="width:800px;height:300px;position:absolute" id="screen_crate">').insertBefore("#zero");
-						$('<img src="videos/video_1_6/1_6powder.png" style="width:800px;height:300px;position:absolute" id="screen_powder">').insertBefore("#zero");
+						$('<img src="videos/video_1_6/1_6crate.png" style="width:800px;height:300px;position:absolute" id="screen_crate" class="screen">').insertBefore("#zero");
+						$('<img src="videos/video_1_6/1_6powder.png" style="width:800px;height:300px;position:absolute" id="screen_powder" class="screen">').insertBefore("#zero");
 					}
 					else {
 						bonuscrate = "";
-						$('<img src="videos/video_1_6/1_6crate.png" style="width:800px;height:300px;position:absolute" id="screen_crate">').insertBefore("#zero");
+						$('<img src="videos/video_1_6/1_6crate.png" style="width:800px;height:300px;position:absolute" id="screen_crate" class="screen">').insertBefore("#zero");
 					}
 					$('<p>You are back in the small storage room. You came from the north. ' + bonuscrate + '</p>').insertBefore("#placeholder").fadeIn(1000);
 					currentroom = "bonus";
@@ -1885,8 +1903,8 @@ $(document).ready(function() {
 				else if (beentobonus == true && cratemove == true) {
 					if (powder == false) {
 						bonuscrate = "The lone wheeled crate in the corner still looks full.";
-						$('<img src="videos/video_1_6/crateMoved.png" style="width:800px;height:300px;position:absolute" id="screen_crate">').insertBefore("#zero");
-						$('<img src="videos/video_1_6/powderMoved.png" style="width:800px;height:300px;position:absolute" id="screen_powder">').insertBefore("#zero");
+						$('<img src="videos/video_1_6/crateMoved.png" style="width:800px;height:300px;position:absolute" id="screen_crate" class="screen">').insertBefore("#zero");
+						$('<img src="videos/video_1_6/powderMoved.png" style="width:800px;height:300px;position:absolute" id="screen_powder" class="screen">').insertBefore("#zero");
 					}
 					else if (powder == true ) {
 						bonuscrate = "The crate sits empty and shifted, ladder revealed.";
@@ -1898,8 +1916,8 @@ $(document).ready(function() {
 				}
 				else {
 					$("#area_bonus").clone().insertBefore("#placeholder").fadeIn(1000);
-					$('<img src="videos/video_1_6/1_6crate.png" style="width:800px;height:300px;position:absolute" id="screen_crate">').insertBefore("#zero");
-					$('<img src="videos/video_1_6/1_6powder.png" style="width:800px;height:300px;position:absolute" id="screen_powder">').insertBefore("#zero");
+					$('<img src="videos/video_1_6/1_6crate.png" style="width:800px;height:300px;position:absolute" id="screen_crate" class="screen">').insertBefore("#zero");
+					$('<img src="videos/video_1_6/1_6powder.png" style="width:800px;height:300px;position:absolute" id="screen_powder" class="screen">').insertBefore("#zero");
 					beentobonus = true;
 					currentroom = "bonus";
 				}
@@ -1930,10 +1948,7 @@ $(document).ready(function() {
 			//go to westhall from bonus room
 			else if (input == "go north" && currentroom == "bonus") {
 				$("video").detach("#screen");
-				$("img").detach("#screen_crate");
-				$("img").detach("#screen_powder");
-				$("img").detach("#screen_obj1");
-				$("img").detach("#screen_obj2");
+				$("img").detach(".screen");
 				if (icecream == true || icecream == "ate") {
 					$('<video autoplay loop id="screen"><source src="videos/video_WH/WH_cream.mp4" type="video/mp4">you cannot use screen</video>').insertBefore("#zero");
 					$('<p>You are back at the west hallway. To the south is where you came from. To the north is a dark room and to the east the hallway continues.</p>').insertBefore("#placeholder").fadeIn(1000);
