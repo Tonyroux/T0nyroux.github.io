@@ -1931,6 +1931,9 @@ $(document).ready(function() {
 
 			//go down ladder
 			else if (input == "go down" && currentroom == "bonus" && cratemove == true) {
+				$("img").detach(".screen");
+				$('<img src="videos/Area0/video_0_1/0_1back.png" style="width:800px;height:300px;position:absolute" id="screen" class="screen">').insertBefore("#zero");
+				$('<img src="videos/Area0/video_0_1/0_1guy.gif" style="width:800px;height:300px;position:absolute" id="screen_guy" class="screen">').insertBefore("#zero");
 				if (beentojukebox == false) {
 				$('<p>You descend down the ladder into a Wizard of Oz esque broadcast room<br>Inside, you find an old jukebox with various songs ready to play throughout these barren halls.<br>up is the crate room.</p>').insertBefore("#placeholder").fadeIn(1000);
 				$('#jukebox_find').clone().insertBefore("#placeholder").fadeIn(1000);
@@ -1946,8 +1949,17 @@ $(document).ready(function() {
 
 			//go up ladder
 			else if (input == "go up" && currentroom == "jukeboxroom") {
+				$("img").detach(".screen");
+				$('<img src="videos/video_1_6/1_6back.png" style="width:800px;height:300px;position:absolute" id="screen" class="screen">').insertBefore("#zero");
+				$('<img src="videos/video_1_6/1_6idle.gif" style="width:800px;height:300px;position:absolute" id="screen_guy" class="screen">').insertBefore("#zero");
 				$('<p>You ascend up the ladder into the crate room. North, the hall, down, the jukebox room.</p>').insertBefore("#placeholder").fadeIn(1000);
 				currentroom = "bonus";
+				if (powder == true) {
+					$('<img src="videos/video_1_6/crateMoved.png" style="width:800px;height:300px;position:absolute" id="screen_crate">').insertBefore("#zero");
+				} else if (powder == false) {
+					$('<img src="videos/video_1_6/crateMoved.png" style="width:800px;height:300px;position:absolute" id="screen_crate" class="screen">').insertBefore("#zero");
+					$('<img src="videos/video_1_6/powderMoved.png" style="width:800px;height:300px;position:absolute" id="screen_powder" class="screen">').insertBefore("#zero");
+				}
 			}
 
 			//go to westhall from bonus room
