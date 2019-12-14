@@ -1935,7 +1935,7 @@ $(document).ready(function() {
 				$('<img src="videos/Area0/video_0_1/0_1back.png" style="width:800px;height:300px;position:absolute" id="screen" class="screen">').insertBefore("#zero");
 				$('<img src="videos/Area0/video_0_1/0_1guy.gif" style="width:800px;height:300px;position:absolute" id="screen_guy" class="screen">').insertBefore("#zero");
 				if (beentojukebox == false) {
-				$('<p>You descend down the ladder into a Wizard of Oz esque broadcast room<br>Inside, you find an old jukebox with various songs ready to play throughout these barren halls.<br>up is the crate room.</p>').insertBefore("#placeholder").fadeIn(1000);
+				$('<p>You descend down the ladder into a Wizard behind the curtain style broadcast room<br>Inside, you find an old jukebox with various songs ready to play throughout these barren halls.<br>up is the crate room.</p>').insertBefore("#placeholder").fadeIn(1000);
 				$('#jukebox_find').clone().insertBefore("#placeholder").fadeIn(1000);
 				beentojukebox = true
 				currentroom = "jukeboxroom";
