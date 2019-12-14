@@ -1704,6 +1704,8 @@ $(document).ready(function() {
 			//go north from tutorial
 			else if (input == "go north" && currentroom == "exit_1") {
 				$("img").detach(".screen");
+				$('<img src="videos/Area2/video_2_0/2_0eyes.gif" style="width:800px;height:300px;position:absolute" id="screen_guy" class="screen">').insertBefore("#zero");
+				setTimeout(function () {$('<img src="videos/Area2/video_2_0/2_0fade.gif" style="width:800px;height:300px;position:absolute" id="screen_fade" class="screen">').insertBefore("#zero");}, 1000);
 				if (exit_1unlocked == true) {
 					$("#area_2Corridor").clone().insertBefore("#placeholder").fadeIn(1000);
 					burnttorch = true;
@@ -1726,6 +1728,7 @@ $(document).ready(function() {
 
 			//go to hub
 			else if (input == "go north" && currentroom == "corridor_2" || input == "go back" && currentroom == "2.2" || input == "go back" && currentroom == "2.3" || input == "go back" && currentroom == "2.4" || input == "go back" && currentroom == "2.5" || input == "go back" && currentroom == "2.6" || input == "go back" && currentroom == "2.7") {
+				$("img").detach(".screen");
 				if (beentohub == false) {
 				$("#area_hub").clone().insertBefore("#placeholder").fadeIn(1000);
 				beentohub = true;
@@ -1850,6 +1853,8 @@ $(document).ready(function() {
 
 			//return to corridor_2
 			else if (input == "go south" && currentroom == "area_hub" && beentocorridor_2 == true) {
+				$("img").detach(".screen");
+				$('<img src="videos/Area2/video_2_0/2_0eyes.gif" style="width:800px;height:300px;position:absolute" id="screen_guy" class="screen">').insertBefore("#zero");
 				$('<p>You are back at the corridor. There is literally no reason for you to be back here. You came from the north.</p>').insertBefore("#placeholder").fadeIn(1000);
 				currentroom = "corridor_2";
 			}
@@ -1992,6 +1997,10 @@ $(document).ready(function() {
 			//go to morgue from torture room
 			else if (input == "go south" && currentroom == "torture") {
 				$("video").detach("#screen");
+				$("img").detach("#screen");
+				$("img").detach(".screen");
+				$('<img src="videos/video_1_4/1_4back.gif" style="width:800px;height:300px;position:absolute" id="screen" class="screen">').insertBefore("#zero");
+				$('<img src="videos/video_1_4/1_4guy.gif" style="width:800px;height:300px;position:absolute" id="screen_guy" class="screen">').insertBefore("#zero");
 				if (beenmorgue == true) {
 					if (zombiedead == false) {
 						morguezombie = "The zombie is still here!";
@@ -2013,6 +2022,7 @@ $(document).ready(function() {
 			//go to torture room from morgue
 			else if (input == "go north" && currentroom == "morgue") {
 				$("video").detach("#screen");
+				$("img").detach(".screen");
 				if (searchtable == false) {
 					torturetable = "The table seems to emit a strange energy. ";
 				}
